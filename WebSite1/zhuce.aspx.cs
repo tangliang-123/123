@@ -28,7 +28,7 @@ public partial class zhuce : System.Web.UI.Page
         Manager zs = new Manager();
         zs.M_LoginId = "zsss";//
         zs.M_Password = "123";
-
+        //
         if (BLL.ManagerBusiness.AddManager(zs))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('ok')</script>");
