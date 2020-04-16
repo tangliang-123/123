@@ -8,3 +8,10 @@ E:\123\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
 E:\123\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 E:\123\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 E:\123\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\123\WindowsFormsApp2\bin\Debug\BLL.dll
+E:\123\WindowsFormsApp2\bin\Debug\Model.dll
+E:\123\WindowsFormsApp2\bin\Debug\DAL.dll
+E:\123\WindowsFormsApp2\bin\Debug\BLL.pdb
+E:\123\WindowsFormsApp2\bin\Debug\Model.pdb
+E:\123\WindowsFormsApp2\bin\Debug\DAL.pdb
+E:\123\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
