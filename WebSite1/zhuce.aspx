@@ -56,7 +56,7 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="下一步" />
+            <asp:Button ID="Button1" runat="server" Text="下一步" OnClick="Button1_Click" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="已有账号"></asp:Label>

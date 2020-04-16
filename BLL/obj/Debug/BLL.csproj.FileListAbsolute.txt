@@ -1,0 +1,13 @@
+E:\123\BLL\bin\Debug\BLL.dll
+E:\123\BLL\bin\Debug\BLL.pdb
+E:\123\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+E:\123\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\123\BLL\obj\Debug\BLL.dll
+E:\123\BLL\obj\Debug\BLL.pdb
+E:\123\BLL\bin\Debug\DAL.dll
+E:\123\BLL\bin\Debug\Model.dll
+E:\123\BLL\bin\Debug\Utility.dll
+E:\123\BLL\bin\Debug\DAL.pdb
+E:\123\BLL\bin\Debug\Model.pdb
+E:\123\BLL\bin\Debug\Utility.pdb
+E:\123\BLL\obj\Debug\BLL.csproj.CopyComplete
