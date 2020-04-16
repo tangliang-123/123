@@ -1,6 +1,5 @@
 E:\123\Model\bin\Debug\Model.dll
 E:\123\Model\bin\Debug\Model.pdb
-E:\123\Model\obj\Debug\Model.csprojAssemblyReference.cache
 E:\123\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\123\Model\obj\Debug\Model.dll
 E:\123\Model\obj\Debug\Model.pdb
