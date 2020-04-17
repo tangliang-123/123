@@ -16,6 +16,7 @@ namespace Model
 			set { iD = value; }
 
 
+
 		}
 
 		private int postID;
