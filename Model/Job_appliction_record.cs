@@ -14,6 +14,8 @@ namespace Model
 		{
 			get { return iD; }
 			set { iD = value; }
+
+
 		}
 
 		private int postID;
