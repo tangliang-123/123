@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>111</title>
     <style type="text/css">
 
 body { background-image: url(image/denglu.png);
@@ -13,6 +13,7 @@ body { background-image: url(image/denglu.png);
 }
 #Panel1 {
     margin:100px auto ;
+
 
         }
         #Button1 {
