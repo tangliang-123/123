@@ -7,3 +7,11 @@ E:\123\DAL\obj\Debug\DAL.pdb
 E:\123\DAL\bin\Debug\Model.dll
 E:\123\DAL\bin\Debug\Model.pdb
 E:\123\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\软件工程\DAL\bin\Debug\DAL.dll
+D:\软件工程\DAL\bin\Debug\DAL.pdb
+D:\软件工程\DAL\bin\Debug\Model.dll
+D:\软件工程\DAL\bin\Debug\Model.pdb
+D:\软件工程\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\软件工程\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\软件工程\DAL\obj\Debug\DAL.dll
+D:\软件工程\DAL\obj\Debug\DAL.pdb

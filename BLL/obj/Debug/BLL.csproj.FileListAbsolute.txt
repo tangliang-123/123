@@ -11,3 +11,15 @@ E:\123\BLL\bin\Debug\DAL.pdb
 E:\123\BLL\bin\Debug\Model.pdb
 E:\123\BLL\bin\Debug\Utility.pdb
 E:\123\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\软件工程\BLL\bin\Debug\BLL.dll
+D:\软件工程\BLL\bin\Debug\BLL.pdb
+D:\软件工程\BLL\bin\Debug\DAL.dll
+D:\软件工程\BLL\bin\Debug\Model.dll
+D:\软件工程\BLL\bin\Debug\Utility.dll
+D:\软件工程\BLL\bin\Debug\DAL.pdb
+D:\软件工程\BLL\bin\Debug\Model.pdb
+D:\软件工程\BLL\bin\Debug\Utility.pdb
+D:\软件工程\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\软件工程\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\软件工程\BLL\obj\Debug\BLL.dll
+D:\软件工程\BLL\obj\Debug\BLL.pdb
