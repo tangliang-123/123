@@ -142,7 +142,7 @@
                                    </tr>
                                </table>
                                &nbsp;&nbsp;&nbsp;&nbsp;
-                               <asp:Button ID="Button1" runat="server" Text="注册" BackColor="Aqua" BorderColor="#6699FF" BorderStyle="Solid" Height="30px" Width="165px" />
+                               <asp:Button ID="Button1" runat="server" Text="注册" BackColor="Aqua" BorderColor="#6699FF" BorderStyle="Solid" Height="30px" Width="165px" OnClick="Button1_Click" />
                            </div>
                            <div class="cut-off">
                                <div class="line"></div>
