@@ -15,19 +15,21 @@ public partial class zhuce : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string admin = Text1.Value;
-        string password = Text2.Value;
+        
         Manager zc = new Manager();
-        zc.M_LoginId = admin;
-        zc.M_Password = password;
-       
-            if (BLL.ManagerBusiness.AddManager(zc))
+        zc.M_LoginId = Text1.Value;
+        zc.M_Password = Text2.Value;
+
+        if (BLL.ManagerBusiness.AddManager(zc))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('ok')</script>");
-            }
+               // ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('注册成功')</script>");
+                Utility.JavaScript.AlertAndRedirect("注册成功","../Default.aspx", this);
+        }
             else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('NOOOOOOOOOOOOOO')</script>");
+                ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('该账号已存在')</script>");
             }
     }
+
+    
 }
