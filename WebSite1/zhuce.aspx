@@ -132,17 +132,17 @@
                            <div class="log_form">
                                <table class="auto-style1">
                                    <tr>
-                                       <td>&nbsp;<input id="Text1" type="text" value="手机号码" />手机号码</td>
+                                       <td>&nbsp;<input id="Text1" type="text" value="手机号码"  runat="server"/>手机号码</td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp;<input id="Text2" type="text" value="验证码"/>验证码</td>
+                                       <td>&nbsp;<input id="Text2" type="text" value="验证码" runat="server"/>验证码</td>
                                    </tr>
                                    <tr>
                                        <td>&nbsp;</td>
                                    </tr>
                                </table>
                                &nbsp;&nbsp;&nbsp;&nbsp;
-                               <asp:Button ID="Button1" runat="server" Text="注册" BackColor="Aqua" BorderColor="#6699FF" BorderStyle="Solid" Height="30px" Width="165px" />
+                               <asp:Button ID="Button1" runat="server" Text="注册" BackColor="Aqua" BorderColor="#6699FF" BorderStyle="Solid" Height="30px" Width="165px" OnClick="Button1_Click" />
                            </div>
                            <div class="cut-off">
                                <div class="line"></div>
