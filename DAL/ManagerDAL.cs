@@ -101,7 +101,7 @@ namespace DAL
                 new SqlParameter("@Password",manager.M_Password)
             };
             // int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddManager", CommandType.StoredProcedure, p));
-            string sqlt = "update Manager set M_Password=@Password from Manager where M_LoginId=@Account";
+            string sqlt = "Update set M_Password=@Password from Manager where M_LoginId=@Account";
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
             return i > 0;
         }
