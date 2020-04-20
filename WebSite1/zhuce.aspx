@@ -132,10 +132,10 @@
                            <div class="log_form">
                                <table class="auto-style1">
                                    <tr>
-                                       <td>&nbsp;<input id="Text1" type="text" value="手机号码" />手机号码</td>
+                                       <td>&nbsp;<input id="Text1" type="text" value="手机号码"  runat="server"/>手机号码</td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp;<input id="Text2" type="text" value="验证码"/>验证码</td>
+                                       <td>&nbsp;<input id="Text2" type="text" value="验证码" runat="server"/>验证码</td>
                                    </tr>
                                    <tr>
                                        <td>&nbsp;</td>
