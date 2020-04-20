@@ -271,7 +271,7 @@
                 </div>   
             </div>
             <div id="touxiang">
-                <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
+                <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/image/头像.png" OnClick="Image1_Click" />
                 <asp:Label ID="Label6" runat="server" Text="18382908734(未实名)"></asp:Label>
                 <asp:Label ID="Label7" runat="server" Text="未绑定公司"></asp:Label>
             </div>

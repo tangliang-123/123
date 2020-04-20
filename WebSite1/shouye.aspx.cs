@@ -16,4 +16,10 @@ public partial class shouye : System.Web.UI.Page
     {
         Response.Redirect("zhiweiguanli.aspx");
     }
+
+    protected void Image1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("mima.aspx");
+
+    }
 }
