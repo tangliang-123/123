@@ -211,7 +211,7 @@
                     <asp:TextBox ID="TextBox3" runat="server" Height="21px" Width="239px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="*不能为空！" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="*两次密码输入不一致！" ForeColor="Red"></asp:CompareValidator>
-                    <p class="p8" style="margin-left:45px;"><asp:Button ID="Button1" runat="server" Text="保存" Height="27px" Width="95px" /></p>
+                    <p class="p8" style="margin-left:45px;"><asp:Button ID="Button1" runat="server" Text="保存" Height="27px" Width="95px" OnClick="Button1_Click" /></p>
                 </div>
             </div>
         </div>

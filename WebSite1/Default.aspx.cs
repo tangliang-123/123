@@ -22,7 +22,7 @@ public partial class _Default : System.Web.UI.Page
             if (BLL.ManagerBusiness.ManagerLogin(admin, password))
             {
                 ////登录成功，数据存入session中
-                //Session["admin"] = admin;; 
+                Session["admin"] = admin;
                 Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
             }
             else
