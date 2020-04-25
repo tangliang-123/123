@@ -28,6 +28,8 @@ namespace Utility
             #endregion
         }
 
+    
+
         /// <summary>
         /// 弹出消息框并且转向到新的URL
         /// </summary>
