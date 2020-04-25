@@ -36,16 +36,26 @@ namespace BLL
                 return DAL.ManagerDAL.AddManager(manager);
         }
 
-        public static bool Upadamima(Manager manager,string password)
+        public static bool Upadamima(Manager manager)
         {
-            if (ManagerDAL.Pdmima(manager)==password)
-            {
                 return DAL.ManagerDAL.UpdataManager(manager);
-            }
-            else
-                return false;
         }
 
-        
+
+        /// <summary>
+        /// 添加助学岗位
+        /// </summary>
+        /// <param name="jobdel"></param>
+        /// <returns></returns>
+        public static bool AddJob(JobDetail jobdel)
+        {
+            return DAL.JobDetailDAL.AddJob(jobdel);
+        }
+
+        public static bool Updatenumber(Manager manager)
+        {
+            return DAL.ManagerDAL.Updatenumber(manager);
+        }
+
     }
 }

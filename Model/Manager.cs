@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+
 	public class Manager
 	{
 		private string m_LoginId;
@@ -83,6 +84,13 @@ namespace Model
 		{
 			get { return nation; }
 			set { nation = value; }
+		}
+
+		private string number;
+		public string Number
+		{
+			get { return number; }
+			set { number = value; }
 		}
 	}
 }

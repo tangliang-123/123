@@ -142,7 +142,24 @@
        ,#LinkButton6,#LinkButton7,#LinkButton8,#LinkButton9,#LinkButton10,#LinkButton11{
            text-decoration:none;
        }
+        .auto-style1 {
+            width: 60px;
+            height: 26px;
+        }
     </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            $("#imageCode2").click(function () {
+                $("#imageCode2").attr("src", function () {
+                    return "Handler.ashx?a=" + new Date().getMilliseconds();
+                })
+            })
+        })
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -155,19 +172,19 @@
             <div class="ulli">
                <ul>
                   <li>
-                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Black">首页</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Black" CausesValidation="False">首页</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black">职位管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black" CausesValidation="False">职位管理</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black">简历管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black" CausesValidation="False">简历管理</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton8" runat="server" ForeColor="Black">青团宝</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton8" runat="server" ForeColor="Black" CausesValidation="False">青团宝</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx" CausesValidation="False">小任务</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx">消息</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx" CausesValidation="False">消息</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black">加速招聘</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black" CausesValidation="False">加速招聘</asp:LinkButton></li>
               </ul>
             </div>
             <div class="toux">
@@ -180,17 +197,17 @@
                 <div class="lefts">
                     <p class="p2">个人信息</p>
                     <p class="p2">
-                        <asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Black" PostBackUrl="~/xinxi.aspx">我的公司</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Black" PostBackUrl="~/xinxi.aspx" CausesValidation="False">我的公司</asp:LinkButton></p>
                 </div>
                 <div class="leftx">
                     <p class="p3">其他设置</p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="None" ForeColor="Black" PostBackUrl="~/mima.aspx">修改密码</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="None" ForeColor="Black" PostBackUrl="~/mima.aspx" CausesValidation="False">修改密码</asp:LinkButton></p>
                     <p class="p4" style="color:aqua;">修改手机号</p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black">微信通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" CausesValidation="False">微信通知</asp:LinkButton></p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black">邮件通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black" CausesValidation="False">邮件通知</asp:LinkButton></p>
                 </div>
             </div>
             <div class="right">
@@ -205,7 +222,8 @@
                     <p class="p8">验证码</p>
                     <asp:TextBox ID="TextBox2" runat="server" Height="30px" Width="244px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="*不能为空！" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <p class="p8" style="margin-left:45px;"><asp:Button ID="Button1" runat="server" Text="保存" Height="27px" Width="95px" /></p>
+                    <img alt="" src="Handler.ashx" class="auto-style1" id="imageCode2" />
+                    <p class="p8" style="margin-left:45px;"><asp:Button ID="Button1" runat="server" Text="保存" Height="27px" Width="95px" OnClick="Button1_Click" /></p>
             </div>
         </div>
     </div>

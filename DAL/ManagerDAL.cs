@@ -71,23 +71,7 @@ namespace DAL
             
         }
 
-        /// <summary>
-        /// 判断密码是否存在
-        /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
-        public static string Pdmima(Manager manager)
-        {
-            SqlParameter[] p = new SqlParameter[]
-            {
-                new SqlParameter("@Account",manager.M_LoginId)
-
-            };
-            //int i = Convert.ToInt32(SQLHelper.ExecuteScalar("ManagerIsExist", CommandType.StoredProcedure, p));
-            string sqltext = "select M_Password from Manager where M_LoginId=@Account";
-            string tr = SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p).ToString();
-            return tr;
-        }
+        
         /// <summary>
         /// 修改密码
         /// </summary>
@@ -100,10 +84,29 @@ namespace DAL
                 new SqlParameter("@Account",manager.M_LoginId),
                 new SqlParameter("@Password",manager.M_Password)
             };
-            // int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddManager", CommandType.StoredProcedure, p));
-            string sqlt = "Update set M_Password=@Password from Manager where M_LoginId=@Account";
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Updatemima", CommandType.StoredProcedure, p));
+            //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
+            //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
             return i > 0;
         }
+
+        /// <summary>
+        /// 修改手机号码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool Updatenumber(Manager manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",manager.M_LoginId),
+                new SqlParameter("@number",manager.Number)
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Upadenumber", CommandType.StoredProcedure, p));
+            //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
+            //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+            return i > 0;
+        }
+
     }
 }
