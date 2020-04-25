@@ -141,7 +141,7 @@
             margin-bottom:15px;
         }
         #LinkButton1,#LinkButton2,#LinkButton3,#LinkButton4,#LinkButton5
-       ,#LinkButton6,#LinkButton7,#LinkButton8,#LinkButton9,#LinkButton10,#LinkButton11{
+       ,#LinkButton6,#LinkButton7,#LinkButton8,#LinkButton9,#LinkButton10,#LinkButton11,#LinkButton12{
            text-decoration:none;
        }
     </style>
@@ -197,7 +197,7 @@
             <div class="right">
                 <div class="xgmm">
                     <p class="p5">修改密码</p>
-                    <p class="p6">注销账号></p>
+                    <p class="p6"><asp:LinkButton ID="LinkButton12" runat="server" CausesValidation="False" OnClick="LinkButton12_Click">注销账号&gt;</asp:LinkButton></p>
                 </div>
                 <div class="xg">
                     <p class="p7">原始密码修改</p>

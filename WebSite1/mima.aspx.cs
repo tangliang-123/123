@@ -21,7 +21,6 @@ public partial class mima : System.Web.UI.Page
             manager.M_LoginId = Session["admin"].ToString();
         manager.M_Password = TextBox2.Text;
         string password = TextBox1.Text;
-        Utility.JavaScript.Alert(manager.M_LoginId, this);
         if (BLL.ManagerBusiness.Upadamima(manager))
         {
             Utility.JavaScript.Alert("修改密码成功", this);
@@ -35,5 +34,20 @@ public partial class mima : System.Web.UI.Page
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         Response.Redirect("telnum.aspx");
+    }
+
+    protected void LinkButton12_Click(object sender, EventArgs e)
+    {
+        Manager manager = new Manager();
+        if (Session["admin"] != null)
+            manager.M_LoginId = Session["admin"].ToString();
+        if (BLL.ManagerBusiness.DeleteManager(manager))
+        {
+            Utility.JavaScript.AlertAndRedirect("注销成功", "../Default.aspx", this);
+        }
+        else
+        {
+            Utility.JavaScript.Alert("注销失败", this);
+        }
     }
 }

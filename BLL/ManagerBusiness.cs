@@ -57,5 +57,10 @@ namespace BLL
             return DAL.ManagerDAL.Updatenumber(manager);
         }
 
+        public static bool DeleteManager(Manager manager)
+        {
+            return DAL.ManagerDAL.DeleteManager(manager);
+        }
+
     }
 }
