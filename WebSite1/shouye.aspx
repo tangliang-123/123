@@ -6,6 +6,9 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    
+    
+</script>
     <style type="text/css">
         body {
         
@@ -255,7 +258,7 @@
             </div>
             <div id="daohang">
                 <div>
-                     <asp:Label ID="Label1" runat="server" Text="首页"></asp:Label>
+                     <asp:Button ID="Label1" runat="server" Text="首页"></asp:Button>
                 </div>
                 <div>
                     <asp:Button ID="Label2" runat="server" Text="职位管理" BackColor="White" BorderStyle="None" OnClick="Label2_Click"></asp:Button>

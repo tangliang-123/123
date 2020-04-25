@@ -21,7 +21,7 @@ public partial class mima : System.Web.UI.Page
         string password = TextBox1.Text;
         if(BLL.ManagerBusiness.Upadamima(xgmm,password))
         {
-            Utility.JavaScript.Alert("修改密码", this);
+            Utility.JavaScript.Alert("修改密码成功", this);
         }
         else
         {
