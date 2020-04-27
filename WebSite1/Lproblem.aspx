@@ -172,19 +172,19 @@
             <div class="ulli">
                <ul>
                   <li>
-                      <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Black">首页</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Black" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black">职位管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black">简历管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton></li>
                   <li>
                       <asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Black">青团宝</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="aqua">小任务</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="aqua" PostBackUrl="~/xiaorenwu.aspx">小任务</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx">消息</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black">加速招聘</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black" PostBackUrl="~/zhaopin.aspx">加速招聘</asp:LinkButton></li>
               </ul>
             </div>
             <div class="toux">

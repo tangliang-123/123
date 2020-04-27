@@ -96,7 +96,7 @@
         top:165px;
         z-index:1;
         }
-        #Button2 {
+        #LinkButton1 {
         text-align:center;
         position:absolute;
         width:100%;
@@ -107,119 +107,127 @@
         border-style:none;
         
         }
-        #Button3 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:50px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button4 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:100px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button5 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:150px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button11 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:450px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button6 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:200px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button10 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:400px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button7 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:250px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button9 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:350px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #Button8 {
-        text-align:center;
-        position:absolute;
-        width:100%;
-        height:50px;
-        line-height:50px;
-        top:300px;
-        background-color:#fff;
-        border-style:none;
-        }
-        #fabugangwei {
-        width:74%;
-        height:60px;
-        background-color:#fafafa;
-        position:absolute;
-        text-align:center;
-        line-height:60px;
-        
-        }
-        #Button1{
-        position:absolute;
-        bottom:-15px;
-        left:725px;
-        text-align:center;
-        height:40px;
-        line-height:40px;
-        width:12%;
-        border-style:none;
-        background-color:#ccc;
-        border-radius:6px;
-        cursor:pointer;
-        
-        }
+    #LinkButton2 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 50px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton3 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 100px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton4 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 150px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton15 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 450px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton16 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 200px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton7 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 400px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton8 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 250px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton9 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 350px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #LinkButton10 {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        top: 300px;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    #fabugangwei {
+        width: 74%;
+        height: 60px;
+        background-color: #fafafa;
+        position: absolute;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    #Button1 {
+        position: absolute;
+        bottom: -15px;
+        left: 725px;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        width: 12%;
+        border-style: none;
+        background-color: #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+    }
 
 
 
@@ -266,19 +274,19 @@
             </div>
             <div id="daohang">
                 <div>
-                     <asp:Label ID="Label1" runat="server" Text="首页"></asp:Label>
+                     <asp:LinkButton ID="LinkButton11" runat="server" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label2" runat="server" Text="职位管理"></asp:Label>
+                    <asp:LinkButton ID="LinkButton12" runat="server" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label3" runat="server" Text="简历管理"></asp:Label>
+                    <asp:LinkButton ID="LinkButton13" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label4" runat="server" Text="消息"></asp:Label>
+                    <asp:LinkButton ID="LinkButton14" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label5" runat="server" Text="招聘"></asp:Label>
+                   <asp:LinkButton ID="LinkButton15" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -292,35 +300,35 @@
                     <asp:Label ID="Label9" runat="server" Text="Label">发布岗位</asp:Label>
                 </div>
                  <div id="zhi">
-                     <div>
-                         <asp:Button ID="Button2" runat="server" Text="推荐岗位" />
+                    <div>
+                         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/fabu_tuijiangangwei.aspx">推荐岗位</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button3" runat="server" Text="文员助理" />
+                         <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/fabu_wenyuanzhuli.aspx">文员助理</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button4" runat="server" Text="市场推广" />
+                         <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/fabu_shichangtuiguang.aspx">市场推广</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button5" runat="server" Text="家教培训" />
+                         <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/fabu_jiajiaopeixun.aspx">家教培训</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button6" runat="server" Text="线上兼职" />
+                         <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/fabu_xianshangjianzhi.aspx">线上兼职</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button7" runat="server" Text="餐饮服务" />
+                         <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/fabu_canyinfuwu.aspx">餐饮服务</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button8" runat="server" Text="店员导购" />
+                         <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/fabu_dianyuandaogou.aspx">店员导购</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button9" runat="server" Text="物流仓储" />
+                         <asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/fabu_wuliucangku.aspx">物流仓储</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button10" runat="server" Text="展会演出" />
+                         <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/fabu_zhanhuiyanchu.aspx">展会演出</asp:LinkButton>
                      </div>
                      <div>
-                         <asp:Button ID="Button11" runat="server" Text="其他" />
+                         <asp:LinkButton ID="LinkButton10" runat="server" PostBackUrl="~/fabu_qita.aspx">其他</asp:LinkButton>
                      </div>
                  </div>
 

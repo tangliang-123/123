@@ -21,7 +21,7 @@ public partial class mima : System.Web.UI.Page
             manager.M_LoginId = Session["admin"].ToString();
         manager.M_Password = TextBox2.Text;
         string password = TextBox1.Text;
-        if (BLL.ManagerBusiness.Upadamima(manager))
+        if (BLL.ManagerBusiness.Upadamima(manager, password))
         {
             Utility.JavaScript.Alert("修改密码成功", this);
         }
