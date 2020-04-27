@@ -34,9 +34,11 @@ namespace DAL
                 new SqlParameter("@remarks",jobdet.Remarks),
                 new SqlParameter("@settlement",jobdet.Settlement),
                 new SqlParameter("@number",jobdet.Need_number),
-                new SqlParameter("@jstate",jobdet.J_state)
+                new SqlParameter("@jstate",jobdet.J_state),
+                new SqlParameter("@release_time",jobdet.To_release_time),
+                new SqlParameter("@Grade",jobdet.Safety_Grade)
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("Addjob", CommandType.StoredProcedure, p));
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Addjob", CommandType.StoredProcedure, p));
             return i > 0;
         }
     }

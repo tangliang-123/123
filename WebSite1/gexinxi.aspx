@@ -109,9 +109,9 @@
                         <br />
                         <span>其他设置</span>
                         <br /><br />
-                        <span><a href="shouye.aspx" target="fd">修改密码</a></span>
+                        <span><a href="mima.aspx" target="fd">修改密码</a></span>
                         <br /><br />
-                        <span><a href="shouye.aspx" target="fd">修改手机号</a></span>
+                        <span><a href="telnum.aspx" target="fd">修改手机号</a></span>
                         <br /><br />
                         <span><a href="wxtz.aspx" target="fd">微信通知</a></span>
                         <br /><br />
