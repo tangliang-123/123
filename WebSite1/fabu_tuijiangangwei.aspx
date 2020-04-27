@@ -140,7 +140,7 @@
             border-style: none;
         }
 
-        #LinkButton15 {
+        #LinkButton5 {
             text-align: center;
             position: absolute;
             width: 100%;
@@ -151,7 +151,7 @@
             border-style: none;
         }
 
-        #LinkButton16 {
+        #LinkButton6 {
             text-align: center;
             position: absolute;
             width: 100%;
