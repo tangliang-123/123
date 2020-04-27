@@ -1,12 +1,12 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="fabugangwei.master.cs" Inherits="fabugangwei" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="fabu_dianyuandaogou.aspx.cs" Inherits="fabu_dianyuandaogou" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
+<style type="text/css">
         body {
         
         background-color:#eff3f6;
@@ -220,16 +220,58 @@
         cursor:pointer;
         
         }
-        
-    </style>
 
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+
+
+ 
+
+
+        #Button {
+            background-color: #fff;
+            height: 40px;
+            line-height: 40px;
+            width: 23%;
+            left: 30px;
+            top: 40px;
+            position: absolute;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #Button21 {
+            background-color: #fff;
+            height: 40px;
+            line-height: 40px;
+            width: 23%;
+            left: 180px;
+            top: 40px;
+            position: absolute;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        
+
+
+
+        #zhiwei {
+    
+            width: 545px;
+            height: 520px;
+            background-color: #fafafa;
+            position: absolute;
+            left: 534px;
+            top: 165px;
+            z-index: 0;
+        }
+
+
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-         <div id="daohangtiao">
+        <div>
+            <div id="daohangtiao">
             <div id="biaozhi">
                 <asp:Image ID="Image2" runat="server" ImageUrl="~/image/标志图.jpg" />
                 <asp:Label ID="Label8" runat="server" Text="勤工助学"></asp:Label>
@@ -256,63 +298,58 @@
                 <asp:Label ID="Label6" runat="server" Text="18382908734(未实名)"></asp:Label>
                 <asp:Label ID="Label7" runat="server" Text="未绑定公司"></asp:Label>
             </div>
-        </div>
-        <div id="fabu2">
-            <div id="fabugangwei">
-                <asp:Label ID="Label9" runat="server" Text="Label">发布岗位</asp:Label>
             </div>
-             <div id="zhi">
-                 <div>
-                     <asp:Button ID="Button2" runat="server" Text="推荐岗位" />
+            <div id="fabu2">
+                <div id="fabugangwei">
+                    <asp:Label ID="Label9" runat="server" Text="Label">发布岗位</asp:Label>
+                </div>
+                 <div id="zhi">
+                     <div>
+                         <asp:Button ID="Button2" runat="server" Text="推荐岗位" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button3" runat="server" Text="文员助理" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button4" runat="server" Text="市场推广" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button5" runat="server" Text="家教培训" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button6" runat="server" Text="线上兼职" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button7" runat="server" Text="餐饮服务" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button8" runat="server" Text="店员导购" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button9" runat="server" Text="物流仓储" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button10" runat="server" Text="展会演出" />
+                     </div>
+                     <div>
+                         <asp:Button ID="Button11" runat="server" Text="其他" />
+                     </div>
                  </div>
-                 <div>
-                     <asp:Button ID="Button3" runat="server" Text="文员助理" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button4" runat="server" Text="市场推广" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button5" runat="server" Text="家教培训" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button6" runat="server" Text="线上兼职" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button7" runat="server" Text="餐饮服务" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button8" runat="server" Text="店员导购" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button9" runat="server" Text="物流仓储" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button10" runat="server" Text="展会演出" />
-                 </div>
-                 <div>
-                     <asp:Button ID="Button11" runat="server" Text="其他" />
-                 </div>
-                 
-                 
+
+
+
+
+            <div id="zhiwei">
                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-             </div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                <asp:Button ID="Button" runat="server" Text="店员/收银员"   />
+                <asp:Button ID="Button21" runat="server" Text="导购"  />
+          
+                
+            </div>  
         
-        </asp:ContentPlaceHolder>
             <asp:Button ID="Button1" runat="server" Text="下一步" />
+            </div>
         </div>
-    </div>
     </form>
-    
-
- 
-
 </body>
 </html>

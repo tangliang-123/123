@@ -1,0 +1,144 @@
+﻿body {
+}
+#Label10 {
+    position: absolute;
+    left: 30px;
+    top: 35px;
+}
+
+#Label11 {
+    left: 30px;
+    top: 70px;
+    position: absolute;
+}
+
+#Button {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 30px;
+    top: 110px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button21 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 180px;
+    top: 110px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button31 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 330px;
+    top: 110px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button41 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 30px;
+    top: 180px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button51 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 180px;
+    top: 180px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button61 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 330px;
+    top: 180px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button71 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 30px;
+    top: 250px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button81 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 180px;
+    top: 250px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button91 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 330px;
+    top: 250px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#Button111 {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    width: 23%;
+    left: 30px;
+    top: 320px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#zhiwei {
+    border: 3px solid #ff0000;
+    width: 545px;
+    height: 520px;
+    background-color: #fafafa;
+    position: absolute;
+    left: 534px;
+    top: 165px;
+    z-index: 0;
+}
