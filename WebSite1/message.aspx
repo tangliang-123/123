@@ -110,19 +110,19 @@
             <div class="ulli">
                <ul>
                   <li>
-                      <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Black">首页</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black">职位管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black">简历管理</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Black">青团宝</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton8" runat="server" ForeColor="Black" CausesValidation="False">青团宝</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx" CausesValidation="False">小任务</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="aqua">消息</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/xiaoxi.aspx" CausesValidation="False">消息</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black">加速招聘</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhaopin.aspx">加速招聘</asp:LinkButton></li>
               </ul>
             </div>
             <div class="toux">

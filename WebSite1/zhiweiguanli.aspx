@@ -195,19 +195,19 @@
             </div>
             <div id="daohang">
                 <div>
-                     <asp:Label ID="Label1" runat="server" Text="首页"></asp:Label>
+                     <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label2" runat="server" Text="职位管理"></asp:Label>
+                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Button ID="Label3" runat="server" Text="简历管理" OnClick="Label3_Click" BackColor="White" BorderStyle="None"></asp:Button>
+                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label4" runat="server" Text="消息"></asp:Label>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label5" runat="server" Text="招聘"></asp:Label>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">

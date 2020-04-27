@@ -101,17 +101,17 @@
                 <div class="left">
                     <div class="left_top">
                         <br />
-                        <span><a href="shouye.aspx" target="fd">个人信息</a></span><br />
+                        <span><a href="gerenxinxi.aspx">个人信息</a></span><br />
                         <br />
-                        <span><a href="shouye.aspx" target="fd">我的公司</a></span>
+                        <span><a href="shouye.aspx">我的公司</a></span>
                     </div>
                     <div class="left_bottom">
                         <br />
                         <span>其他设置</span>
                         <br /><br />
-                        <span><a href="mima.aspx" target="fd">修改密码</a></span>
+                        <span><a href="mima.aspx" >修改密码</a></span>
                         <br /><br />
-                        <span><a href="telnum.aspx" target="fd">修改手机号</a></span>
+                        <span><a href="telnum.aspx">修改手机号</a></span>
                         <br /><br />
                         <span><a href="wxtz.aspx" target="fd">微信通知</a></span>
                         <br /><br />
