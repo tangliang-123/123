@@ -72,7 +72,31 @@ namespace DAL
             
         }
 
-        
+        /// <summary>
+        /// 返回一个密码的值
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+
+        public static string Selectmima(Manager manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+           {
+                new SqlParameter("@Acount",manager.M_LoginId)
+           };
+            SqlDataReader i = SQLHelper.ExecuteReader("Selectmima", CommandType.StoredProcedure, p);
+            string m="";
+            if(i.HasRows)
+            {
+                while (i.Read())
+                {
+                    m = i["M_Password"].ToString();
+                }
+            }
+            
+            return m;
+        }
+
         /// <summary>
         /// 修改密码
         /// </summary>

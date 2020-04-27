@@ -35,10 +35,18 @@ namespace BLL
             else
                 return DAL.ManagerDAL.AddManager(manager);
         }
-
-        public static bool Upadamima(Manager manager)
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool Upadamima(Manager manager,string password)
         {
+            if (DAL.ManagerDAL.Selectmima(manager) == password)
                 return DAL.ManagerDAL.UpdataManager(manager);
+            else
+                return false;
         }
 
 
