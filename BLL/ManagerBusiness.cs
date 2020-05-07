@@ -70,5 +70,9 @@ namespace BLL
             return DAL.ManagerDAL.DeleteManager(manager);
         }
 
+        public static string returnlogid(Manager manager)
+        {
+            return DAL.ManagerDAL.selectzh(manager);
+        }
     }
 }

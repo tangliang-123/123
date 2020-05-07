@@ -148,5 +148,26 @@ namespace DAL
             return i > 0;
         }
 
+        /// <summary>
+        /// 返回一个账号
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static string selectzh(Manager manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",manager.M_LoginId)
+            };
+
+            SqlDataReader i = SQLHelper.ExecuteReader("returnZH", CommandType.StoredProcedure, p);
+            string m = "";
+            while(i.Read())
+            {
+                m = i["M_Loginid"].ToString();
+            }
+            return m;
+        }
+
     }
 }
