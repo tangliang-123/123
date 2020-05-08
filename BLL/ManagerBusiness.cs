@@ -86,10 +86,24 @@ namespace BLL
         {
             return DAL.ManagerDAL.selectzh(manager);
         }
-
+        /// <summary>
+        /// 查询发布职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
         public static DataSet selectJob(JobDetail jobDetail)
         {
             return DAL.JobDetailDAL.selectJob(jobDetail);
+        }
+
+        /// <summary>
+        /// 删除职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DropJob(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.DropJob(jobDetail);
         }
     }
 }

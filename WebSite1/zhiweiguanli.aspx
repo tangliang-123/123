@@ -237,7 +237,7 @@
                 <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
             </asp:Panel>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting">
                 <Columns>
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
                     <asp:BoundField DataField="J_Category" HeaderText="职位类型" />
@@ -250,6 +250,7 @@
                     <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
                     <asp:BoundField DataField="J_state" HeaderText="审核状态" />
                     <asp:BoundField DataField="To_release_time" HeaderText="发布时间" />
+                    <asp:CommandField ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>
         </div>

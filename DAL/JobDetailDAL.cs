@@ -59,5 +59,21 @@ namespace DAL
             return ds;
 
         }
+        /// <summary>
+        /// 删除职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DropJob(JobDetail jobDetail)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",jobDetail.M_LoginId),
+                new SqlParameter("@Id",jobDetail.ID)
+            };
+
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DropJob", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
     }
 }

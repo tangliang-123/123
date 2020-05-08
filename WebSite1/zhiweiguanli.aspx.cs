@@ -36,4 +36,25 @@ public partial class zhiweiguanli : System.Web.UI.Page
     {
         Response.Redirect("zhiweiguanlishixi.aspx");
     }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        JobDetail jobDetail = new JobDetail();
+        if (Session["admin"] != null)
+        {
+            jobDetail.M_LoginId = Session["admin"].ToString();
+        }
+        string departID = GridView1.DataKeys[e.RowIndex].Values[0].ToString();
+        jobDetail.ID = Convert.ToInt32(departID);
+        //Utility.JavaScript.Alert(jobDetail.ID.ToString(), this);
+        if(BLL.ManagerBusiness.DropJob(jobDetail))
+        {
+            Utility.JavaScript.Alert("删除成功", this);
+            bindfab();
+        }
+        else
+        {
+            Utility.JavaScript.Alert("删除失败", this);
+        }
+    }
 }
