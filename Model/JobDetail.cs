@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+
 	public class JobDetail
 	{
-		private string iD;
-		public string ID
+		private int iD;
+		public int ID
 		{
 			get { return iD; }
 			set { iD = value; }
+		}
+
+		private string m_LoginId;
+		public string M_LoginId
+		{
+			get { return m_LoginId; }
+			set { m_LoginId = value; }
 		}
 
 		private string j_name;

@@ -233,8 +233,26 @@
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" />
         </div>
         <div id="jilu">
-            <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
-            <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
+            <asp:Panel ID="Panel1" runat="server">
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
+                <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
+            </asp:Panel>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting">
+                <Columns>
+                    <asp:BoundField DataField="J_name" HeaderText="职位名称" />
+                    <asp:BoundField DataField="J_Category" HeaderText="职位类型" />
+                    <asp:BoundField DataField="J_Portray" HeaderText="职位描述" />
+                    <asp:BoundField DataField="J_Salary" HeaderText="薪资" />
+                    <asp:BoundField DataField="Working_time" HeaderText="工作时间" />
+                    <asp:BoundField DataField="Position" HeaderText="地址" />
+                    <asp:BoundField DataField="Remarks" HeaderText="要求" />
+                    <asp:BoundField DataField="Settlement" HeaderText="结算方式" />
+                    <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
+                    <asp:BoundField DataField="J_state" HeaderText="审核状态" />
+                    <asp:BoundField DataField="To_release_time" HeaderText="发布时间" />
+                    <asp:CommandField ShowDeleteButton="True" />
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
     </form>

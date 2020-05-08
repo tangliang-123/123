@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;//
-
+using System.Data;
 
 namespace BLL
 {
@@ -59,16 +59,51 @@ namespace BLL
         {
             return DAL.JobDetailDAL.AddJob(jobdel);
         }
-
+        /// <summary>
+        /// 修改手机号码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
         public static bool Updatenumber(Manager manager)
         {
             return DAL.ManagerDAL.Updatenumber(manager);
         }
-
+        /// <summary>
+        /// 注销账号
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
         public static bool DeleteManager(Manager manager)
         {
             return DAL.ManagerDAL.DeleteManager(manager);
         }
+        /// <summary>
+        /// 显示账号
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static string returnlogid(Manager manager)
+        {
+            return DAL.ManagerDAL.selectzh(manager);
+        }
+        /// <summary>
+        /// 查询发布职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJob(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.selectJob(jobDetail);
+        }
 
+        /// <summary>
+        /// 删除职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DropJob(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.DropJob(jobDetail);
+        }
     }
 }

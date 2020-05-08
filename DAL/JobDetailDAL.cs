@@ -41,5 +41,39 @@ namespace DAL
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Addjob", CommandType.StoredProcedure, p));
             return i > 0;
         }
+
+        /// <summary>
+        /// 查询发布的职业
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJob(JobDetail jobDetail)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",jobDetail.M_LoginId)
+            };
+            string sql = "select * from JobDetail where M_LoginId=@Account";
+
+            DataSet ds = SQLHelper.ExecuteDataSet(sql, CommandType.Text,p);
+            return ds;
+
+        }
+        /// <summary>
+        /// 删除职位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DropJob(JobDetail jobDetail)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",jobDetail.M_LoginId),
+                new SqlParameter("@Id",jobDetail.ID)
+            };
+
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DropJob", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
     }
 }

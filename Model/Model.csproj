@@ -44,7 +44,9 @@
     <Compile Include="JobDetail.cs" />
     <Compile Include="Job_appliction_record.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Permission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="T_StuAdmin.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
