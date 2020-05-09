@@ -816,6 +816,9 @@
     .action  {
 				display: block;
 			}
+        .auto-style1 {
+        right: 162px;
+    }
         </style>
 </head>
 <body>
@@ -875,7 +878,7 @@
                     </div>
                     <div id="gonzuoxingzhi">
                         <asp:Label ID="Label2" runat="server" Text="Label">工作性质</asp:Label>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
                             <asp:ListItem>兼职</asp:ListItem>
                             <asp:ListItem>全职</asp:ListItem>
                             <asp:ListItem>兼职+全职</asp:ListItem>
@@ -888,7 +891,7 @@
                         <asp:Label ID="Label14" runat="server" Text="Label">基本薪资</asp:Label>
                         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                         <asp:Label ID="Label15" runat="server" Text="Label">元</asp:Label>
-                        <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" CssClass="auto-style1">
                             <asp:ListItem>小时</asp:ListItem>
                             <asp:ListItem>天</asp:ListItem>
                             <asp:ListItem>周</asp:ListItem>
@@ -899,7 +902,7 @@
                     </div>
                     <div id="jiesuanfangshi">
                         <asp:Label ID="Label16" runat="server" Text="Label">结算方式</asp:Label>
-                        <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True">
                             <asp:ListItem>日结</asp:ListItem>
                             <asp:ListItem>周结</asp:ListItem>
                             <asp:ListItem>月结</asp:ListItem>
@@ -929,13 +932,21 @@
                         <div id="shijian">
                             <div id="shij">
                                 <asp:Label ID="Label5" runat="server" Text="Label">工作日期</asp:Label>
-                                <asp:DropDownList ID="DropDownList5" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList5" runat="server" AutoPostBack="True">
+                                    <asp:ListItem>周一</asp:ListItem>
+                                    <asp:ListItem>周二</asp:ListItem>
+                                    <asp:ListItem>周三</asp:ListItem>
+                                    <asp:ListItem>周四</asp:ListItem>
+                                    <asp:ListItem>周五</asp:ListItem>
+                                    <asp:ListItem>周六</asp:ListItem>
+                                    <asp:ListItem>周天</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div id="shij">
                                 <asp:Label ID="Label21" runat="server" Text="Label">工作时间</asp:Label>
-                                <asp:DropDownList ID="DropDownList6" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList6" runat="server" AutoPostBack="True"></asp:DropDownList>
                                 <asp:Label ID="Label23" runat="server" Text="Label">~</asp:Label>
-                                <asp:DropDownList ID="DropDownList7" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList7" runat="server" AutoPostBack="True"></asp:DropDownList>
                             </div>
                             <div id="shij">
                                 <asp:Label ID="Label22" runat="server" Text="Label">工作地点</asp:Label>
@@ -981,7 +992,7 @@
                     </div>
                     <div id="shangyibu">
                         <asp:Button ID="Button1" runat="server" Text="上一步" />
-                        <asp:Button ID="Button2" runat="server" Text="发布兼职" />
+                        <asp:Button ID="Button2" runat="server" Text="发布兼职" OnClick="Button2_Click" />
                     </div>
                     
                 </div>

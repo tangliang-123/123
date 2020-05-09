@@ -240,7 +240,7 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting">
                 <Columns>
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
-                    <asp:BoundField DataField="J_Category" HeaderText="职位类型" />
+                    <asp:BoundField DataField="J_Category" HeaderText="工作性质" />
                     <asp:BoundField DataField="J_Portray" HeaderText="职位描述" />
                     <asp:BoundField DataField="J_Salary" HeaderText="薪资" />
                     <asp:BoundField DataField="Working_time" HeaderText="工作时间" />
