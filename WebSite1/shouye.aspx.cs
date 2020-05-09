@@ -25,4 +25,19 @@ public partial class shouye : System.Web.UI.Page
         Response.Redirect("mima.aspx");
 
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("fabugangwei.aspx");
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("mima.aspx");
+    }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("xiaorenwu.aspx");
+    }
 }
