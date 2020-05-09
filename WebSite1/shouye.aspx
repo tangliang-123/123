@@ -304,9 +304,9 @@
         </div>
          <div id="zhiweifabu">
              <asp:Label ID="Label11" runat="server" Text="职位发布"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="发布兼职" />
-            <asp:Button ID="Button3" runat="server" Text="发布实习" />
-            <asp:Button ID="Button4" runat="server" Text="发布小任务" />
+            <asp:Button ID="Button2" runat="server" Text="发布兼职" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" Text="发布实习" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Text="发布小任务" OnClick="Button4_Click" />
         </div>
         <div id="shengyubaoming">
             
