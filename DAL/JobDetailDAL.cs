@@ -24,19 +24,17 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Id",jobdet.ID),
+                new SqlParameter("@Account",jobdet.M_LoginId),
                 new SqlParameter("@jname",jobdet.J_name),
                 new SqlParameter("@jCategory",jobdet.J_Category),
                 new SqlParameter("@jportray",jobdet.J_Portray),
-                new SqlParameter("@jsalay",jobdet.J_Salary),
+                new SqlParameter("@jsalary",jobdet.J_Salary),
                 new SqlParameter("@wokintime",jobdet.Working_time),
-                new SqlParameter("@positon",jobdet.Position),
+                new SqlParameter("@position",jobdet.Position),
                 new SqlParameter("@remarks",jobdet.Remarks),
                 new SqlParameter("@settlement",jobdet.Settlement),
                 new SqlParameter("@number",jobdet.Need_number),
-                new SqlParameter("@jstate",jobdet.J_state),
-                new SqlParameter("@release_time",jobdet.To_release_time),
-                new SqlParameter("@Grade",jobdet.Safety_Grade)
+                new SqlParameter("@release_time",jobdet.To_release_time)
             };
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Addjob", CommandType.StoredProcedure, p));
             return i > 0;
