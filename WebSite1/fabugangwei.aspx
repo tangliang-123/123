@@ -17,8 +17,7 @@
              background-color:#fff;
              width:101%;
              height:50px;
-             position:relative;
-             
+             position:relative;            
         }
         #daohang div {
         float:left;
