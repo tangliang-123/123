@@ -14,4 +14,9 @@ public partial class fabu_wenyuanzhuli : System.Web.UI.Page
         manager.M_LoginId = Session["admin"].ToString();
         Label6.Text = BLL.ManagerBusiness.returnlogid(manager);
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("fabugangwei.aspx");
+    }
 }

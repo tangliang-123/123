@@ -183,6 +183,19 @@
         }
 
 
+    .auto-style1 {
+        left: 0px;
+        top: -2px;
+        bottom: 104px;
+    }
+
+
+    .auto-style2 {
+        right: 20px;
+        top: 10px;
+    }
+
+
     </style>
 </head>
 <body>
@@ -204,10 +217,10 @@
                     <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -218,7 +231,7 @@
         </div>
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
-            <asp:Label ID="Label10" runat="server" Text="兼职"></asp:Label>
+            <asp:Button ID="Label10" runat="server" Text="兼职" CssClass="auto-style1" BorderStyle="None" BackColor="White" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
         <asp:Label ID="Label12" runat="server" Text="招聘中0"></asp:Label>
@@ -227,10 +240,9 @@
         <asp:Label ID="Label15" runat="server" Text="审核中0"></asp:Label>
         <asp:Label ID="Label16" runat="server" Text="审核驳回0"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" Text="请输入兼职名称"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="发布兼职" />
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="首次发布职位即可获得6份报名单"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" />
+            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style2" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
             <asp:Panel ID="Panel1" runat="server">

@@ -283,10 +283,10 @@
                     <asp:LinkButton ID="LinkButton13" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:LinkButton ID="LinkButton14" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton14" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton15" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton15" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -342,7 +342,7 @@
                 
             </div>  
         
-            <asp:Button ID="Button1" runat="server" Text="下一步" />
+            <asp:Button ID="Button1" runat="server" Text="下一步" OnClick="Button1_Click" />
             </div>
         </div>
     </form>

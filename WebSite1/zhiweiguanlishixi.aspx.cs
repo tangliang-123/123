@@ -22,11 +22,21 @@ public partial class zhiweiguanlishixi : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("fabu_tuijiangangwei.aspx");
     }
 
     protected void Label3_Click(object sender, EventArgs e)
     {
         Response.Redirect("jianliguanli.aspx");
+    }
+
+    protected void Label10_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("zhiweiguanli.aspx");
+    }
+
+    protected void Label11_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("zhiweiguanlishixi.aspx");
     }
 }

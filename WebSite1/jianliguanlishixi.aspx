@@ -257,10 +257,10 @@
                     <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -271,8 +271,8 @@
         </div>
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
-            <asp:Label ID="Label10" runat="server" Text="兼职"></asp:Label>
-            <asp:Label ID="Label11" runat="server" Text="实习"></asp:Label>
+            <asp:Button ID="Label10" runat="server" Text="兼职" BackColor="White" BorderStyle="None" OnClick="Label10_Click"></asp:Button>
+            <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
         <asp:Label ID="Label12" runat="server" Text="待处理0"></asp:Label>
         <asp:Label ID="Label13" runat="server" Text="已安排面试0"></asp:Label>

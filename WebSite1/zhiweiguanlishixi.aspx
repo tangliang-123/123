@@ -169,31 +169,31 @@
             </div>
             <div id="daohang">
                 <div>
-                     <asp:Label ID="Label1" runat="server" Text="首页"></asp:Label>
+                     <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Button ID="Label2" runat="server" Text="职位管理" BackColor="White" BorderStyle="None"></asp:Button>
+                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Button ID="Label3" runat="server" Text="简历管理" BackColor="White" BorderStyle="None" OnClick="Label3_Click"></asp:Button>
+                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label4" runat="server" Text="消息"></asp:Label>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:Label ID="Label5" runat="server" Text="招聘"></asp:Label>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
-                <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/image/头像.png" OnClick="Image1_Click" />
+                <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
                 <asp:Label ID="Label6" runat="server" Text="18382908734(未实名)"></asp:Label>
                 <asp:Label ID="Label7" runat="server" Text="未绑定公司"></asp:Label>
             </div>
         </div>
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
-            <asp:Label ID="Label10" runat="server" Text="兼职"></asp:Label>
-            <asp:Label ID="Label11" runat="server" Text="实习"></asp:Label>
+            <asp:Button ID="Label10" runat="server" Text="兼职" CssClass="auto-style1" BorderStyle="None" BackColor="White" OnClick="Label10_Click"></asp:Button>
+            <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
         <div id="fabushixi">
             <asp:Label ID="Label12" runat="server" Text="招聘中0"></asp:Label>

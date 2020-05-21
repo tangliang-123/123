@@ -19,4 +19,14 @@ public partial class jianliguanlishixi : System.Web.UI.Page
     {
         Response.Redirect("shangjiaxinxi.aspx");
     }
+
+    protected void Label10_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("jianliguanli.aspx");
+    }
+
+    protected void Label11_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("jianliguanlishixi.aspx");
+    }
 }

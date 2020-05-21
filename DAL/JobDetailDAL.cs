@@ -24,7 +24,7 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",jobdet.M_LoginId),
+                new SqlParameter("@Account",jobdet.J_LoginId),
                 new SqlParameter("@jname",jobdet.J_name),
                 new SqlParameter("@jCategory",jobdet.J_Category),
                 new SqlParameter("@jportray",jobdet.J_Portray),
@@ -49,9 +49,9 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",jobDetail.M_LoginId)
+                new SqlParameter("@Account",jobDetail.J_LoginId)
             };
-            string sql = "select * from JobDetail where M_LoginId=@Account";
+            string sql = "select * from JobDetail where J_LoginId=@Account";
 
             DataSet ds = SQLHelper.ExecuteDataSet(sql, CommandType.Text,p);
             return ds;
@@ -66,7 +66,7 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",jobDetail.M_LoginId),
+                new SqlParameter("@Account",jobDetail.J_LoginId),
                 new SqlParameter("@Id",jobDetail.ID)
             };
 

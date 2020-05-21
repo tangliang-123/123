@@ -18,7 +18,7 @@ public partial class fabugangwei : System.Web.UI.Page
     protected void Button2_Click(object sender, EventArgs e)
     {
         JobDetail jobDetail = new JobDetail();
-        jobDetail.M_LoginId = Session["admin"].ToString();
+        jobDetail.J_LoginId = Session["admin"].ToString();
         jobDetail.J_name = TextBox1.Text;
         jobDetail.J_Category = DropDownList1.SelectedValue;
         jobDetail.J_Portray = TextBox2.Text;
