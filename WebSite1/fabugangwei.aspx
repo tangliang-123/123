@@ -11,16 +11,13 @@
         
         background-color:#eff3f6;
         }
-        #daohangtiao{
-            
-             
+        #daohangtiao{                      
              margin-top:30px;
              margin-left:-7px;
              background-color:#fff;
              width:101%;
              height:50px;
-             position:relative;
-             
+             position:relative;            
         }
         #daohang div {
         float:left;
@@ -843,7 +840,7 @@
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">

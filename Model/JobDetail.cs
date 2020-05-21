@@ -16,11 +16,11 @@ namespace Model
 			set { iD = value; }
 		}
 
-		private string m_LoginId;
-		public string M_LoginId
+		private string j_LoginId;
+		public string J_LoginId
 		{
-			get { return m_LoginId; }
-			set { m_LoginId = value; }
+			get { return j_LoginId; }
+			set { j_LoginId = value; }
 		}
 
 		private string j_name;

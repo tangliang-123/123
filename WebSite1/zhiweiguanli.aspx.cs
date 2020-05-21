@@ -22,7 +22,7 @@ public partial class zhiweiguanli : System.Web.UI.Page
         JobDetail jobDetail = new JobDetail();
         if (Session["admin"] != null)
         {
-            jobDetail.M_LoginId = Session["admin"].ToString();
+            jobDetail.J_LoginId = Session["admin"].ToString();
         }
         Panel1.Visible = false;
         DataSet ds = BLL.ManagerBusiness.selectJob(jobDetail);
@@ -45,7 +45,7 @@ public partial class zhiweiguanli : System.Web.UI.Page
         JobDetail jobDetail = new JobDetail();
         if (Session["admin"] != null)
         {
-            jobDetail.M_LoginId = Session["admin"].ToString();
+            jobDetail.J_LoginId = Session["admin"].ToString();
         }
         string departID = GridView1.DataKeys[e.RowIndex].Values[0].ToString();
         jobDetail.ID = Convert.ToInt32(departID);
@@ -59,5 +59,15 @@ public partial class zhiweiguanli : System.Web.UI.Page
         {
             Utility.JavaScript.Alert("删除失败", this);
         }
+    }
+
+    protected void Label10_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("zhiweiguanli.aspx");
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("fabu_tuijiangangwei.aspx");
     }
 }

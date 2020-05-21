@@ -147,7 +147,7 @@
                   <li>
                       <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx" CausesValidation="False">小任务</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/xiaoxi.aspx" CausesValidation="False">消息</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx" CausesValidation="False">消息</asp:LinkButton></li>
                   <li>
                       <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhaopin.aspx">加速招聘</asp:LinkButton></li>
               </ul>
@@ -168,9 +168,9 @@
                     <p class="p4"><asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Black" PostBackUrl="~/mima.aspx">修改密码</asp:LinkButton></p> 
                     <p class="p4"><asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="None" ForeColor="Black" PostBackUrl="~/telnum.aspx">修改手机号</asp:LinkButton></p></p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black">微信通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" PostBackUrl="~/wxtz.aspx">微信通知</asp:LinkButton></p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black">邮件通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black" PostBackUrl="~/yjtz.aspx">邮件通知</asp:LinkButton></p>
                 </div>
             </div>
             <div class="right">
