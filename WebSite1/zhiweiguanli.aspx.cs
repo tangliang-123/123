@@ -11,7 +11,7 @@ public partial class zhiweiguanli : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        bindfab();
+       bindfab();
         Manager manager = new Manager();
         manager.M_LoginId = Session["admin"].ToString();
         Label6.Text = BLL.ManagerBusiness.returnlogid(manager);

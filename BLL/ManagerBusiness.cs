@@ -105,5 +105,24 @@ namespace BLL
         {
             return DAL.JobDetailDAL.DropJob(jobDetail);
         }
+        /// <summary>
+        /// 修改岗位状态
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool updategwzk(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.updatejstate(jobDetail);
+        }
+
+        /// <summary>
+        /// 修改岗位信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool updatejobxx(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.updatejobxx(jobDetail);
+        }
     }
 }

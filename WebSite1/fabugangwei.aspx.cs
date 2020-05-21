@@ -17,6 +17,7 @@ public partial class fabugangwei : System.Web.UI.Page
 
     protected void Button2_Click(object sender, EventArgs e)
     {
+        string remark="";
         JobDetail jobDetail = new JobDetail();
         jobDetail.J_LoginId = Session["admin"].ToString();
         jobDetail.J_name = TextBox1.Text;
@@ -25,7 +26,9 @@ public partial class fabugangwei : System.Web.UI.Page
         jobDetail.J_Salary = TextBox4.Text + DropDownList2.SelectedValue;
         jobDetail.Working_time = DropDownList5.SelectedValue;
         jobDetail.Position = TextBox6.Text;
-        jobDetail.Remarks = RadioButtonList1.SelectedValue + RadioButtonList2.SelectedValue + RadioButtonList3.SelectedValue;
+        if (RadioButtonList1.SelectedValue == "需求" || RadioButtonList2.SelectedValue == "需求" || RadioButtonList3.SelectedValue == "需求")
+             remark = Label24.Text + " " + Label25.Text + " " + Label26.Text + " " + Label27.Text;
+        jobDetail.Remarks = remark;
         jobDetail.Settlement = DropDownList3.SelectedValue;
         jobDetail.Need_number = int.Parse(TextBox3.Text);
         jobDetail.To_release_time = DateTime.Now;
