@@ -162,7 +162,7 @@
     }
 
     #TextBox1 {
-        right: 450px;
+        right: 300px;
         top: 85px;
         position: absolute;
     }

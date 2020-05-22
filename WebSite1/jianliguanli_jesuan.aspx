@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli.aspx.cs" Inherits="jianliguanli" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli_jesuan.aspx.cs" Inherits="jianliguanli_jesuan" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,7 @@
         body {
         
         background-color:#eff3f6;
+        
         }
         #daohangtiao{
             
@@ -116,19 +117,19 @@
         left:455px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
         #Label14 {
         left:565px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
         #Label15 {
         left:675px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
 
     #fabujianzhi {
@@ -232,17 +233,10 @@
         background-color:mediumspringgreen;
         width:100px;
             }
-        #Button7{
-        position:absolute;
-        left:215px;
-        top:160px;
-        color:white;
-        background-color:mediumspringgreen;
-        width:100px;
-            }
+
         #Button8{
         position:absolute;
-        left:330px;
+        left:215px;
         top:160px;
         color:white;
         background-color:mediumspringgreen;
@@ -319,10 +313,10 @@
             <asp:Button ID="Label10" runat="server" Text="兼职" BackColor="White" BorderStyle="None" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
-        <asp:Linkbutton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label15" runat="server" Text="待支付订单0"></asp:Linkbutton>
+        <asp:LinkButton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label15" runat="server" Text="待支付订单0"></asp:LinkButton>
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="您还没有发布职位哦"></asp:Label>
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" OnClick="Button2_Click" />
@@ -340,8 +334,7 @@
             <asp:Button ID="Button5" runat="server" Text="有备注" />
             <asp:Label ID="Label21" runat="server" Text="可多选"></asp:Label>
             <asp:CheckBox ID="CheckBox1" runat="server"/>
-            <asp:Button ID="Button6" runat="server" Text="批量录取" />
-            <asp:Button ID="Button7" runat="server" Text="批量放弃" />
+            <asp:Button ID="Button6" runat="server" Text="批量支付" />
             <asp:Button ID="Button8" runat="server" Text="导出报名记录" />
             <asp:TextBox ID="TextBox1" runat="server" Text="请输入应聘者的姓名或手机号"></asp:TextBox>
 

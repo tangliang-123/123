@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli.aspx.cs" Inherits="jianliguanli" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli_yiwancheng.aspx.cs" Inherits="jianliguanli_yiwancheng" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,7 @@
         body {
         
         background-color:#eff3f6;
+        
         }
         #daohangtiao{
             
@@ -116,19 +117,19 @@
         left:455px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
         #Label14 {
         left:565px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
         #Label15 {
         left:675px;
         top:85px;
         position:absolute;
-        color:black;
+         color:black;
         }
 
     #fabujianzhi {
@@ -162,24 +163,19 @@
         }
         #Button1{
         position:absolute;
-        left:520px;
-        top:445px;
+        left:450px;
+        top:345px;
         color:white;
         background-color:mediumspringgreen;
             }
         #Image3 {
         position:absolute;
-        left:450px;
-        top:280px;
+        left:400px;
+        top:180px;
         width:200px;
         height:150px;
         }
-        #Label16 {
-        position:absolute;
-        left:10px;
-        top:10px;
 
-        }
         #Label18 {
         position:absolute;
         left:325px;
@@ -193,17 +189,12 @@
         #Label20 {
         position:absolute;
         left:10px;
-        top:90px;
-        }
-        #Label21 {
-        position:absolute;
-        left:10px;
-        top:105px;
+        top:20px;
         }
         #Button3{
         position:absolute;
         left:100px;
-        top:90px;
+        top:20px;
         color:white;
         background-color:mediumspringgreen;
         width:60px;
@@ -211,75 +202,26 @@
         #Button4{ 
         position:absolute;
         left:180px;
-        top:90px;
+        top:20px;
         color:white;
         background-color:mediumspringgreen;
         width:70px;
             }
-        #Button5{
-        position:absolute;
-        left:270px;
-        top:90px;
-        color:white;
-        background-color:mediumspringgreen;
-        width:70px;
-            }
-        #Button6{
-        position:absolute;
-        left:100px;
-        top:160px;
-        color:white;
-        background-color:mediumspringgreen;
-        width:100px;
-            }
-        #Button7{
-        position:absolute;
-        left:215px;
-        top:160px;
-        color:white;
-        background-color:mediumspringgreen;
-        width:100px;
-            }
-        #Button8{
-        position:absolute;
-        left:330px;
-        top:160px;
-        color:white;
-        background-color:mediumspringgreen;
-        width:120px;
-            }
-        #DropDownList1 {
-        position:absolute;
-        width:160px;
-        left:88px;
-        top:12px;
-        }
-        #DropDownList2 {
-        position:absolute;
-        width:160px;
-        left:380px;
-        top:12px;
-        }
-        #DropDownList3 {
-        position:absolute;
-        width:160px;
-        left:715px;
-        top:12px;
-        }
-        #CheckBox1 {
-        position:absolute;
-        left:10px;
-        top:165px;
-        }
+       
+       
+        
         #TextBox1 {
         position:absolute;
         width:230px;
         right:60px;
-        top:165px;
+        top:50px;
         }
     .auto-style1 {
         left: 520px;
         top: 445px;
+    }
+    .auto-style2 {
+        right: 824px;
     }
     </style>
 </head>
@@ -319,30 +261,19 @@
             <asp:Button ID="Label10" runat="server" Text="兼职" BackColor="White" BorderStyle="None" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
-        <asp:Linkbutton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label15" runat="server" Text="待支付订单0"></asp:Linkbutton>
+        <asp:LinkButton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label15" runat="server" Text="待支付订单0"></asp:LinkButton>
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="您还没有发布职位哦"></asp:Label>
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
-            <asp:Label ID="Label16" runat="server" Text="全部岗位"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-            <asp:Label ID="Label18" runat="server" Text="性别"></asp:Label>
-            <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
-            <asp:Label ID="Label19" runat="server" Text="排序方式"></asp:Label>
-            <asp:DropDownList ID="DropDownList3" runat="server"></asp:DropDownList>
-            <asp:Label ID="Label20" runat="server" Text="筛选条件"></asp:Label>
+            <asp:Label ID="Label20" runat="server" Text="筛选条件" CssClass="auto-style2"></asp:Label>
             <asp:Button ID="Button3" runat="server" Text="不限" />
             <asp:Button ID="Button4" runat="server" Text="有留言" />
-            <asp:Button ID="Button5" runat="server" Text="有备注" />
-            <asp:Label ID="Label21" runat="server" Text="可多选"></asp:Label>
-            <asp:CheckBox ID="CheckBox1" runat="server"/>
-            <asp:Button ID="Button6" runat="server" Text="批量录取" />
-            <asp:Button ID="Button7" runat="server" Text="批量放弃" />
-            <asp:Button ID="Button8" runat="server" Text="导出报名记录" />
+
             <asp:TextBox ID="TextBox1" runat="server" Text="请输入应聘者的姓名或手机号"></asp:TextBox>
 
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />

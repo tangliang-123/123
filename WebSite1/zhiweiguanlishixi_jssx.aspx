@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="zhiweiguanlishixi.aspx.cs" Inherits="zhiweiguanlishixi" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="zhiweiguanlishixi_jssx.aspx.cs" Inherits="zhiweiguanlishixi_jssx" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-<style type="text/css">
+    <style type="text/css">
         body {
         
         background-color:#eff3f6;
@@ -163,8 +163,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <div id="daohangtiao">
+        <div>
+            <div id="daohangtiao">
             <div id="biaozhi">
                 <asp:Image ID="Image2" runat="server" ImageUrl="~/image/标志图.jpg" />
                 <asp:Label ID="Label8" runat="server" Text="勤工助学"></asp:Label>
@@ -195,20 +195,20 @@
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
             <asp:Button ID="Label10" runat="server" Text="兼职" CssClass="auto-style1" BorderStyle="None" BackColor="White" OnClick="Label10_Click"></asp:Button>
-            <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
+            <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click" style="height: 17px" ></asp:Button>
         </div>
         <div id="fabushixi">
             <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/zhiweiguanlishixi.aspx">在招实习</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx">在招实习</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx.aspx">在招实习</asp:LinkButton>
             
-            <asp:Button ID="Button1" runat="server" Text="发布兼职" BorderStyle="None" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="发布兼职" BorderStyle="None" OnClick="Button1_Click"  />
         </div>
        
         <div id="jilu">
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
             <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
         </div>
-    </div>
+        </div>
     </form>
 </body>
 </html>
