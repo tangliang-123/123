@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="ManagerBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeachAdminBLL.cs" />
+    <Compile Include="UniversityStudentBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

@@ -169,5 +169,93 @@ namespace DAL
             return m;
         }
 
+        /// <summary>
+        /// 查询发布的职业
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static DataSet selectmanager(Manager manager)
+        {
+            SqlParameter[] p = new SqlParameter[] 
+            {
+                new SqlParameter("@Account",manager.M_LoginId)
+            };
+            string sql = "select * from Manager";
+
+            DataSet ds = SQLHelper.ExecuteDataSet(sql, CommandType.Text,null);
+            return ds;
+
+        }
+        /// <summary>
+        /// 根据商家“账号”查看商家完整信息
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static Manager GetManager(string account)
+        {
+
+            SqlParameter[] p = {
+                  new SqlParameter("@Account",account)
+            };
+            SqlDataReader dr = SQLHelper.ExecuteReader("GetManager", CommandType.StoredProcedure, p);
+
+            Manager m = new Manager();
+            if (dr.Read())
+            {
+                m.M_LoginId = Convert.ToString(dr["Account"]);
+                m.M_Password = Convert.ToString(dr["Password"]);
+            }
+            dr.Close();
+            return m;
+        }
+
+        /// <summary>
+        /// 获取商家账号列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<Manager> GetManagerList()
+        {
+            SqlDataReader dr = SQLHelper.ExecuteReader("GetManagerList", CommandType.StoredProcedure, null);
+
+            List<Manager> list = new List<Manager>();///
+            while (dr.Read())
+            {
+                Manager n = new Manager();
+                n.M_LoginId = Convert.ToString(dr["Account"]);
+                n.M_Password = Convert.ToString(dr["Password"]);
+                list.Add(n);
+            }
+            return list;
+        }
+        /// <summary>
+        /// 获取所有商家信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<Manager> GetAllManagerList()
+        {
+            SqlDataReader dr = SQLHelper.ExecuteReader("GetAllManagerList", CommandType.StoredProcedure, null);
+
+            List<Manager> list = new List<Manager>();///
+            while (dr.Read())
+            {
+                Manager n = new Manager();
+                n.M_LoginId = Convert.ToString(dr["M_LoginId"]);
+                n.M_Password = Convert.ToString(dr["M_Password"]);
+                n.Identification = Convert.ToString(dr["Identification"]);
+                n.Real_Name = Convert.ToBoolean(dr["Real_Name"]);
+                n.Grading = Convert.ToString(dr["Grading"]);
+                n.M_Name = Convert.ToString(dr["M_Name"]);
+                n.M_Address = Convert.ToString(dr["M_Address"]);
+                n.M_Position = Convert.ToString(dr["M_Position"]);
+                n.Sex = Convert.ToBoolean(dr["Sex"]);
+                n.Nation = Convert.ToString(dr["Nation"]);
+                n.Number = Convert.ToString(dr["number"]);
+                list.Add(n);
+            }
+            return list;
+        }
+
+
+
     }
 }

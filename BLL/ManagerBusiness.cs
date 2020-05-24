@@ -24,7 +24,14 @@ namespace BLL
         {
             return DAL.ManagerDAL.ManagerLogin(admin, password);
         }
-
+        ///<summary>
+		///商家登录验证
+		/// </summary>
+        public static bool Permanlogin(string admin, string password)
+        {
+            return DAL.PermissionDAL.Permanlogin(admin, password);
+        }
+        //注册
         public static bool AddManager(Manager manager)
         {
             //判断账号是否存在？
@@ -86,6 +93,17 @@ namespace BLL
         {
             return DAL.ManagerDAL.selectzh(manager);
         }
+
+        /// <summary>
+        /// 查询所有商家信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectmanager(Manager manager)
+        {
+            return DAL.ManagerDAL.selectmanager(manager);
+        }
+
         /// <summary>
         /// 查询发布职位
         /// </summary>
@@ -104,6 +122,39 @@ namespace BLL
         public static bool DropJob(JobDetail jobDetail)
         {
             return DAL.JobDetailDAL.DropJob(jobDetail);
+        }
+        /// <summary>
+        /// 根据工作编号来获取工作对象
+        /// </summary>
+        /// <param name="OrderNumber"></param>
+        /// <returns></returns>
+        public static JobDetail GetJob(string OrderNumber)
+        {
+            return DAL.JobDetailDAL.GetJob(OrderNumber);
+        }
+
+        /// <summary>
+        /// 获取申请应聘简历信息
+        /// </summary>
+        /// <param name="jobdel"></param>
+        /// <returns></returns>
+        public static List<Job_appliction_record> GetAppliction_Records()
+        {
+            return DAL.Job_appliction_recordDAL.GetAppliction_Records();
+        }
+        /// <summary>
+        /// 申请应聘工作岗位状态操作
+        /// </summary>
+        /// <param name="jobdel"></param>
+        /// <returns></returns>
+        public static bool ChangeAppliction_recordState(int Jobid, byte state)
+        {
+            return DAL.Job_appliction_recordDAL.ChangeAppliction_recordState(Jobid,state);
+        }
+
+        public static JobDetail GetJobAppliction(string obAppliction_recordState)
+        {
+            return DAL.JobDetailDAL.GetJobAppliction(obAppliction_recordState);
         }
     }
 }
