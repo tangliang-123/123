@@ -73,193 +73,48 @@ namespace DAL
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DropJob", CommandType.StoredProcedure, p));
             return i > 0;
         }
+
+
         /// <summary>
-        /// 审批通过操作
+        /// 修改工位状态
         /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
+        /// <param name="jobDetail"></param>
         /// <returns></returns>
-        public static bool ChangeJobState(int Jobid, int state)
+        public static bool updatejstate(JobDetail jobDetail)
         {
             SqlParameter[] p = new SqlParameter[]
-            {
-                 new SqlParameter("@JobID",Jobid),
-                 new SqlParameter("@JobState",state)
-
-            };
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ManangerChangeJobState", CommandType.StoredProcedure, p));
-
+           {
+                new SqlParameter("@Jstat",jobDetail.J_state),
+                new SqlParameter("@ID",jobDetail.ID)
+           };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("updateJobstat", CommandType.StoredProcedure, p));
             return i > 0;
         }
 
-
         /// <summary>
-        /// 根据jobID获岗位对象
+        /// 修改信息
         /// </summary>
-        /// <param name="account"></param>
+        /// <param name="jobdet"></param>
         /// <returns></returns>
-        public static JobDetail GetJob(string jobNumber)
+        public static bool updatejobxx(JobDetail jobdet)
         {
-            SqlParameter[] p = {
-                  new SqlParameter("@JobNumber",jobNumber)
-            };
-            SqlDataReader dr = SQLHelper.ExecuteReader("GetJob", CommandType.StoredProcedure, p);
-            JobDetail order = new JobDetail();
-            if (dr.Read())
+            SqlParameter[] p = new SqlParameter[]
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.Img = Convert.ToString(dr["Img"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-            }
-            dr.Close();
-            return order;
-        }
-        /// <summary>
-        /// 根据类型获岗位对象
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static List<JobDetail> GetJobListByType(string type)
-        {
-            SqlParameter[] p = {
-                  new SqlParameter("@Type",type)
-            };
-
-            SqlDataReader dr = SQLHelper.ExecuteReader("StudentGetJobListByType", CommandType.StoredProcedure, p);
-
-            List<JobDetail> list = new List<JobDetail>();
-            while (dr.Read())
-            {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
-            }
-            return list;
-        }
-        /// <summary>
-        /// 获取岗位对象
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static List<JobDetail> GetJobList()
-        {
-            SqlDataReader dr = SQLHelper.ExecuteReader("StudentGetJobList", CommandType.StoredProcedure, null);
-
-            List<JobDetail> list = new List<JobDetail>();
-            while (dr.Read())
-            {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
-            }
-            return list;
-
-        }
-        /// <summary>
-        /// 根据jobID获岗位对象////////////////////////////////////////////////
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static JobDetail GetJobAppliction(string jobAppliction_recordState)
-        {
-            SqlParameter[] p = {
-                  new SqlParameter("@JobNumber",jobAppliction_recordState)
-            };
-            SqlDataReader dr = SQLHelper.ExecuteReader("GetJobAppliction", CommandType.StoredProcedure, p);
-            JobDetail order = new JobDetail();
-            if (dr.Read())
-            {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.Img = Convert.ToString(dr["Img"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
                 
-            }
-            dr.Close();
-            return order;
-        }
-        /// <summary>
-        /// 根据状态获岗位对象
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static List<JobDetail> GetJobListState(string state)
-        {
-            SqlParameter[] p = {
-                  new SqlParameter("@Type",state)
+                new SqlParameter("@jname",jobdet.J_name),
+                new SqlParameter("@jCategory",jobdet.J_Category),
+                new SqlParameter("@jportray",jobdet.J_Portray),
+                new SqlParameter("@jsalary",jobdet.J_Salary),
+                new SqlParameter("@wokintime",jobdet.Working_time),
+                new SqlParameter("@position",jobdet.Position),
+                new SqlParameter("@remarks",jobdet.Remarks),
+                new SqlParameter("@settlement",jobdet.Settlement),
+                new SqlParameter("@number",jobdet.Need_number),
+                new SqlParameter("@release_time",jobdet.To_release_time),
+                new SqlParameter("@id",jobdet.ID),
             };
-
-            SqlDataReader dr = SQLHelper.ExecuteReader("GetJobListState", CommandType.StoredProcedure, p);
-
-            List<JobDetail> list = new List<JobDetail>();
-            while (dr.Read())
-            {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
-            }
-            return list;
-        }
-        /// <summary>
-        /// 根据时间获岗位对象
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static List<JobDetail> GetJobListTime(DateTime time)
-        {
-            SqlParameter[] p = {
-                  new SqlParameter("@Type",time)
-            };
-
-            SqlDataReader dr = SQLHelper.ExecuteReader("GetJobLisTime", CommandType.StoredProcedure, p);
-
-            List<JobDetail> list = new List<JobDetail>();
-            while (dr.Read())
-            {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
-            }
-            return list;
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("updatejobxx", CommandType.StoredProcedure, p));
+            return i > 0;
         }
     }
 }
