@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
         
         if (admin != string.Empty && password != string.Empty)
         {
-            if (BLL.ManagerBusiness.ManagerLogin(admin, password)&&BLL.ManagerBusiness.Permanlogin(admin, password))
+            if (BLL.ManagerBusiness.ManagerLogin(admin, password)&&BLL.ManagerBusiness.Permanlogin(admin,password))
             {
                 ////登录成功，数据存入session中
                 Session["admin"] = admin;
@@ -30,6 +30,11 @@ public partial class _Default : System.Web.UI.Page
             if (BLL.TeachAdminBLL.T_StuAdminLogin(admin, password) && BLL.TeachAdminBLL.Peradmlogin(admin, password))
             {
                 Session["adminlogin"] = admin;
+                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
+            }
+            if (BLL.UniversityStudentBLL.StuLogin(admin, password) && BLL.UniversityStudentBLL.Perstulogin(admin, password))
+            {
+                Session["stulogin"] = admin;
                 Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
             }
             else
