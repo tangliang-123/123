@@ -283,7 +283,7 @@
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
             </asp:Panel>
             <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting" Width="1037px">
                 <Columns>
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
                     <asp:BoundField DataField="J_Category" HeaderText="工作性质" />

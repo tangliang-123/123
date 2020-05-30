@@ -71,6 +71,10 @@ namespace BLL
         /// < returns ></ returns >
         public static bool ChangeStuPwd(Student manager)
         {
+            if (DAL.StudentDAL.StuIsExist(manager.StuID, manager.S_Password))
+            {
+                return false;
+            }
             return DAL.StudentDAL.ChangeStuPwd(manager);
         }
         /// <summary>
@@ -89,6 +93,10 @@ namespace BLL
         /// < returns ></ returns >
         public static bool ChangeStuNum(Student manager)
         {
+            if (DAL.StudentDAL.StuNumIsExist(manager.S_telnum))
+            {
+                return false;
+            }
             return DAL.StudentDAL.ChangeStuNum(manager);
         }
         /// <summary>

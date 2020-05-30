@@ -82,5 +82,14 @@ namespace BLL
         {
             return DAL.JobDetailDAL.GetJobListTime(time);
         }
+        /// <summary>
+        /// 查询所有商家信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectmanager(Manager manager)
+        {
+            return DAL.ManagerDAL.selectmanager(manager);
+        }
     }
 }

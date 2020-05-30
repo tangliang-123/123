@@ -293,7 +293,7 @@
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
