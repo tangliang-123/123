@@ -24,6 +24,7 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
+                //new SqlParameter("@Account",jobdet.ID),
                 new SqlParameter("@Account",jobdet.J_LoginId),
                 new SqlParameter("@jname",jobdet.J_name),
                 new SqlParameter("@jCategory",jobdet.J_Category),
@@ -76,7 +77,7 @@ namespace DAL
 
 
         /// <summary>
-        /// 修改工位状态
+        /// 商家达到效果自动修改工位状态
         /// </summary>
         /// <param name="jobDetail"></param>
         /// <returns></returns>
@@ -92,7 +93,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 修改信息
+        /// 修改信息////////////////////////////////////////////
         /// </summary>
         /// <param name="jobdet"></param>
         /// <returns></returns>
@@ -150,15 +151,22 @@ namespace DAL
             JobDetail order = new JobDetail();
             if (dr.Read())
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.Img = Convert.ToString(dr["Img"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
+                //JobDetail c = new JobDetail();
+                order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
             }
             dr.Close();
             return order;
@@ -179,16 +187,60 @@ namespace DAL
             List<JobDetail> list = new List<JobDetail>();
             while (dr.Read())
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
+                JobDetail order = new JobDetail();
+                order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
+                list.Add(order);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 根据名称获岗位对象
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static List<JobDetail> GetJobListByName(string name)
+        {
+            SqlParameter[] p = {
+                  new SqlParameter("@Name",name)
+            };
+
+            SqlDataReader dr = SQLHelper.ExecuteReader("GetJobListByName", CommandType.StoredProcedure, p);
+
+            List<JobDetail> list = new List<JobDetail>();
+            while (dr.Read())
+            {
+                JobDetail order = new JobDetail();
+               // order.ID = Convert.ToInt32(dr["JobID"]);
+                //order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                //order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                //order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
+                list.Add(order);
             }
             return list;
         }
@@ -204,22 +256,29 @@ namespace DAL
             List<JobDetail> list = new List<JobDetail>();
             while (dr.Read())
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
+                JobDetail order = new JobDetail();
+                order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
+                list.Add(order);
             }
             return list;
 
         }
         /// <summary>
-        /// 根据jobID获岗位对象////////////////////////////////////////////////
+        /// 根据jobID获岗位对象//////////////////////////////////////////////////////
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
@@ -247,7 +306,7 @@ namespace DAL
             return order;
         }
         /// <summary>
-        /// 根据状态获岗位对象
+        /// 商家更换界面自动根据状态获岗位对象
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
@@ -262,16 +321,23 @@ namespace DAL
             List<JobDetail> list = new List<JobDetail>();
             while (dr.Read())
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
+                JobDetail order = new JobDetail();
+                order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
+                list.Add(order);
             }
             return list;
         }
@@ -291,16 +357,23 @@ namespace DAL
             List<JobDetail> list = new List<JobDetail>();
             while (dr.Read())
             {
-                JobDetail c = new JobDetail();
-                c.ID = Convert.ToInt32(dr["JobID"]);
-                c.J_LoginId = Convert.ToString(dr["M_Account"]);
-                //c.Title = Convert.ToString(dr["Title"]);
-                //c.Type = Convert.ToString(dr["Type"]);
-                //c.JobState = Convert.ToInt32(dr["JobState"]);
-                //c.Money = Convert.ToSingle(dr["Money"]);
-                //c.Content = Convert.ToString(dr["Content"]);
-                //c.PublishTime = Convert.ToDateTime(dr["PublishTime"]);
-                list.Add(c);
+                JobDetail order = new JobDetail();
+                order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                order.J_name = Convert.ToString(dr["J_name"]);
+                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
+                order.J_Portray = Convert.ToString(dr["J_Portray"]);
+                order.J_Salary = Convert.ToString(dr["J_Salary"]);
+                order.Working_time = Convert.ToString(dr["Working_time"]);
+                order.Position = Convert.ToString(dr["Position"]);
+                order.Remarks = Convert.ToString(dr["Remarks"]);
+                order.Settlement = Convert.ToString(dr["Settlement"]);
+                order.Need_number = Convert.ToInt32(dr["Need_number"]);
+                order.J_state = Convert.ToInt32(dr["J_state"]);
+                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
+
+                list.Add(order);
             }
             return list;
         }

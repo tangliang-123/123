@@ -53,6 +53,7 @@ namespace BLL
         /// <returns></returns>
         public static bool Upadamima(Manager manager,string password)
         {
+            //判断原密码是否正确
             if (DAL.ManagerDAL.Selectmima(manager) == password)
                 return DAL.ManagerDAL.UpdataManager(manager);
             else
@@ -75,7 +76,11 @@ namespace BLL
         /// <param name="manager"></param>
         /// <returns></returns>
         public static bool Updatenumber(Manager manager)
-        {
+        {//不能改为与数据库相同的手机号手机号
+            if (DAL.ManagerDAL.ManNumIsExist(manager.Number))
+            {
+                return false;
+            }
             return DAL.ManagerDAL.Updatenumber(manager);
         }
         /// <summary>
@@ -174,6 +179,15 @@ namespace BLL
         public static JobDetail GetJobAppliction(string obAppliction_recordState)
         {
             return DAL.JobDetailDAL.GetJobAppliction(obAppliction_recordState);
+        }
+        /// <summary>
+        /// 根据名称获岗位对象
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static List<JobDetail> GetJobListByName(string name)
+        {
+            return DAL.JobDetailDAL.GetJobListByName(name);
         }
     }
 }
