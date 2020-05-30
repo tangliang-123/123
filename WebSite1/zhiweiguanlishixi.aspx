@@ -199,7 +199,7 @@
         </div>
         <div id="fabushixi">
             <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/zhiweiguanlishixi.aspx">在招实习</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx">在招实习</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx.aspx">结束实习</asp:LinkButton>
             
             <asp:Button ID="Button1" runat="server" Text="发布兼职" BorderStyle="None" OnClick="Button1_Click" />
         </div>
