@@ -189,5 +189,15 @@ namespace BLL
         {
             return DAL.JobDetailDAL.GetJobListByName(name);
         }
+
+        /// <summary>
+        /// 根据ID查看商家的详细信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJobByID(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.selectJobById(jobDetail);
+        }
     }
 }

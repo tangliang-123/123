@@ -41,6 +41,7 @@
     <div id="jilu2">
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
             <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
+        <asp:GridView ID="GridView1" runat="server" Visible="false"></asp:GridView>
         </div>
 </asp:Content>
 

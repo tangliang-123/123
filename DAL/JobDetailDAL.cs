@@ -93,7 +93,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 修改信息////////////////////////////////////////////
+        /// 修改信息
         /// </summary>
         /// <param name="jobdet"></param>
         /// <returns></returns>
@@ -107,11 +107,10 @@ namespace DAL
                 new SqlParameter("@jportray",jobdet.J_Portray),
                 new SqlParameter("@jsalary",jobdet.J_Salary),
                 new SqlParameter("@wokintime",jobdet.Working_time),
-                new SqlParameter("@position",jobdet.Position),
+                new SqlParameter("@positio",jobdet.Position),
                 new SqlParameter("@remarks",jobdet.Remarks),
                 new SqlParameter("@settlement",jobdet.Settlement),
                 new SqlParameter("@number",jobdet.Need_number),
-                new SqlParameter("@release_time",jobdet.To_release_time),
                 new SqlParameter("@id",jobdet.ID),
             };
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("updatejobxx", CommandType.StoredProcedure, p));
@@ -376,6 +375,20 @@ namespace DAL
                 list.Add(order);
             }
             return list;
+        }
+
+        /// <summary>
+        /// 详细信息，通过id来查
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJobById(JobDetail jobDetail)
+        {
+            SqlParameter[] p = {
+                  new SqlParameter("@ID",jobDetail.ID)
+            };
+            DataSet i = SQLHelper.ExecuteDataSet("selectJobById", CommandType.StoredProcedure, p);
+            return i;
         }
     }
 }

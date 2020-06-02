@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="zhiweiguanli.aspx.cs" Inherits="zhiweiguanli" %>
 
+<%@ Register Src="~/zhiweiguanlikongjian.ascx" TagPrefix="uc1" TagName="zhiweiguanlikongjian" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -229,7 +232,20 @@
     }
 
 
+    .auto-style3 {
+        left: 0px;
+        top: 0px;
+    }
+
+
+    .auto-style4 {
+        left: 461px;
+        top: 157px;
+    }
+
+
     </style>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -273,34 +289,103 @@
         <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/zhiweiguangli_shz.aspx">审核中</asp:LinkButton><asp:Label ID="Label15" runat="server" Text="0"></asp:Label>
         <asp:LinkButton ID="LinkButton10" runat="server" PostBackUrl="~/zhiweiguanli_shbh.aspx">审核驳回</asp:LinkButton><asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" Text="请输入兼职名称"></asp:TextBox>
-        <div id="fabujianzhi">
+        <div id="fabujianzhi" class="auto-style3">
             <asp:Label ID="Label17" runat="server" Text="首次发布职位即可获得6份报名单"></asp:Label>
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style2" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
             <asp:Panel ID="Panel1" runat="server">
-                <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" CssClass="auto-style4" />
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
             </asp:Panel>
+            <asp:Button ID="Button1" runat="server" Text="修改工作状态" OnClick="Button1_Click" />
             <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting" Width="1037px">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting" Width="800px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" >
                 <Columns>
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
                     <asp:BoundField DataField="J_Category" HeaderText="工作性质" />
-                    <asp:BoundField DataField="J_Portray" HeaderText="职位描述" />
                     <asp:BoundField DataField="J_Salary" HeaderText="薪资" />
                     <asp:BoundField DataField="Working_time" HeaderText="工作时间" />
                     <asp:BoundField DataField="Position" HeaderText="地址" />
-                    <asp:BoundField DataField="Remarks" HeaderText="要求" />
                     <asp:BoundField DataField="Settlement" HeaderText="结算方式" />
                     <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
-                    <asp:BoundField DataField="J_state" HeaderText="审核状态" />
-                    <asp:BoundField DataField="To_release_time" HeaderText="发布时间" />
                     <asp:CommandField ShowDeleteButton="True" />
+                    <asp:HyperLinkField Text="详细" DataNavigateUrlFormatString="Default2.aspx?ID={0}" NavigateUrl="~/Default2.aspx" DataNavigateUrlFields="ID"/>
+                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/EditManager.aspx?Id={0}" NavigateUrl="~/EditManager.aspx" Text="修改" />
+                    <asp:CommandField ShowSelectButton="True" />
                 </Columns>
             </asp:GridView>
+            <%--<div class="layui-card-body layui-table-body layui-table-main">
+                <asp:Repeater ID="Repeater1" runat="server">
+                <HeaderTemplate>
+                    <table class="layui-table layui-form">
+                        <tr>
+
+                        <th>职位名称</th>
+                        <th>工作性质</th>
+                        <th>薪资</th>
+                        <th>工作时间</th>
+                        <th>需求人数</th>
+                        <th>地址</th>
+                        <th>结算方式</th>                  
+                                           
+                </HeaderTemplate>
+                <ItemTemplate>
+                    
+                    <tr>
+                        <td><%# Eval("J_name") %></td>
+                        <td><%# Eval("J_Category") %></td>
+                        <td><%# Eval("J_Salary") %></td>
+                        <td><%# Eval("Working_time") %></td>
+                        <td><%# Eval("Need_number") %></td>
+                        <td><%# Eval("Position") %></td>
+                        <td><%# Eval("Settlement") %></td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default2.aspx?">详细</asp:HyperLink>
+                        </td>
+                </ItemTemplate>
+                <FooterTemplate>
+                        
+                    </tr>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
+            </div>--%>
+            
+            <%--<uc1:zhiweiguanlikongjian runat="server" ID="zhiweiguanlikongjia" />--%>
         </div>
     </div>
     </form>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        function Jobdel(obj, id) {
+ 
+                //ajax传值
+                $.ajax({
+                    type: "post",
+                    url: "../Joblist.aspx/selectJobByID",
+                    data: "{ID:'" + id + "'}",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.d == true) {
+                            //发异步删除数据
+                            $(obj).parents("tr").remove();
+                            layer.msg('已删除!', { icon: 1, time: 1000 });
+                        }
+                        else if (data.d == false) {
+                            //发异步删除数据
+                            $(obj).parents("tr").remove();
+                            layer.msg('已删除!', { icon: 2, time: 1000 });
+                        }
+                    },
+                    error: function (e) {
+                        alter("错误是:" + e.responseText);
+                    }
+                });
+        }
+
+     
+    </script>
 </body>
 </html>
