@@ -199,5 +199,15 @@ namespace BLL
         {
             return DAL.JobDetailDAL.selectJobById(jobDetail);
         }
+
+        /// <summary>
+        /// 根据岗位状态来获取信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJobByStata(JobDetail jobDetail)
+        {
+            return DAL.JobDetailDAL.selectJobByStata(jobDetail);
+        }
     }
 }

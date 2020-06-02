@@ -284,10 +284,10 @@
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
         <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/zhiweiguanli.aspx">招聘中</asp:LinkButton><asp:Label ID="Label12" runat="server" Text="0"></asp:Label>
-        <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanli_zt.aspx">暂停中</asp:LinkButton><asp:Label ID="Label13" runat="server" Text="0"></asp:Label>
-        <asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/zhiweiguanli_end.aspx">已结束</asp:LinkButton><asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
-        <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/zhiweiguangli_shz.aspx">审核中</asp:LinkButton><asp:Label ID="Label15" runat="server" Text="0"></asp:Label>
-        <asp:LinkButton ID="LinkButton10" runat="server" PostBackUrl="~/zhiweiguanli_shbh.aspx">审核驳回</asp:LinkButton><asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
+        <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanli_zanting.aspx">暂停中</asp:LinkButton><asp:Label ID="Label13" runat="server" Text="0"></asp:Label>
+        <asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/zhiweiguanli_end2.aspx">已结束</asp:LinkButton><asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
+        <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/zhiweiguanli_shenhezhong.aspx">审核中</asp:LinkButton><asp:Label ID="Label15" runat="server" Text="0"></asp:Label>
+        <asp:LinkButton ID="LinkButton10" runat="server" PostBackUrl="~/zhiweiguanli_shbohui.aspx">审核驳回</asp:LinkButton><asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" Text="请输入兼职名称"></asp:TextBox>
         <div id="fabujianzhi" class="auto-style3">
             <asp:Label ID="Label17" runat="server" Text="首次发布职位即可获得6份报名单"></asp:Label>

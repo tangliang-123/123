@@ -390,5 +390,20 @@ namespace DAL
             DataSet i = SQLHelper.ExecuteDataSet("selectJobById", CommandType.StoredProcedure, p);
             return i;
         }
+
+        /// <summary>
+        /// 根据岗位状态来获取信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectJobByStata(JobDetail jobDetail)
+        {
+            SqlParameter[] p = {
+                  new SqlParameter("@Stata",jobDetail.J_state),
+                  new SqlParameter("@Account",jobDetail.J_LoginId)
+            };
+            DataSet i = SQLHelper.ExecuteDataSet("GetJobByStata", CommandType.StoredProcedure, p);
+            return i;
+        }
     }
 }

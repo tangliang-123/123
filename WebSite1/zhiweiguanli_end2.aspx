@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/zhiweiguanlimubanye.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/zhiweiguanlimubanye.master" AutoEventWireup="true" CodeFile="zhiweiguanli_end2.aspx.cs" Inherits="zhiweiguanli_end2" %>
 
 <script runat="server">
 
