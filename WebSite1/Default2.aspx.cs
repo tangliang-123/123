@@ -15,7 +15,7 @@ public partial class Default2 : System.Web.UI.Page
         JobDetail jobDetail = new JobDetail();
         jobDetail.ID =int.Parse(jobId);
         DataSet ds = BLL.ManagerBusiness.selectJobByID(jobDetail);
-
+        string str="";
         Literal1.Text= ds.Tables[0].Rows[0]["J_name"].ToString();
         Literal2.Text = ds.Tables[0].Rows[0]["J_Category"].ToString();
         Literal3.Text = ds.Tables[0].Rows[0]["J_Portray"].ToString();
@@ -25,7 +25,17 @@ public partial class Default2 : System.Web.UI.Page
         Literal7.Text = ds.Tables[0].Rows[0]["Remarks"].ToString();
         Literal8.Text = ds.Tables[0].Rows[0]["Settlement"].ToString();
         Literal9.Text = ds.Tables[0].Rows[0]["Need_number"].ToString();
-        Literal10.Text = ds.Tables[0].Rows[0]["J_state"].ToString();
+        if (ds.Tables[0].Rows[0]["J_state"].ToString() == "0")
+            str = "审核中";
+        else if(ds.Tables[0].Rows[0]["J_state"].ToString() == "1")
+            str = "暂停";
+        else if (ds.Tables[0].Rows[0]["J_state"].ToString() == "2")
+            str = "审核通过";
+        else if (ds.Tables[0].Rows[0]["J_state"].ToString() == "3")
+            str = "审核驳回";
+        else
+            str = "已结束";
+        Literal10.Text = str;
         Literal11.Text = ds.Tables[0].Rows[0]["To_release_time"].ToString();
     }
 }
