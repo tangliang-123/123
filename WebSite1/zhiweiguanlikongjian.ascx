@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="zhiweiguanlikongjian.ascx.cs" Inherits="zhiweiguanlikongjian" %>
+<link href="css/xadmin.css" rel="stylesheet" />
 <style type="text/css">
     .auto-style1 {
         width: 113px;

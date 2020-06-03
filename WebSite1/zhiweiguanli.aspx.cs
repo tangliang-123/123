@@ -129,4 +129,7 @@ public partial class zhiweiguanli : System.Web.UI.Page
     {
         Session["ID"]= GridView1.DataKeys[e.NewSelectedIndex].Values[0].ToString();
     }
+
+   
+    
 }

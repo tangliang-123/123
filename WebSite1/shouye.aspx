@@ -270,6 +270,7 @@
 
 
     </style>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -339,5 +340,6 @@
         </div>
     </div>
     </form>
+    <script src="layui.js"></script>
 </body>
 </html>

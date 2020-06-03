@@ -38,4 +38,9 @@ public partial class Default2 : System.Web.UI.Page
         Literal10.Text = str;
         Literal11.Text = ds.Tables[0].Rows[0]["To_release_time"].ToString();
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("zhiweiguanli.aspx");
+    }
 }

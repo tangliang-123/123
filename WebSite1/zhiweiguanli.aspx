@@ -298,9 +298,8 @@
                 <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" CssClass="auto-style4" />
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
             </asp:Panel>
-            <asp:Button ID="Button1" runat="server" Text="修改工作状态" OnClick="Button1_Click" />
             <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting" Width="800px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"  Width="800px" OnRowDeleting="GridView1_RowDeleting"  >
                 <Columns>
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
                     <asp:BoundField DataField="J_Category" HeaderText="工作性质" />
@@ -311,81 +310,16 @@
                     <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
                     <asp:CommandField ShowDeleteButton="True" />
                     <asp:HyperLinkField Text="详细" DataNavigateUrlFormatString="Default2.aspx?ID={0}" NavigateUrl="~/Default2.aspx" DataNavigateUrlFields="ID"/>
-                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/EditManager.aspx?Id={0}" NavigateUrl="~/EditManager.aspx" Text="修改" />
-                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="EditManager.aspx?Id={0}" NavigateUrl="~/EditManager.aspx" Text="修改"  />
+                   <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="xiugaigangweizhuangtai.aspx?Id={0}" NavigateUrl="~/xiugaigangweizhuangtai.aspx" Text="修改岗位状态" />
                 </Columns>
             </asp:GridView>
-            <%--<div class="layui-card-body layui-table-body layui-table-main">
-                <asp:Repeater ID="Repeater1" runat="server">
-                <HeaderTemplate>
-                    <table class="layui-table layui-form">
-                        <tr>
-
-                        <th>职位名称</th>
-                        <th>工作性质</th>
-                        <th>薪资</th>
-                        <th>工作时间</th>
-                        <th>需求人数</th>
-                        <th>地址</th>
-                        <th>结算方式</th>                  
-                                           
-                </HeaderTemplate>
-                <ItemTemplate>
-                    
-                    <tr>
-                        <td><%# Eval("J_name") %></td>
-                        <td><%# Eval("J_Category") %></td>
-                        <td><%# Eval("J_Salary") %></td>
-                        <td><%# Eval("Working_time") %></td>
-                        <td><%# Eval("Need_number") %></td>
-                        <td><%# Eval("Position") %></td>
-                        <td><%# Eval("Settlement") %></td>
-                        <td>
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default2.aspx?">详细</asp:HyperLink>
-                        </td>
-                </ItemTemplate>
-                <FooterTemplate>
-                        
-                    </tr>
-                    </table>
-                </FooterTemplate>
-            </asp:Repeater>
-            </div>--%>
             
             <%--<uc1:zhiweiguanlikongjian runat="server" ID="zhiweiguanlikongjia" />--%>
         </div>
     </div>
     </form>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script>
-        function Jobdel(obj, id) {
- 
-                //ajax传值
-                $.ajax({
-                    type: "post",
-                    url: "../Joblist.aspx/selectJobByID",
-                    data: "{ID:'" + id + "'}",
-                    contentType: "application/json;charset=utf-8",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d == true) {
-                            //发异步删除数据
-                            $(obj).parents("tr").remove();
-                            layer.msg('已删除!', { icon: 1, time: 1000 });
-                        }
-                        else if (data.d == false) {
-                            //发异步删除数据
-                            $(obj).parents("tr").remove();
-                            layer.msg('已删除!', { icon: 2, time: 1000 });
-                        }
-                    },
-                    error: function (e) {
-                        alter("错误是:" + e.responseText);
-                    }
-                });
-        }
-
-     
-    </script>
+    <%--<script src="layui.js"></script>--%>
+    
 </body>
 </html>

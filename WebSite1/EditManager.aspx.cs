@@ -19,16 +19,21 @@ public partial class EditManager : System.Web.UI.Page
         jobDetail.ID = int.Parse(jobId);
 
         DataSet ds = BLL.ManagerBusiness.selectJobByID(jobDetail);
+        if (!IsPostBack)
+        {
+            TextBox1.Text = ds.Tables[0].Rows[0]["J_name"].ToString();
+            TextBox2.Text = ds.Tables[0].Rows[0]["J_Category"].ToString();
+            TextBox3.Text = ds.Tables[0].Rows[0]["J_Portray"].ToString();
+            TextBox4.Text = ds.Tables[0].Rows[0]["J_Salary"].ToString();
+            TextBox5.Text = ds.Tables[0].Rows[0]["Working_time"].ToString();
+            TextBox6.Text = ds.Tables[0].Rows[0]["Position"].ToString();
+            TextBox7.Text = ds.Tables[0].Rows[0]["Remarks"].ToString();
+            TextBox8.Text = ds.Tables[0].Rows[0]["Settlement"].ToString();
+            TextBox9.Text = ds.Tables[0].Rows[0]["Need_number"].ToString();
+        }
+       
 
-        TextBox1.Text = ds.Tables[0].Rows[0]["J_name"].ToString();
-        TextBox2.Text = ds.Tables[0].Rows[0]["J_Category"].ToString();
-        TextBox3.Text = ds.Tables[0].Rows[0]["J_Portray"].ToString();
-        TextBox4.Text = ds.Tables[0].Rows[0]["J_Salary"].ToString();
-        TextBox5.Text = ds.Tables[0].Rows[0]["Working_time"].ToString();
-        TextBox6.Text = ds.Tables[0].Rows[0]["Position"].ToString();
-        TextBox7.Text = ds.Tables[0].Rows[0]["Remarks"].ToString();
-        TextBox8.Text = ds.Tables[0].Rows[0]["Settlement"].ToString();
-        TextBox9.Text = ds.Tables[0].Rows[0]["Need_number"].ToString();
+        
 
 
 
@@ -48,16 +53,7 @@ public partial class EditManager : System.Web.UI.Page
         jobDetail.Remarks = TextBox7.Text;
         jobDetail.Settlement = TextBox8.Text;
         jobDetail.Need_number =int.Parse( TextBox9.Text);
-        ////Utility.JavaScript.Alert(jobId, this);
-        //Utility.JavaScript.Alert(jobDetail.J_name, this);
-        //Utility.JavaScript.Alert(jobDetail.J_Category, this);
-        //Utility.JavaScript.Alert(jobDetail.J_Portray, this);
-        //Utility.JavaScript.Alert(jobDetail.J_Salary, this);
-        //Utility.JavaScript.Alert(jobDetail.Working_time, this);
-        //Utility.JavaScript.Alert(jobDetail.Position, this);
-        //Utility.JavaScript.Alert(jobDetail.Remarks, this);
-        //Utility.JavaScript.Alert(jobDetail.Settlement, this);
-        //Utility.JavaScript.Alert(jobDetail.Need_number.ToString(), this);
+       
         if (BLL.ManagerBusiness.updatejobxx(jobDetail))
         {
             Utility.JavaScript.AlertAndRedirect("修改成功","../zhiweiguanli.aspx", this);
@@ -67,5 +63,11 @@ public partial class EditManager : System.Web.UI.Page
             Utility.JavaScript.Alert("修改失败", this);
         }
 
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+
+        Response.Redirect("zhiweiguanli.aspx");
     }
 }
