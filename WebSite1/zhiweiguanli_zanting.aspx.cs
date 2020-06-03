@@ -27,7 +27,17 @@ public partial class zhiweiguanli_zanting : System.Web.UI.Page
             Image3.Visible = false;
             Label18.Visible = false;
         }
+
+        Button souSuo = (Button)Master.FindControl("Button1");
+        souSuo.Click += new EventHandler(souSuo_Click);
+    }
+    protected void souSuo_Click(object sender, EventArgs e)
+    {
+        string name =((TextBox) Master.FindControl(" TextBox1")).Text;
+        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name);
+        GridView1.DataSource = ds;
+        GridView1.DataBind();
     }
 
-    
+
 }

@@ -185,7 +185,7 @@ namespace BLL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public static List<JobDetail> GetJobListByName(string name)
+        public static DataSet GetJobListByName(string name)
         {
             return DAL.JobDetailDAL.GetJobListByName(name);
         }

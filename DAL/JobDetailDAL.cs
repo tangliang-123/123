@@ -212,36 +212,16 @@ namespace DAL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public static List<JobDetail> GetJobListByName(string name)
+        public static DataSet GetJobListByName(string name)
         {
             SqlParameter[] p = {
                   new SqlParameter("@Name",name)
             };
 
-            SqlDataReader dr = SQLHelper.ExecuteReader("GetJobListByName", CommandType.StoredProcedure, p);
+            DataSet dr = SQLHelper.ExecuteDataSet("GetJobListByName", CommandType.StoredProcedure, p);
 
-            List<JobDetail> list = new List<JobDetail>();
-            while (dr.Read())
-            {
-                JobDetail order = new JobDetail();
-               // order.ID = Convert.ToInt32(dr["JobID"]);
-                //order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
-                order.J_name = Convert.ToString(dr["J_name"]);
-                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
-                order.J_Portray = Convert.ToString(dr["J_Portray"]);
-                order.J_Salary = Convert.ToString(dr["J_Salary"]);
-                order.Working_time = Convert.ToString(dr["Working_time"]);
-                order.Position = Convert.ToString(dr["Position"]);
-                order.Remarks = Convert.ToString(dr["Remarks"]);
-                order.Settlement = Convert.ToString(dr["Settlement"]);
-                order.Need_number = Convert.ToInt32(dr["Need_number"]);
-                //order.J_state = Convert.ToInt32(dr["J_state"]);
-                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
-                //order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
-
-                list.Add(order);
-            }
-            return list;
+           
+            return dr;
         }
         /// <summary>
         /// 获取岗位对象

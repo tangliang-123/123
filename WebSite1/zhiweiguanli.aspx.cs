@@ -130,6 +130,12 @@ public partial class zhiweiguanli : System.Web.UI.Page
         Session["ID"]= GridView1.DataKeys[e.NewSelectedIndex].Values[0].ToString();
     }
 
-   
-    
+
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
+        string name = TextBox1.Text;
+        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name);
+        GridView1.DataSource = ds;
+        GridView1.DataBind();
+    }
 }
