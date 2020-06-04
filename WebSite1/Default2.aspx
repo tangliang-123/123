@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -78,6 +79,7 @@
             </td>
         </tr>
     </table>
+            <br />
             <asp:Button ID="Button1" runat="server" Text="关闭" BackColor="#99FFCC" BorderColor="#99CCFF" BorderStyle="Inset" Font-Names="Baskerville Old Face" Height="27px" Width="94px" OnClick="Button1_Click" />
         </div>
     </form>

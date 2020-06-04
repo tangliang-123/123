@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,6 +17,7 @@
                 <asp:ListItem>审核驳回</asp:ListItem>
                 <asp:ListItem>已结束</asp:ListItem>
             </asp:RadioButtonList>
+            <br />
             <asp:Button ID="Button1" runat="server" Text="修改" OnClick="Button1_Click" />
         </div>
     </form>
