@@ -14,7 +14,7 @@ public partial class EditManager : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        jobId = Request.QueryString["Id"];
+        jobId = Request.QueryString["Id"].ToString();
         JobDetail jobDetail = new JobDetail();
         jobDetail.ID = int.Parse(jobId);
 
@@ -31,9 +31,9 @@ public partial class EditManager : System.Web.UI.Page
             TextBox8.Text = ds.Tables[0].Rows[0]["Settlement"].ToString();
             TextBox9.Text = ds.Tables[0].Rows[0]["Need_number"].ToString();
         }
-       
 
-        
+
+
 
 
 
@@ -56,11 +56,13 @@ public partial class EditManager : System.Web.UI.Page
        
         if (BLL.ManagerBusiness.updatejobxx(jobDetail))
         {
-            Utility.JavaScript.AlertAndRedirect("修改成功","../zhiweiguanli.aspx", this);
+            Response.Write("<script>window.opener=null;window.close();</script>");
+           // Response.Redirect("zhiweiguanli.aspx");
+            //Utility.JavaScript.AlertAndRedirect("修改成功","../zhiweiguanli.aspx", this);
         }
         else
         {
-            Utility.JavaScript.Alert("修改失败", this);
+           // Utility.JavaScript.Alert("修改失败", this);
         }
 
     }
@@ -68,6 +70,12 @@ public partial class EditManager : System.Web.UI.Page
     protected void Button2_Click(object sender, EventArgs e)
     {
 
-        Response.Redirect("zhiweiguanli.aspx");
+        Response.Write("<script>window.opener=null;window.close();</script>");
+
+    }
+
+    protected void Button2_Unload(object sender, EventArgs e)
+    {
+
     }
 }

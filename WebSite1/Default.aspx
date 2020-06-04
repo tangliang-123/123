@@ -9,7 +9,7 @@
 
     <style type="text/css">
         *{border:0;margin:0;list-style:none;
-          font-weight:bold;
+          font-weight:bold; 
         }
        
 
@@ -24,7 +24,7 @@
             color:white;
             float:left;
         }
-        .jl{
+        .jl{    
             margin-bottom:50px;
             margin-left:50px;
         }

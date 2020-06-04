@@ -16,11 +16,11 @@ public partial class xiugaigangweizhuangtai : System.Web.UI.Page
     {
         if(BLL.ManagerBusiness.updategwzk(jobDetail))
         {
-            Utility.JavaScript.AlertAndRedirect("修改成功", "../zhiweiguanli.aspx", this);
+            Response.Write("<script>window.opener=null;window.close();</script>");
         }
         else
         {
-            Utility.JavaScript.Alert("修改失败", this);
+           // Utility.JavaScript.Alert("修改失败", this);
         }
     }
     protected void Button1_Click(object sender, EventArgs e)

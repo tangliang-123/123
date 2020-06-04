@@ -295,13 +295,18 @@
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style2" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            
             <asp:Panel ID="Panel1" runat="server">
                 <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" CssClass="auto-style4" />
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
             </asp:Panel>
-            <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"  Width="800px" OnRowDeleting="GridView1_RowDeleting"  >
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"  Width="800px" OnRowDeleting="GridView1_RowDeleting"  OnSelectedIndexChanging="GridView1_SelectedIndexChanging1" OnRowDataBound="GridView1_RowDataBound"  >
                 <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="岗位ID" />
                     <asp:BoundField DataField="J_name" HeaderText="职位名称" />
                     <asp:BoundField DataField="J_Category" HeaderText="工作性质" />
                     <asp:BoundField DataField="J_Salary" HeaderText="薪资" />
@@ -310,17 +315,53 @@
                     <asp:BoundField DataField="Settlement" HeaderText="结算方式" />
                     <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
                     <asp:CommandField ShowDeleteButton="True" />
-                    <asp:HyperLinkField Text="详细" DataNavigateUrlFormatString="Default2.aspx?ID={0}" NavigateUrl="~/Default2.aspx" DataNavigateUrlFields="ID"/>
-                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="EditManager.aspx?Id={0}" NavigateUrl="~/EditManager.aspx" Text="修改"  />
-                   <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="xiugaigangweizhuangtai.aspx?Id={0}" NavigateUrl="~/xiugaigangweizhuangtai.aspx" Text="修改岗位状态" />
+                    <asp:HyperLinkField Text="详细" DataNavigateUrlFormatString="Default2.aspx?ID={0}"  DataNavigateUrlFields="ID"/>
+                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="EditManager.aspx?Id={0}"  Text="修改" />
+                   <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="xiugaigangweizhuangtai.aspx?Id={0}" Text="修改岗位状态" />
+
                 </Columns>
             </asp:GridView>
+                    <asp:Timer ID="Timer1" runat="server" Interval="500" ></asp:Timer>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             
+             <%--<div class="layui-card-header">--%>
+                 <%------------------功能按钮区第2部分：角色分类---商家/助学管理员----------%>
+                           <%-- <button class="layui-btn layui-btn-danger">
+                                <i class="layui-icon"></i>暂停工作岗位</button>
+                             <button class="layui-btn layui-btn-danger" onclick="delAll(<%# Eval("JobID") %>)">
+                                 <i class="layui-icon"></i>修改岗位状态</button>
+                            <button class="layui-btn" onclick="window.open('./EditManager.aspx?Id=7','添加岗位','height=400, width=300,top=250,left=350')">
+                                <i class="layui-icon"></i>修改</button></div>--%>
             <%--<uc1:zhiweiguanlikongjian runat="server" ID="zhiweiguanlikongjia" />--%>
         </div>
     </div>
     </form>
-    <%--<script src="layui.js"></script>--%>
+    <script>
+        function Jobdel(obj, id) {
+            $.ajax({
+                type: "post",
+                url: "../Joblist.aspx/getId()",
+                data: "{ID:'" + id + "'}",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == true) {
+                        //发异步删除数据
+
+                        layer.msg('已修改!', { icon: 1, time: 1000 });
+                    }
+                    else if (data.d == false) {
+                        //发异步删除数据
+                        layer.msg('修改失败!', { icon: 2, time: 1000 });
+                    }
+                },
+                error: function (e) {
+                    alter("错误是:" + e.responseText);
+                }
+            });
+        }
+    </script>
      
 </body>
 </html>
