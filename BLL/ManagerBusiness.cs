@@ -45,6 +45,8 @@ namespace BLL
             else
                 return DAL.ManagerDAL.AddManager(manager);
         }
+
+
         /// <summary>
         /// 修改密码
         /// </summary>
@@ -60,6 +62,34 @@ namespace BLL
                 return false;
         }
 
+        /// <summary>
+        /// 忘记密码，重置密码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool wangjiMima(Manager manager)
+        {
+            return DAL.ManagerDAL.UpdataManager(manager);
+        }
+
+        /// <summary>
+        /// 更新权限表
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
+        public static bool UpdateQuanxian(Permission permission)
+        {
+            return DAL.PermissionDAL.UpdateQuanxian(permission);
+        }
+        /// <summary>
+        /// 向权限表添加数据
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
+        public static bool AddQuanxian(Permission permission)
+        {
+            return DAL.PermissionDAL.AddQuanxian(permission);
+        }
 
         /// <summary>
         /// 添加助学岗位

@@ -132,13 +132,18 @@
                            <div class="log_form">
                                <table class="auto-style1">
                                    <tr>
-                                       <td>&nbsp;<input id="Text1" type="text" value="手机号码"  runat="server"/>手机号码</td>
+                                       <td>手机号码&nbsp;<input id="Text1" type="text" value="手机号码"  runat="server"/></td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp;<input id="Text2" type="text" value="密码" runat="server"/>密码</td>
+                                       <td>密码&nbsp;<input id="Text2" type="text" value="密码" runat="server"/></td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp;</td>
+                                       <td>身份<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                                           <asp:ListItem>--请选择--</asp:ListItem>
+                                           <asp:ListItem>学生</asp:ListItem>
+                                           <asp:ListItem>管理员</asp:ListItem>
+                                           <asp:ListItem>商家</asp:ListItem>
+                                           </asp:DropDownList></td>
                                    </tr>
                                </table>
                                &nbsp;&nbsp;&nbsp;&nbsp;
@@ -166,7 +171,9 @@
                 $("#Text2").click(function () {
                     this.value = "";
                 })
-               
+                $("#Text3").click(function () {
+                    this.value = "";
+                })
             </script>
         </div>
     </form>
