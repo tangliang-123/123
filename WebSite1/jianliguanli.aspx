@@ -6,7 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
 <style type="text/css">
+    *{
+        text-decoration:none;
+    }
         body {
         
         background-color:#eff3f6;
@@ -107,38 +111,40 @@
         left:345px;
         top:85px;
         position:absolute;
+        color:black;
         }
         #Label13 {
         left:455px;
         top:85px;
         position:absolute;
+        color:black;
         }
         #Label14 {
         left:565px;
         top:85px;
         position:absolute;
+        color:black;
         }
         #Label15 {
         left:675px;
         top:85px;
         position:absolute;
+        color:black;
         }
-       
-        #fabujianzhi {
-        position:absolute;
-        width:70%;
-        height:45px;
-        left:345px;
-        top:130px;
-       
-        
-        background-color:#00CCFF;
-        }
-        #Label17 {
-        position:absolute;
-        left:45px;
-        top:12px;
-        }
+
+    #fabujianzhi {
+        position: absolute;
+        width: 70%;
+        height: 45px;
+        left: 345px;
+        top: 130px;
+        background-color: #00CCFF;
+    }
+    #Label17 {
+        position: absolute;
+        left: 45px;
+        top: 12px;
+    }
         #Button2 {
         right:20px;
         top:10px;
@@ -272,6 +278,10 @@
         right:60px;
         top:165px;
         }
+    .auto-style1 {
+        left: 520px;
+        top: 445px;
+    }
     </style>
 </head>
 <body>
@@ -293,10 +303,10 @@
                     <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>    
             </div>
             <div id="touxiang">
@@ -307,16 +317,16 @@
         </div>
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
-            <asp:Label ID="Label10" runat="server" Text="兼职"></asp:Label>
+            <asp:Button ID="Label10" runat="server" Text="兼职" BackColor="White" BorderStyle="None" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
-        <asp:Label ID="Label12" runat="server" Text="待录取0"></asp:Label>
-        <asp:Label ID="Label13" runat="server" Text="待结算0"></asp:Label>
-        <asp:Label ID="Label14" runat="server" Text="已完成"></asp:Label>
-        <asp:Label ID="Label15" runat="server" Text="待支付订单0"></asp:Label>
+        <asp:Linkbutton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:Linkbutton>
+        <asp:Linkbutton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:Linkbutton>
+        <asp:Linkbutton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:Linkbutton>
+        <asp:Linkbutton ID="Label15" runat="server" Text="待支付订单0" PostBackUrl="~/jianliguanli_zhifu.aspx"></asp:Linkbutton>
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="您还没有发布职位哦"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" />
+            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
             <asp:Label ID="Label16" runat="server" Text="全部岗位"></asp:Label>
@@ -337,7 +347,7 @@
             <asp:TextBox ID="TextBox1" runat="server" Text="请输入应聘者的姓名或手机号"></asp:TextBox>
 
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
-            <asp:Button ID="Button1" runat="server" Text="发布兼职" />
+            <asp:Button ID="Button1" runat="server" Text="发布兼职" CssClass="auto-style1" OnClick="Button1_Click" />
         </div>
     </div>
     </form>

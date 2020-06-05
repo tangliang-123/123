@@ -9,34 +9,52 @@ using Model;
 
 namespace DAL
 {
-    /// <summary>
-    /// 登陆身份识别
-    /// </summary>
-    public class Permission
-    {
-        public static string IDcard(string admin, string password)
-        {
-            SqlParameter[] p = new SqlParameter[]
-            {
-                new SqlParameter("@Account",admin),
-                new SqlParameter("@Password",password)
-            };
-            string card = Convert.ToString(SQLHelper.ExecuteScalar("IDcard", CommandType.StoredProcedure, p));
 
-            return card;
-        }
+	/// <summary>
+	/// 权限表的登陆身份识别
+	/// </summary>
+	public class PermissionDAL
+	{
+		///<summary>
+		///学生登录验证
+		/// </summary>
+		public static bool Perstulogin(string admin, string password)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",admin),
+				new SqlParameter("@Password",password)
+			};
+			int card = Convert.ToInt32(SQLHelper.ExecuteScalar("Perstulogin", CommandType.StoredProcedure, p)); ;
+			return card>0;
+		}
+		///<summary>
+		///商家登录验证
+		/// </summary>
+		public static bool Permanlogin(string admin, string password)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",admin),
+				new SqlParameter("@Password",password)
+			};
+			int card = Convert.ToInt32(SQLHelper.ExecuteScalar("Permanlogin", CommandType.StoredProcedure, p)); ;
+			return card > 0;
+		}
+		///<summary>
+		///管理员登录验证
+		/// </summary>
+		public static bool Peradmlogin(string admin, string password)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",admin),
+				new SqlParameter("@Password",password)
+			};
+			int card = Convert.ToInt32(SQLHelper.ExecuteScalar("Peradmlogin", CommandType.StoredProcedure, p)); ;
+			return card > 0;
+		}
 
-        public static bool UserLogin(string admin, string password)
-        {
-            SqlParameter[] p = new SqlParameter[]
-            {
-                new SqlParameter("@Account",admin),
-                new SqlParameter("@Password",password)
-            };
-            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("UserLogin", CommandType.StoredProcedure, p));
-            //string sqltext = "select count(*) from Manager where M_LoginId=@Account and M_Password=@Password";
-            //int i = Convert.ToInt32(SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p));
-            return i > 0;
-        }
-    }
+
+	}
 }

@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
     <style type="text/css">
         *{
             margin:0;
@@ -120,7 +121,7 @@
                   <li>
                       <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx" CausesValidation="False">小任务</asp:LinkButton></li>
                   <li>
-                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/xiaoxi.aspx" CausesValidation="False">消息</asp:LinkButton></li>
+                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx" CausesValidation="False">消息</asp:LinkButton></li>
                   <li>
                       <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhaopin.aspx">加速招聘</asp:LinkButton></li>
               </ul>

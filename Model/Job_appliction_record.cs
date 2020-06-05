@@ -26,8 +26,8 @@ namespace Model
 			set { postID = value; }
 		}
 
-		private int stuID;
-		public int StuID
+		private string stuID;
+		public string StuID
 		{
 			get { return stuID; }
 			set { stuID = value; }

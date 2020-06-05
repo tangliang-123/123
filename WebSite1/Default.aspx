@@ -6,9 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+
     <style type="text/css">
         *{border:0;margin:0;list-style:none;
-          font-weight:bold;
+          font-weight:bold; 
         }
        
 
@@ -23,7 +24,7 @@
             color:white;
             float:left;
         }
-        .jl{
+        .jl{    
             margin-bottom:50px;
             margin-left:50px;
         }

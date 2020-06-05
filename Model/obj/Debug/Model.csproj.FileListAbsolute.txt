@@ -3,12 +3,9 @@ E:\123\Model\bin\Debug\Model.pdb
 E:\123\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\123\Model\obj\Debug\Model.dll
 E:\123\Model\obj\Debug\Model.pdb
+E:\123\Model\obj\Debug\Model.csprojAssemblyReference.cache
 D:\软件工程\Model\bin\Debug\Model.dll
 D:\软件工程\Model\bin\Debug\Model.pdb
 D:\软件工程\Model\obj\Debug\Model.dll
 D:\软件工程\Model\obj\Debug\Model.pdb
-C:\Users\admin\Source\Repos\123\Model\bin\Debug\Model.dll
-C:\Users\admin\Source\Repos\123\Model\bin\Debug\Model.pdb
-C:\Users\admin\Source\Repos\123\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
-C:\Users\admin\Source\Repos\123\Model\obj\Debug\Model.dll
-C:\Users\admin\Source\Repos\123\Model\obj\Debug\Model.pdb
+D:\软件工程\Model\obj\Debug\Model.csprojAssemblyReference.cache

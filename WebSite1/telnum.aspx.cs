@@ -10,7 +10,10 @@ public partial class telnum : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       // UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+        // UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+        Manager manager = new Manager();
+        manager.M_LoginId = Session["admin"].ToString();
+        Label1.Text = BLL.ManagerBusiness.returnlogid(manager);
     }
 
     protected void Button1_Click(object sender, EventArgs e)

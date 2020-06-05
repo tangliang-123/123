@@ -8,7 +8,7 @@
     <title></title>
     
     
-</script>
+
     <style type="text/css">
         body {
         
@@ -246,7 +246,31 @@
 
 
 
+        .auto-style1 {
+            bottom: 210px;
+        }
+        .auto-style2 {
+            left: 0px;
+            top: -2px;
+        }
+        .auto-style3 {
+            right: 64px;
+        }
+        .auto-style4 {
+            margin-bottom: 0px;
+        }
+
+
+
+        .auto-style5 {
+            left: 1px;
+            top: -3px;
+        }
+
+
+
     </style>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -267,10 +291,10 @@
                     <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
                 </div>
                 <div>
-                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
                 <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/zhaopin.aspx">招聘</asp:LinkButton>
+                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -281,32 +305,32 @@
         </div>
         <div id="center">
             <div id="p1"> 
-                <asp:Image ID="Image3" runat="server" ImageUrl="~/image/新报名.png" />
+                <asp:ImageButton ID="Image3" runat="server" ImageUrl="~/image/新报名.png" CssClass="auto-style3" OnClick="Image3_Click" />
                 <asp:Label ID="Label12" runat="server" Text="0"></asp:Label>
-                <asp:Label ID="Label13" runat="server" Text="新报名"></asp:Label>
+                <asp:Label ID="Label13" runat="server" Text="新报名" style="height: 20px; width: 91px"></asp:Label>
             </div>
             <div id="p2">
-                <asp:Image ID="Image4" runat="server" ImageUrl="~/image/新报名2.png" />
+                <asp:ImageButton ID="Image4" runat="server" ImageUrl="~/image/新报名2.png" CssClass="auto-style5" OnClick="Image4_Click" />
                 <asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
                 <asp:Label ID="Label15" runat="server" Text="在招职位"></asp:Label>
             </div>
             <div id="p3">
-                <asp:Image ID="Image5" runat="server" ImageUrl="~/image/消息.png" />
+                <asp:ImageButton ID="Image5" runat="server" ImageUrl="~/image/消息.png" OnClick="Image5_Click" />
                 <asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
-                <asp:Label ID="Label17" runat="server" Text="未读消息"></asp:Label>
+                <asp:Label ID="Label17" runat="server" Text="未读消息" CssClass="auto-style4"></asp:Label>
             </div>
         </div>
        <asp:Label ID="Label9" runat="server" Text="新报名"></asp:Label>
         <asp:Label ID="Label10" runat="server" Text="在招兼职"></asp:Label>
         <div id="fabu">
-            <asp:Image ID="Image6" runat="server" ImageUrl="~/image/发布兼职.png" />
-            <asp:Button ID="Button1" runat="server" Text="发布兼职" />
+            <asp:Image ID="Image6" runat="server" ImageUrl="~/image/发布兼职.png" CssClass="auto-style2" />
+            <asp:Button ID="Button1" runat="server" Text="发布兼职" CssClass="auto-style2" OnClick="Button1_Click" />
         </div>
          <div id="zhiweifabu">
              <asp:Label ID="Label11" runat="server" Text="职位发布"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="发布兼职" />
-            <asp:Button ID="Button3" runat="server" Text="发布实习" />
-            <asp:Button ID="Button4" runat="server" Text="发布小任务" />
+            <asp:Button ID="Button2" runat="server" Text="发布兼职" OnClick="Button2_Click" CssClass="auto-style1" />
+            <asp:Button ID="Button3" runat="server" Text="发布实习" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Text="发布小任务" OnClick="Button4_Click" />
         </div>
         <div id="shengyubaoming">
             
@@ -316,5 +340,6 @@
         </div>
     </div>
     </form>
+    <script src="layui.js"></script>
 </body>
 </html>
