@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="guanlitest.aspx.cs" Inherits="guanlitest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Student.aspx.cs" Inherits="Student" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            管理员界面
+            学生界面
         </div>
     </form>
 </body>

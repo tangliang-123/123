@@ -19,11 +19,23 @@ public partial class _Default : System.Web.UI.Page
 
         if (admin != string.Empty && password != string.Empty)
         {
-            if (BLL.ManagerBusiness.ManagerLogin(admin, password))
+            if (BLL.P_Permission.UserLogin(admin, password))
             {
                 ////登录成功，数据存入session中
                 Session["admin"] = admin;
-                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
+                if (BLL.P_Permission.Idcard(admin, password) == "管理员")
+                {
+                    Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../guanlitest.aspx", this);
+                }
+                else if (BLL.P_Permission.Idcard(admin, password) == "商家")
+                {
+                    Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
+                }
+                else if (BLL.P_Permission.Idcard(admin, password) == "学生")
+                {
+                    Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../Student.aspx", this);
+                }
+                
             }
             else
             {

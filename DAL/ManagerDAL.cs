@@ -22,14 +22,14 @@ namespace DAL
         /// <param name="account"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static bool ManagerLogin(string admin, string password)
+        public static bool UserLogin(string admin, string password)
         {
             SqlParameter[] p = new SqlParameter[]
             {
                 new SqlParameter("@Account",admin),
                 new SqlParameter("@Password",password)
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("MangerLogin", CommandType.StoredProcedure, p));
+            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("UserLogin", CommandType.StoredProcedure, p));
             //string sqltext = "select count(*) from Manager where M_LoginId=@Account and M_Password=@Password";
             //int i = Convert.ToInt32(SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p));
             return i > 0;

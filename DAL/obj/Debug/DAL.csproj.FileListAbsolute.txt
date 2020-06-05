@@ -15,3 +15,12 @@ D:\软件工程\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 D:\软件工程\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\软件工程\DAL\obj\Debug\DAL.dll
 D:\软件工程\DAL\obj\Debug\DAL.pdb
+C:\Users\admin\Source\Repos\123\DAL\bin\Debug\DAL.dll
+C:\Users\admin\Source\Repos\123\DAL\bin\Debug\DAL.pdb
+C:\Users\admin\Source\Repos\123\DAL\bin\Debug\Model.dll
+C:\Users\admin\Source\Repos\123\DAL\bin\Debug\Model.pdb
+C:\Users\admin\Source\Repos\123\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\admin\Source\Repos\123\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\admin\Source\Repos\123\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\admin\Source\Repos\123\DAL\obj\Debug\DAL.dll
+C:\Users\admin\Source\Repos\123\DAL\obj\Debug\DAL.pdb

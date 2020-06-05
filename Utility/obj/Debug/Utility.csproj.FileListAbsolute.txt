@@ -7,3 +7,9 @@ D:\软件工程\Utility\bin\Debug\Utility.dll
 D:\软件工程\Utility\bin\Debug\Utility.pdb
 D:\软件工程\Utility\obj\Debug\Utility.dll
 D:\软件工程\Utility\obj\Debug\Utility.pdb
+C:\Users\admin\Source\Repos\123\Utility\bin\Debug\Utility.dll
+C:\Users\admin\Source\Repos\123\Utility\bin\Debug\Utility.pdb
+C:\Users\admin\Source\Repos\123\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
+C:\Users\admin\Source\Repos\123\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Users\admin\Source\Repos\123\Utility\obj\Debug\Utility.dll
+C:\Users\admin\Source\Repos\123\Utility\obj\Debug\Utility.pdb
