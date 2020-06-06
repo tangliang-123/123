@@ -89,5 +89,25 @@ namespace DAL
 			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddQuanxian", CommandType.StoredProcedure, p));
 			return i > 0;
 		}
+		/// <summary>
+		/// 增，根据选择注册账号，传递实参
+		/// </summary>
+		/// <param name="manager"></param>
+		/// <returns></returns>
+		public static bool Permission_Add(string login, string pwd, string role, string date)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@P_Account",login),
+				new SqlParameter("@P_Password",pwd),
+				new SqlParameter("@P_Role",role),
+				new SqlParameter("@P_Lastlogin",date)
+
+			};
+			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Permission_Add", CommandType.StoredProcedure, p));
+			//string sqlt = "insert into Manager(M_LoginId,M_Password) values(@Account,@Password)";
+			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+			return i > 0;
+		}
 	}
 }
