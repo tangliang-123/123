@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;//
 using System.Data;
-using System.Data.SqlClient;
 
 namespace BLL
 {
@@ -46,15 +45,8 @@ namespace BLL
             else
                 return DAL.ManagerDAL.AddManager(manager);
         }
-        /// <summary>
-		/// 增，根据选择注册账号，传递实参
-		/// </summary>
-		/// <param name="manager"></param>
-		/// <returns></returns>
-        public static bool Permission_Add(string login, string pwd, string role, string date)
-        {
-            return DAL.PermissionDAL.Permission_Add(login, pwd, role, date);
-        }
+
+
         /// <summary>
         /// 修改密码
         /// </summary>
@@ -70,6 +62,34 @@ namespace BLL
                 return false;
         }
 
+        /// <summary>
+        /// 忘记密码，重置密码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool wangjiMima(Manager manager)
+        {
+            return DAL.ManagerDAL.UpdataManager(manager);
+        }
+
+        /// <summary>
+        /// 更新权限表
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
+        public static bool UpdateQuanxian(Permission permission)
+        {
+            return DAL.PermissionDAL.UpdateQuanxian(permission);
+        }
+        /// <summary>
+        /// 向权限表添加数据
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
+        public static bool AddQuanxian(Permission permission)
+        {
+            return DAL.PermissionDAL.AddQuanxian(permission);
+        }
 
         /// <summary>
         /// 添加助学岗位
@@ -144,7 +164,7 @@ namespace BLL
         /// </summary>
         /// <param name="jobDetail"></param>
         /// <returns></returns>
-        public static SqlDataReader GetJob(int OrderNumber)
+        public static JobDetail GetJob(string OrderNumber)
         {
             return DAL.JobDetailDAL.GetJob(OrderNumber);
         }
@@ -185,16 +205,7 @@ namespace BLL
         {
             return DAL.Job_appliction_recordDAL.ChangeAppliction_recordState(Jobid, state);
         }
-        /// <summary>
-        /// 根据状态查看显示应聘工作岗位
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader joblist_Applictions(byte state,string mid)
-        {
-            return DAL.Job_appliction_recordDAL.joblist_Applictions(state,mid);
-        }
+
         public static JobDetail GetJobAppliction(string obAppliction_recordState)
         {
             return DAL.JobDetailDAL.GetJobAppliction(obAppliction_recordState);
@@ -204,88 +215,29 @@ namespace BLL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public static List<JobDetail> GetJobListByName(string name)
+        public static DataSet GetJobListByName(string name)
         {
             return DAL.JobDetailDAL.GetJobListByName(name);
         }
+
         /// <summary>
-        /// 根据学号显示学生信息
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public static SqlDataReader GetStu(int stu)
-        {
-            return DAL.StudentDAL.GetStu(stu);
-        }
-        /// <summary>
-        /// 获取全部岗位
+        /// 根据ID查看商家的详细信息
         /// </summary>
         /// <param name="jobDetail"></param>
         /// <returns></returns>
-        public static SqlDataReader Job_name(string jobid)
+        public static DataSet selectJobByID(JobDetail jobDetail)
         {
-            return DAL.JobDetailDAL.Job_name(jobid);
+            return DAL.JobDetailDAL.selectJobById(jobDetail);
         }
-        /// <summary>
-        /// 根据时间获取申请记录
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader Job_appliction_time(DateTime time)
-        {
-            return DAL.Job_appliction_recordDAL.Job_appliction_time(time);
-        }
-        /// <summary>
-        /// 根据时间降序排序申请记录
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader Job_appliction_order_by_time(byte state,string mid)
-        {
-            return DAL.Job_appliction_recordDAL.Job_appliction_order_by_time(state,mid);
-        }
-        /// <summary>
-        /// 根据时间升序排序申请记录
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader Job_appliction_order_by_asctime(byte state, string mid)
-        {
-            return DAL.Job_appliction_recordDAL.Job_appliction_order_by_asctime(state, mid);
-        }
-        /// <summary>
-        /// 根据岗位名称申请记录
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader Job_appliction_name(string name, string mid,byte state)
-        {
 
-            return DAL.Job_appliction_recordDAL.Job_appliction_name(name, mid,state);
-        }
         /// <summary>
-        /// 根据根据应聘者姓名获取申请记录
+        /// 根据岗位状态来获取信息
         /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
+        /// <param name="jobDetail"></param>
         /// <returns></returns>
-        public static SqlDataReader Job_appliction_stu_name(string name, string mid, byte state)
+        public static DataSet selectJobByStata(JobDetail jobDetail)
         {
-            return DAL.Job_appliction_recordDAL.Job_appliction_stu_name(name, mid, state);
-        }
-        /// <summary>
-        /// 根据根据应聘者手机号获取申请记录
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static SqlDataReader Job_appliction_stu_phone(string phone, string mid, byte state)
-        {
-            return DAL.Job_appliction_recordDAL.Job_appliction_stu_phone(phone, mid, state);
+            return DAL.JobDetailDAL.selectJobByStata(jobDetail);
         }
     }
 }

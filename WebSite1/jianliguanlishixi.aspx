@@ -6,7 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
 <style type="text/css">
+    *{
+       color:black;
+       text-decoration:none;
+    }
         body {
         
         background-color:#eff3f6;
@@ -258,10 +263,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>   
+                </div> 
             </div>
             <div id="touxiang">
                 <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/image/头像.png" OnClick="Image1_Click" />
@@ -274,9 +276,9 @@
             <asp:Button ID="Label10" runat="server" Text="兼职" BackColor="White" BorderStyle="None" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
-        <asp:Label ID="Label12" runat="server" Text="待处理0"></asp:Label>
-        <asp:Label ID="Label13" runat="server" Text="已安排面试0"></asp:Label>
-        <asp:Label ID="Label14" runat="server" Text="不合适简历"></asp:Label>
+        <asp:LinkButton ID="Label12" runat="server" Text="待处理0" PostBackUrl="~/jianliguanlishixi.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label13" runat="server" Text="已安排面试0" PostBackUrl="~/jianliguanlishixi_mianshi.aspx"></asp:LinkButton>
+        <asp:LinkButton ID="Label14" runat="server" Text="不合适简历" PostBackUrl="~/jianliguanlishixi_buheshi.aspx"></asp:LinkButton>
         
        
         <div id="jilu">

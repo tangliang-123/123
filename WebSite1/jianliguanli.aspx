@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
 <style type="text/css">
     *{
         text-decoration:none;
@@ -310,10 +311,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>    
+                </div>  
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
@@ -329,7 +327,7 @@
         <asp:Linkbutton ID="Label12" runat="server" Text="待录取0" PostBackUrl="~/jianliguanli.aspx"></asp:Linkbutton>
         <asp:Linkbutton ID="Label13" runat="server" Text="待结算0" PostBackUrl="~/jianliguanli_jesuan.aspx"></asp:Linkbutton>
         <asp:Linkbutton ID="Label14" runat="server" Text="已完成" PostBackUrl="~/jianliguanli_yiwancheng.aspx"></asp:Linkbutton>
-        <asp:Linkbutton ID="Label15" runat="server" Text="待支付订单0"></asp:Linkbutton>
+        <asp:Linkbutton ID="Label15" runat="server" Text="待支付订单0" PostBackUrl="~/jianliguanli_zhifu.aspx"></asp:Linkbutton>
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="您还没有发布职位哦"></asp:Label>
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" OnClick="Button2_Click" />

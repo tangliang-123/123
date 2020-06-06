@@ -270,6 +270,7 @@
 
 
     </style>
+    <link href="css/xadmin.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -291,9 +292,6 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
                 </div>   
             </div>
             <div id="touxiang">
@@ -339,5 +337,6 @@
         </div>
     </div>
     </form>
+    <script src="layui.js"></script>
 </body>
 </html>

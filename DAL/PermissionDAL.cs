@@ -56,23 +56,37 @@ namespace DAL
 		}
 
 		/// <summary>
-		/// 增，根据选择注册账号，传递实参
+		/// 更新权限表
 		/// </summary>
-		/// <param name="manager"></param>
+		/// <param name="permission"></param>
 		/// <returns></returns>
-		public static bool Permission_Add(string login,string pwd,string role,string date)
+		public static bool UpdateQuanxian(Permission permission)
 		{
 			SqlParameter[] p = new SqlParameter[]
 			{
-				new SqlParameter("@P_Account",login),
-				new SqlParameter("@P_Password",pwd),
-				new SqlParameter("@P_Role",role),
-				new SqlParameter("@P_Lastlogin",date)
-			
+				new SqlParameter("@Account",permission.P_Account),
+				new SqlParameter("@Password",permission.P_Password)
 			};
-			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Permission_Add", CommandType.StoredProcedure, p));
-			//string sqlt = "insert into Manager(M_LoginId,M_Password) values(@Account,@Password)";
+			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Updatepermission", CommandType.StoredProcedure, p));
+			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
 			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+			return i > 0;
+		}
+
+		/// <summary>
+		/// 向权限表添加数据
+		/// </summary>
+		/// <param name="permission"></param>
+		/// <returns></returns>
+		public static bool AddQuanxian(Permission permission)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",permission.P_Account),
+				new SqlParameter("@Password",permission.P_Password),
+				new SqlParameter("@Post",permission.P_Role)
+			};
+			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddQuanxian", CommandType.StoredProcedure, p));
 			return i > 0;
 		}
 	}

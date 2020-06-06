@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
     <style type="text/css">
         body {
         
@@ -181,10 +182,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>   
+                </div>  
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
@@ -199,7 +197,7 @@
         </div>
         <div id="fabushixi">
             <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/zhiweiguanlishixi.aspx">在招实习</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx.aspx">在招实习</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/zhiweiguanlishixi_jssx.aspx">结束实习</asp:LinkButton>
             
             <asp:Button ID="Button1" runat="server" Text="发布兼职" BorderStyle="None" OnClick="Button1_Click"  />
         </div>

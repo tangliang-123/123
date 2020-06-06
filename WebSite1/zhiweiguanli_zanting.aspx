@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/zhiweiguanlimubanye.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/zhiweiguanlimubanye.master" AutoEventWireup="true" CodeFile="zhiweiguanli_zanting.aspx.cs" Inherits="zhiweiguanli_zanting" %>
 
 <script runat="server">
 
@@ -41,6 +41,16 @@
     <div id="jilu2">
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
             <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" Width="800px" >
+                <Columns>
+                    <asp:BoundField DataField="J_name" HeaderText="职位名称" />
+                    <asp:BoundField DataField="J_Category" HeaderText="工作性质" />
+                    <asp:BoundField DataField="J_Salary" HeaderText="薪资" />
+                    <asp:BoundField DataField="Working_time" HeaderText="工作时间" />
+                    <asp:BoundField DataField="Position" HeaderText="地址" />
+                    <asp:BoundField DataField="Settlement" HeaderText="结算方式" />
+                    <asp:BoundField DataField="Need_number" HeaderText="需求人数" />
+                </Columns>
+            </asp:GridView>
         </div>
 </asp:Content>
-

@@ -23,3 +23,7 @@ D:\软件工程\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
 D:\软件工程\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\软件工程\BLL\obj\Debug\BLL.dll
 D:\软件工程\BLL\obj\Debug\BLL.pdb
+C:\Users\admin\Source\Repos\123\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\admin\Source\Repos\123\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\admin\Source\Repos\123\BLL\obj\Debug\BLL.dll
+C:\Users\admin\Source\Repos\123\BLL\obj\Debug\BLL.pdb

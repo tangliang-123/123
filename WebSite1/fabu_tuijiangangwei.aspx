@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/xadmin.css" rel="stylesheet" />
     <style type="text/css">
         body {
         
@@ -399,9 +400,6 @@
                 <div>
                     <asp:LinkButton ID="LinkButton14" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton15" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>   
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />

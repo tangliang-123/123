@@ -6,9 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+
     <style type="text/css">
         *{border:0;margin:0;list-style:none;
-          font-weight:bold;
+          font-weight:bold; 
         }
        
 
@@ -23,7 +24,7 @@
             color:white;
             float:left;
         }
-        .jl{
+        .jl{    
             margin-bottom:50px;
             margin-left:50px;
         }
@@ -60,7 +61,7 @@
             margin-bottom:20px;
         }
         .cut-off{
-             margin-top:30px;
+             margin-top:15px;
              
         }
         .line{
@@ -77,7 +78,7 @@
 
         }
         .has-account{
-            margin-top:20px;
+            margin-top:10px;
             margin-left:75px;
             float:left;
             text-align:center;
@@ -85,6 +86,10 @@
         .blue{
             color:aquamarine;
             cursor:pointer;
+        }
+        #LinkButton1{
+            color:black;
+            text-decoration:none;
         }
     </style>
 </head>
@@ -139,6 +144,10 @@
                                <br />
                                <br />
                                <asp:Button ID="Button1" runat="server" Text="登录" BackColor="Aqua" BorderColor="#6699FF" BorderStyle="Solid" Height="30px" Width="165px" OnClick="Button1_Click" />
+                               <br />
+                               <br />
+                               <asp:CheckBox ID="CheckBox1" runat="server" Text="记住密码" OnCheckedChanged="CheckBox1_CheckedChanged" />
+                               &nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" OnClick="LinkButton1_Click" >忘记密码</asp:LinkButton>
                            </div>
                            <div class="cut-off">
                                <div class="line"></div>
