@@ -24,7 +24,10 @@ public partial class mima : System.Web.UI.Page
             manager.M_LoginId = Session["admin"].ToString();
         manager.M_Password = TextBox2.Text;
         string password = TextBox1.Text;
-        if (BLL.ManagerBusiness.Upadamima(manager, password))
+        Permission permission = new Permission();
+        permission.P_Account = Session["admin"].ToString(); 
+        permission.P_Password = TextBox2.Text;
+        if (BLL.ManagerBusiness.Upadamima(manager, password) && BLL.ManagerBusiness.UpdateQuanxian(permission))
         {
             Utility.JavaScript.Alert("修改密码成功", this);
         }
