@@ -14,6 +14,7 @@ public partial class telnum : System.Web.UI.Page
         Manager manager = new Manager();
         manager.M_LoginId = Session["admin"].ToString();
         Label1.Text = BLL.ManagerBusiness.returnlogid(manager);
+        Literal1.Text= BLL.ManagerBusiness.returnlogid(manager);
     }
 
     protected void Button1_Click(object sender, EventArgs e)
