@@ -6,6 +6,5 @@ E:\123\Utility\obj\Debug\Utility.pdb
 E:\123\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
 D:\软件工程\Utility\bin\Debug\Utility.dll
 D:\软件工程\Utility\bin\Debug\Utility.pdb
-D:\软件工程\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
 D:\软件工程\Utility\obj\Debug\Utility.dll
 D:\软件工程\Utility\obj\Debug\Utility.pdb

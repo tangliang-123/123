@@ -20,9 +20,9 @@ namespace BLL
         /// <param name="account"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static bool UserLogin(string admin, string password)
+        public static bool ManagerLogin(string admin, string password)
         {
-            return DAL.ManagerDAL.UserLogin(admin, password);
+            return DAL.ManagerDAL.ManagerLogin(admin, password);
         }
         /// <summary>
         /// 商家登录验证
