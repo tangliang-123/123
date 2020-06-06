@@ -1,148 +1,242 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="message.aspx.cs" Inherits="message" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="css/xadmin.css" rel="stylesheet" />
     <style type="text/css">
-        *{
-            margin:0;
-            padding:0;
-            list-style:none;
+        body {
+        background-color:#eff3f6;
         }
-        .container{
-            //border:1px solid black;
-            width:100%;
-            height:720px;
-            margin:0 auto;
-            background-color:ghostwhite;
+        #daohangtiao{
+            
+             margin-top:30px;
+             margin-left:-7px;
+             background-color:#fff;
+             width:101%;
+             height:50px;
+             position:relative;
         }
-        .nav{
-            //border:1px solid black;
-            width:1200px;
-            height:50px;
-            margin:0 auto;
-            background-color:white;
+        #daohang div {
+        float:left;
+        margin-left:100px;
+        margin-top:10px;
+        
         }
-        .logo{
-            width:150px;
-            height:50px;
-            //border:1px solid black;
+        #biaozhi {
+        margin-left:90px;
+        margin-top:12px;
+        position:relative;
+        position:absolute;
+        }
+        #daohang {
+        margin-left:204px;
+        margin-top:4px;
+        position:absolute;
+        }
+        
+        #touxiang {
+        margin-left:1180px;
+        margin-top:-30px;
+        position:relative;
+        
+        }
+        #Literal1 {
+        margin-left:10px;
+        margin-top:10px;
+
+        }
+        #Image2 {
+        margin-left:-40px;
+        margin-top:-4px;
+        width:30px;
+        height:30px;
+        position:absolute;
+        
+        }
+        #Image1 {
+        margin-left:10px;
+        margin-top:-3px;
+        position:absolute;
+        width:50px;
+        height:50px;
+        }
+        #Label1 {
+        margin-left:75px;
+        margin-top:5px;
+        position:absolute;
+        }
+        #Label7 {
+        margin-left:75px;
+        margin-top:22px;
+        position:absolute;
+        }
+        #Label8 {
+        font-size:20px;
+        }
+        #zhiweiguanli {
+        position:absolute;
+        width:13%;
+        height:200px;
+        left:85px;
+        top:75px;
+        background-color:#fff;
+        
+        }
+        #Label9 {
+        margin-left:65px;
+        margin-top:30px;
+        position:absolute;
+        }
+        #Label10 {
+        margin-left:80px;
+        margin-top:75px;
+        position:absolute;
+        }
+        #Label11 {
+        margin-left:80px;
+        margin-top:115px;
+        position:absolute;
+        top: -2px;
+        left: 0px;
+        }
+        #fabushixi {
+        position:absolute;
+        left:345px;
+        top:75px;
+        border-bottom:1px solid #c7bcbc;
+        background-color:#eff3f6;
+        width:70%;
+        height:50px;
+        }
+        #LinkButton6 {
+        left:0px;
+        top:20px;
+        position:absolute;
+        color:black;
+        text-decoration:none;
+        }
+        #LinkButton7 {
+        left:105px;
+        top:20px;
+        position:absolute;
+        color:black;
+        text-decoration:none;
+        }
+
+    #Button1 {
+        right: 0px;
+        top: 20px;
+        position: absolute;
+        color: white;
+        background-color: #00CCFF;
+        width: 90px;
+        height: 30px;
+    }
+
+    #jilu {
+        position: absolute;
+        width: 70%;
+        height: 555px;
+        left: 345px;
+        top: 140px;
+        background-color: #fff;
+    }
+        #Label18{
+        position:absolute;
+        left:520px;
+        top:330px;
+            }
+        #Image3 {
+        position:absolute;
+        left:450px;
+        top:170px;
+        width:200px;
+        height:150px;
+        }
+
+        #tongzhi {
+            width:200px;
+            height:600px;
             float:left;
-            margin-right:70px;
+            margin-left:150px;
+            margin-top:20px;
+            background:white;
         }
-        .ulli{
-            width:600px;
-            height:50px;
-            //border:1px solid black;
+
+        #xiaoxi {
+            width:850px;
+            height:600px;
             float:left;
+            margin-top:20px;
+            margin-left:10px;
+            background:white;
         }
-        /*ul{
-            width:500px;
-            height:50px;
-            float:right;
-            border:1px solid black;
-        }*/
-        li{
-            margin-right:30px;
+
+        #p1 {
+            width:80px;
             height:50px;
             line-height:50px;
+            background:white;
             float:left;
-        }
-        .p1{
-            font-size:20px;
-            float:right;
-            margin-top:15px;
-        }
-        .toux{
-            margin-left:60px;
-            //border:1px solid black;
-            float:left;
-            width:200px;
-            height:50px;
-        }
-        .left{
-            //border:1px solid black;
-            width:300px;
-            height:600px;
-            float:left;
-            background-color:white;
-            margin-top:10px;
-        }
-        .right{
-            //border:1px solid black;
-            height:600px;
-            width:890px;
-            float:left;
-            background-color:white;
+            margin-top:5px;
             margin-left:10px;
-            margin-top:10px;
         }
-        .main{
-            //border:1px solid black;
-            width:1200px;
-            height:600px;
-            margin:0 auto;
+
+        #img1,#img2{
+
+            float:left;
         }
-        .xx{
-            width:100px;
-            height:50px;
-            margin-top:250px;
-            margin-left:300px;
-            //border:1px solid black;
+
+        #img2 {
+            margin-top:13px;
         }
-        #LinkButton1,#LinkButton2,#LinkButton3,#LinkButton4,#LinkButton5
-       ,#LinkButton6,#LinkButton7{
-           text-decoration:none;
-       }
+
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="container">
-    <div class="nav">
-            <div class="logo">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo.jpg" Height="43px" Width="64px" />
-                <p class="p1">助学社</p>
+    <div>
+            <div id="daohangtiao">
+            <div id="biaozhi">
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/image/标志图.jpg" />
+                <asp:Label ID="Label8" runat="server" Text="勤工助学"></asp:Label>
             </div>
-            <div class="ulli">
-               <ul>
-                  <li>
-                      <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton8" runat="server" ForeColor="Black" CausesValidation="False">青团宝</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton9" runat="server" ForeColor="Black" PostBackUrl="~/Lproblem.aspx" CausesValidation="False">小任务</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton10" runat="server" ForeColor="Black" PostBackUrl="~/message.aspx" CausesValidation="False">消息</asp:LinkButton></li>
-                  <li>
-                      <asp:LinkButton ID="LinkButton11" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/zhaopin.aspx">加速招聘</asp:LinkButton></li>
-              </ul>
+            <div id="daohang">
+                <div>
+                     <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/shouye.aspx">首页</asp:LinkButton>
+                </div>
+                <div>
+                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/zhiweiguanli.aspx">职位管理</asp:LinkButton>
+                </div>
+                <div>
+                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/jianliguanli.aspx">简历管理</asp:LinkButton>
+                </div>
+                <div>
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
+                </div>
+
             </div>
-            <div class="toux">
-                <img src="images/tx.png" />
-                <asp:Label ID="Label1" runat="server" Text="Label">18783920361</asp:Label>
+            <div id="touxiang">
+                <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
+                <asp:Label ID="Label1" runat="server" Text="18382908734(未实名)"></asp:Label>
+                <asp:Label ID="Label7" runat="server" Text="未绑定公司"></asp:Label>
             </div>
+
         </div>
-        <div class="main">
-          <div class="left">
-              &nbsp;&nbsp;&nbsp;&nbsp;<p>&nbsp;&nbsp;&nbsp;&nbsp;系统通知&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/JT.png" Height="16px" Width="19px" /></p>
-          </div>
-          <div class="right">
-              <div class="xx">
-                  <p>
-                      <asp:Label ID="Label2" runat="server" Text="暂无消息"></asp:Label></p>
-              </div>
-          </div>
-       </div>
-    </div>
+        <div id="tongzhi">
+            <img src="image/系统通知.png" id="img1" />
+            <p id="p1">系统通知</p>
+            <img id="img2" src="image/jiantou.png" />
+        </div>
+        <div id="xiaoxi">
+
+        </div>
+
+        </div>
     </form>
 </body>
 </html>
