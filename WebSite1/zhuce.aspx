@@ -126,14 +126,7 @@
                     </div>
                     
                    <div id="right">
-                       <div class="log">
-                           <div class="head_text">
-                               <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
-                                   <asp:ListItem>商家</asp:ListItem>
-                                   <asp:ListItem>学生</asp:ListItem>
-                                   <asp:ListItem>管理员</asp:ListItem>
-                               </asp:RadioButtonList>
-                           </div><br />
+ 
                            <div class="log_form">
                                <table class="auto-style1">
                                    <tr>
