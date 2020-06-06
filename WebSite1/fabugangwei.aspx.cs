@@ -24,10 +24,9 @@ public partial class fabugangwei : System.Web.UI.Page
         jobDetail.J_Category = DropDownList1.SelectedValue;
         jobDetail.J_Portray = TextBox2.Text;
         jobDetail.J_Salary = TextBox4.Text + DropDownList2.SelectedValue;
-        jobDetail.Working_time = DropDownList5.SelectedValue;
+        jobDetail.Working_time = DropDownList5.SelectedValue+"至"+DropDownList9.SelectedValue+" "+DropDownList6.SelectedValue+"~"+DropDownList7.SelectedValue;
         jobDetail.Position = TextBox6.Text;
-        if (RadioButtonList1.SelectedValue == "需求" || RadioButtonList2.SelectedValue == "需求" || RadioButtonList3.SelectedValue == "需求")
-             remark = Label24.Text + " " + Label25.Text + " " + Label26.Text + " " + Label27.Text;
+        remark = Label24.Text + " " +RadioButtonList2.SelectedValue + " "+DropDownList8.SelectedValue + " " + Label27.Text;
         jobDetail.Remarks = remark;
         jobDetail.Settlement = DropDownList3.SelectedValue;
         jobDetail.Need_number = int.Parse(TextBox3.Text);
