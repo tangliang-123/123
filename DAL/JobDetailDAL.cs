@@ -212,10 +212,11 @@ namespace DAL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public static DataSet GetJobListByName(string name)
+        public static DataSet GetJobListByName(string name,string id)
         {
             SqlParameter[] p = {
-                  new SqlParameter("@Name",name)
+                  new SqlParameter("@Name",name),
+                  new SqlParameter("@Account",id)
             };
 
             DataSet dr = SQLHelper.ExecuteDataSet("GetJobListByName", CommandType.StoredProcedure, p);
