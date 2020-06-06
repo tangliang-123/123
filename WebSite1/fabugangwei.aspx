@@ -503,58 +503,87 @@
     text-align: left;
     margin-right:28px;
     }
+    #Label28 {
+    color: #666;
+    text-align: left;
+    margin-right:28px;
+    }
     #Label21:before{
     content: "*";
     color: #e6322d;
     margin-right: 4px;
     }
-    #Label22 {
-    color: #666;
-    text-align: left;
-    margin-right:28px;
-    }
-    #Label22:before{
+     #Label21:before{
     content: "*";
     color: #e6322d;
     margin-right: 4px;
     }
+    #Label28 {
+    color: #666;
+    text-align: left;
+    margin-right:28px;
+    }
+        #Label22:before {
+            content: "*";
+            color: #e6322d;
+            margin-right: 4px;
+        }
+
     #shij {
-    margin-top:22px;
+        margin-top: 22px;
     }
+
     #DropDownList5 {
-    background-color: #fff;
-    background-image: none;
-    border-radius: 4px;
-    border: 1px solid #1ecdb9;
-    box-sizing: border-box;
-    color: #606266;
-    display: inline-block;
-    font-size: inherit;
-    height: 40px;
-    line-height: 40px;
-    outline: none;
-    padding: 0 15px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-    width: 543px;
-    margin-left:32px;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #1ecdb9;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+        width: 140px;
+        margin-left: 32px;
     }
+    #DropDownList9 {
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #1ecdb9;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+        width: 140px;
+        margin-left: 32px;
+    }
+
     #DropDownList6 {
-    
-    background-color: #fff;
-    background-image: none;
-    border-radius: 4px;
-    border: 1px solid #e8e8e8;
-    box-sizing: border-box;
-    color: #606266;
-    display: inline-block;
-    font-size: inherit;
-    height: 40px;
-    line-height: 40px;
-    outline: none;
-    padding: 0 15px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-    width: 140px;
-    margin-left:32px;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #e8e8e8;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+        width: 140px;
+        margin-left: 32px;
     }
     #DropDownList7 {
     background-color: #fff;
@@ -839,8 +868,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/xiaoxi.aspx">消息</asp:LinkButton>
-                </div>
-  
+                </div> 
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
@@ -874,7 +902,7 @@
                     </div>
                     <div id="gonzuoxingzhi">
                         <asp:Label ID="Label2" runat="server" Text="Label">工作性质</asp:Label>
-                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                        <asp:DropDownList ID="DropDownList1" runat="server">
                             <asp:ListItem>兼职</asp:ListItem>
                             <asp:ListItem>全职</asp:ListItem>
                             <asp:ListItem>兼职+全职</asp:ListItem>
@@ -887,7 +915,7 @@
                         <asp:Label ID="Label14" runat="server" Text="Label">基本薪资</asp:Label>
                         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                         <asp:Label ID="Label15" runat="server" Text="Label">元</asp:Label>
-                        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" CssClass="auto-style1">
+                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style1">
                             <asp:ListItem>小时</asp:ListItem>
                             <asp:ListItem>天</asp:ListItem>
                             <asp:ListItem>周</asp:ListItem>
@@ -898,7 +926,7 @@
                     </div>
                     <div id="jiesuanfangshi">
                         <asp:Label ID="Label16" runat="server" Text="Label">结算方式</asp:Label>
-                        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True">
+                        <asp:DropDownList ID="DropDownList3" runat="server">
                             <asp:ListItem>日结</asp:ListItem>
                             <asp:ListItem>周结</asp:ListItem>
                             <asp:ListItem>月结</asp:ListItem>
@@ -928,7 +956,17 @@
                         <div id="shijian">
                             <div id="shij">
                                 <asp:Label ID="Label5" runat="server" Text="Label">工作日期</asp:Label>
-                                <asp:DropDownList ID="DropDownList5" runat="server" AutoPostBack="True">
+                                <asp:DropDownList ID="DropDownList5" runat="server">
+                                    <asp:ListItem>周一</asp:ListItem>
+                                    <asp:ListItem>周二</asp:ListItem>
+                                    <asp:ListItem>周三</asp:ListItem>
+                                    <asp:ListItem>周四</asp:ListItem>
+                                    <asp:ListItem>周五</asp:ListItem>
+                                    <asp:ListItem>周六</asp:ListItem>
+                                    <asp:ListItem>周天</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:Label ID="Label28" runat="server" Text="Label">~</asp:Label>
+                                <asp:DropDownList ID="DropDownList9" runat="server">
                                     <asp:ListItem>周一</asp:ListItem>
                                     <asp:ListItem>周二</asp:ListItem>
                                     <asp:ListItem>周三</asp:ListItem>
@@ -940,9 +978,57 @@
                             </div>
                             <div id="shij">
                                 <asp:Label ID="Label21" runat="server" Text="Label">工作时间</asp:Label>
-                                <asp:DropDownList ID="DropDownList6" runat="server" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList6" runat="server">
+                                    <asp:ListItem>00:00</asp:ListItem>
+                                    <asp:ListItem>01:00</asp:ListItem>
+                                    <asp:ListItem>02:00</asp:ListItem>
+                                    <asp:ListItem>03:00</asp:ListItem>
+                                    <asp:ListItem>04:00</asp:ListItem>
+                                    <asp:ListItem>05:00</asp:ListItem>
+                                    <asp:ListItem>06:00</asp:ListItem>
+                                    <asp:ListItem>07:00</asp:ListItem>
+                                    <asp:ListItem>08:00</asp:ListItem>
+                                    <asp:ListItem>10:00</asp:ListItem>
+                                    <asp:ListItem>11:00</asp:ListItem>
+                                    <asp:ListItem>12:00</asp:ListItem>
+                                    <asp:ListItem>13:00</asp:ListItem>
+                                    <asp:ListItem>14:00</asp:ListItem>
+                                    <asp:ListItem>15:00</asp:ListItem>
+                                    <asp:ListItem>16:00</asp:ListItem>
+                                    <asp:ListItem>17:00</asp:ListItem>
+                                    <asp:ListItem>18:00</asp:ListItem>
+                                    <asp:ListItem>19:00</asp:ListItem>
+                                    <asp:ListItem>20:00</asp:ListItem>
+                                    <asp:ListItem>21:00</asp:ListItem>
+                                    <asp:ListItem>22:00</asp:ListItem>
+                                    <asp:ListItem>23:00</asp:ListItem>
+                                </asp:DropDownList>
                                 <asp:Label ID="Label23" runat="server" Text="Label">~</asp:Label>
-                                <asp:DropDownList ID="DropDownList7" runat="server" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList7" runat="server">
+                                    <asp:ListItem>00:00</asp:ListItem>
+                                    <asp:ListItem>01:00</asp:ListItem>
+                                    <asp:ListItem>02:00</asp:ListItem>
+                                    <asp:ListItem>03:00</asp:ListItem>
+                                    <asp:ListItem>04:00</asp:ListItem>
+                                    <asp:ListItem>05:00</asp:ListItem>
+                                    <asp:ListItem>06:00</asp:ListItem>
+                                    <asp:ListItem>07:00</asp:ListItem>
+                                    <asp:ListItem>08:00</asp:ListItem>
+                                    <asp:ListItem>10:00</asp:ListItem>
+                                    <asp:ListItem>11:00</asp:ListItem>
+                                    <asp:ListItem>12:00</asp:ListItem>
+                                    <asp:ListItem>13:00</asp:ListItem>
+                                    <asp:ListItem>14:00</asp:ListItem>
+                                    <asp:ListItem>15:00</asp:ListItem>
+                                    <asp:ListItem>16:00</asp:ListItem>
+                                    <asp:ListItem>17:00</asp:ListItem>
+                                    <asp:ListItem>18:00</asp:ListItem>
+                                    <asp:ListItem>19:00</asp:ListItem>
+                                    <asp:ListItem>20:00</asp:ListItem>
+                                    <asp:ListItem>21:00</asp:ListItem>
+                                    <asp:ListItem>22:00</asp:ListItem>
+                                    <asp:ListItem>23:00</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div id="shij">
                                 <asp:Label ID="Label22" runat="server" Text="Label">工作地点</asp:Label>
@@ -971,7 +1057,14 @@
                             </div>
                             <div id="yao">
                                 <asp:Label ID="Label26" runat="server" Text="Label">学历要求</asp:Label>
-                                <asp:DropDownList ID="DropDownList8" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList8" runat="server">
+                                    <asp:ListItem>无</asp:ListItem>
+                                    <asp:ListItem>高中</asp:ListItem>
+                                    <asp:ListItem>大专/本科</asp:ListItem>
+                                    <asp:ListItem>研究生</asp:ListItem>
+                                    <asp:ListItem>硕士</asp:ListItem>
+                                    <asp:ListItem>博士</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div id="yao">
                                 <asp:Label ID="Label27" runat="server" Text="Label">身高要求</asp:Label>

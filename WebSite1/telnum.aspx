@@ -206,9 +206,9 @@
                         <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="None" ForeColor="Black" PostBackUrl="~/mima.aspx" CausesValidation="False">修改密码</asp:LinkButton></p>
                     <p class="p4" style="color:aqua;">修改手机号</p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/wxtz.aspx">微信通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/gexinxi.aspx">微信通知</asp:LinkButton></p>
                     <p class="p4">
-                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/yjtz.aspx">邮件通知</asp:LinkButton></p>
+                        <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="Black" CausesValidation="False" PostBackUrl="~/gexinxi.aspx">邮件通知</asp:LinkButton></p>
                 </div>
             </div>
             <div class="right">

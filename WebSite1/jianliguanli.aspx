@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli.aspx.cs" Inherits="jianliguanli" %>
-
+<%@ Register Src="~/user/jianli.ascx" TagPrefix="uc1" TagName="jianli" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -278,10 +278,17 @@
         right:60px;
         top:165px;
         }
-    .auto-style1 {
-        left: 520px;
-        top: 445px;
+   
+    #jianlixinxi {
+        position:absolute;
+        width:100%;
+       
+        left:0px;
+        top:250px;
+        background-color:#fff;
+
     }
+   
     </style>
 </head>
 <body>
@@ -304,8 +311,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-
+                </div>  
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
@@ -328,11 +334,11 @@
         </div>
         <div id="jilu">
             <asp:Label ID="Label16" runat="server" Text="全部岗位"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-            <asp:Label ID="Label18" runat="server" Text="性别"></asp:Label>
-            <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+            <asp:Label ID="Label18" runat="server" Text="时间"></asp:Label>
+            <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
             <asp:Label ID="Label19" runat="server" Text="排序方式"></asp:Label>
-            <asp:DropDownList ID="DropDownList3" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
             <asp:Label ID="Label20" runat="server" Text="筛选条件"></asp:Label>
             <asp:Button ID="Button3" runat="server" Text="不限" />
             <asp:Button ID="Button4" runat="server" Text="有留言" />
@@ -341,11 +347,13 @@
             <asp:CheckBox ID="CheckBox1" runat="server"/>
             <asp:Button ID="Button6" runat="server" Text="批量录取" />
             <asp:Button ID="Button7" runat="server" Text="批量放弃" />
-            <asp:Button ID="Button8" runat="server" Text="导出报名记录" />
-            <asp:TextBox ID="TextBox1" runat="server" Text="请输入应聘者的姓名或手机号"></asp:TextBox>
-
+            <asp:Button ID="Button8" runat="server" Text="导出报名记录" OnClick="Button8_Click" />
+            <asp:TextBox ID="TextBox1" runat="server" Text="请输入应聘者的姓名或手机号" ></asp:TextBox>
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
-            <asp:Button ID="Button1" runat="server" Text="发布兼职" CssClass="auto-style1" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="发布兼职"  OnClick="Button1_Click" />
+            <div id="jianlixinxi" style="overflow-y:auto;">
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+            </div>
         </div>
     </div>
     </form>

@@ -100,5 +100,18 @@ namespace DAL
             return i > 0;
 
         }
+        /// <summary>
+        /// 根据学生学号显示学生信息
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static SqlDataReader GetStu(int stu)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@stu",stu)
+                };
+            return SQLHelper.ExecuteReader("GetStu", CommandType.StoredProcedure, p);
+        }
     }
 }

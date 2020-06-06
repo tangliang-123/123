@@ -217,8 +217,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-  
+                </div> 
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />
