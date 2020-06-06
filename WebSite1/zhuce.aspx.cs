@@ -20,7 +20,7 @@ public partial class zhuce : System.Web.UI.Page
         zc.M_LoginId = Text1.Value;
         zc.M_Password = Text2.Value;
 
-        if (BLL.ManagerBusiness.AddManager(zc))
+        if (BLL.ManagerBusiness.AddManager(zc)&&BLL.ManagerBusiness.Permission_Add(zc.M_LoginId,zc.M_Password,RadioButtonList1.SelectedValue,DateTime.Now.ToString()))
             {
                // ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('注册成功')</script>");
                 Utility.JavaScript.AlertAndRedirect("注册成功","../Default.aspx", this);

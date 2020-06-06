@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="zhiweiguanli.aspx.cs" Inherits="zhiweiguanli" %>
 
+
+
+
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -216,17 +221,10 @@
         }
 
 
-    .auto-style1 {
-        left: 0px;
-        top: -2px;
-        bottom: 104px;
-    }
+    
 
 
-    .auto-style2 {
-        right: 20px;
-        top: 10px;
-    }
+    
 
 
     </style>
@@ -264,7 +262,7 @@
         </div>
         <div id="zhiweiguanli">
             <asp:Label ID="Label9" runat="server" Text="职位管理"></asp:Label>
-            <asp:Button ID="Label10" runat="server" Text="兼职" CssClass="auto-style1" BorderStyle="None" BackColor="White" OnClick="Label10_Click"></asp:Button>
+            <asp:Button ID="Label10" runat="server" Text="兼职"  BorderStyle="None" BackColor="White" OnClick="Label10_Click"></asp:Button>
             <asp:Button ID="Label11" runat="server" Text="实习" BackColor="White" BorderStyle="None" OnClick="Label11_Click"></asp:Button>
         </div>
         <asp:LinkButton ID="LinkButton6" runat="server">招聘中</asp:LinkButton><asp:Label ID="Label12" runat="server" Text="0"></asp:Label>
@@ -275,13 +273,15 @@
         <asp:TextBox ID="TextBox1" runat="server" Text="请输入兼职名称"></asp:TextBox>
         <div id="fabujianzhi">
             <asp:Label ID="Label17" runat="server" Text="首次发布职位即可获得6份报名单"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style2" OnClick="Button2_Click" />
+            <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px"  OnClick="Button2_Click" />
         </div>
-        <div id="jilu">
+        <div id="jilu" style="overflow-y:auto">
             <asp:Panel ID="Panel1" runat="server">
                 <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
                 <asp:Label ID="Label18" runat="server" Text="暂无记录"></asp:Label>
+                
             </asp:Panel>
+            
             <asp:SqlDataSource ID="constr" runat="server" ConnectionString="<%$ ConnectionStrings:constr %>" SelectCommand="SELECT [ID], [J_name], [J_Category], [J_Portray], [J_Salary], [Working_time], [Position], [Remarks], [Settlement], [Need_number], [J_state], [To_release_time] FROM [JobDetail]"></asp:SqlDataSource>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowDeleting="GridView1_RowDeleting" Width="1037px">
                 <Columns>
