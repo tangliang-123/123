@@ -400,9 +400,7 @@
                 <div>
                     <asp:LinkButton ID="LinkButton14" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
                 </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton15" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>   
+
             </div>
             <div id="touxiang">
                 <asp:Image ID="Image1" runat="server"  ImageUrl="~/image/头像.png" />

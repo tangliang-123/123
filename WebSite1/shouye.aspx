@@ -121,9 +121,11 @@
         height:100px;
         } 
         #Image3 {
-        margin-left:35px;
-        margin-top:30px;
+        left:23px;
+        margin-top:23px;
         position:absolute;
+        width:50px;
+        height:50px;
         }
         #Label12 {
         margin-left:90px;
@@ -206,16 +208,22 @@
         position:absolute;
         margin-left:118px;
         margin-top:65px;
+        background:white;
+        border-style:none;
         }
         #Button3 {
         position:absolute;
         margin-left:118px;
         margin-top:115px;
+        background:white;
+        border-style:none;
         }
         #Button4 {
         position:absolute;
         margin-left:110px;
         margin-top:165px;
+        background:white;
+        border-style:none;
         }
         #shengyubaoming {
         position:absolute;
@@ -292,10 +300,7 @@
                 </div>
                 <div>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/message.aspx">消息</asp:LinkButton>
-                </div>
-                <div>
-                   <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Lproblem.aspx">小任务</asp:LinkButton>
-                </div>   
+                </div> 
             </div>
             <div id="touxiang">
                 <asp:ImageButton ID="Image1" runat="server"  ImageUrl="~/image/头像.png" OnClick="Image1_Click" />
@@ -305,12 +310,12 @@
         </div>
         <div id="center">
             <div id="p1"> 
-                <asp:ImageButton ID="Image3" runat="server" ImageUrl="~/image/新报名.png" CssClass="auto-style3" OnClick="Image3_Click" />
+                <asp:ImageButton ID="Image3" runat="server" ImageUrl="~/image/baoming.png" CssClass="auto-style3" OnClick="Image3_Click" />
                 <asp:Label ID="Label12" runat="server" Text="0"></asp:Label>
                 <asp:Label ID="Label13" runat="server" Text="新报名" style="height: 20px; width: 91px"></asp:Label>
             </div>
             <div id="p2">
-                <asp:ImageButton ID="Image4" runat="server" ImageUrl="~/image/新报名2.png" CssClass="auto-style5" OnClick="Image4_Click" />
+                <asp:ImageButton ID="Image4" runat="server" ImageUrl="~/image/gangwei.png" CssClass="auto-style5" OnClick="Image4_Click" />
                 <asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
                 <asp:Label ID="Label15" runat="server" Text="在招职位"></asp:Label>
             </div>
@@ -336,7 +341,6 @@
             
             <asp:Label ID="Label18" runat="server" Text="剩余报名单"></asp:Label>
             <asp:Label ID="Label19" runat="server" Text="0份"></asp:Label>
-            <asp:Image ID="Image7" runat="server"  ImageUrl="#"/>
         </div>
     </div>
     </form>
