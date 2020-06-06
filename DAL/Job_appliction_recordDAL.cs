@@ -59,27 +59,28 @@ namespace DAL
         /// <param name="Jobid"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        public static List<Job_appliction_record> joblist_Applictions(byte state)
+        public static SqlDataReader joblist_Applictions(byte state,string mid)
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@state",state)
+                new SqlParameter("@state",state),
+                new SqlParameter("@mid",mid)
             };
-            SqlDataReader dr = SQLHelper.ExecuteReader("joblist_Applictions", CommandType.StoredProcedure, p);
-            List<Job_appliction_record> list = new List<Job_appliction_record>();
-            while (dr.Read())
-            {
-                Job_appliction_record n = new Job_appliction_record();
-                n.PostID = Convert.ToInt32(dr["PostID"]);
-                n.StuID = Convert.ToString(dr["StuID"]);
-                n.Application_time = Convert.ToDateTime(dr["Application_time"]);
-                n.Application_status = Convert.ToByte(dr["Application_status"]);
-                n.Stu_Resume = Convert.ToString(dr["Stu_Resume"]);
-                list.Add(n);
+           return  SQLHelper.ExecuteReader("joblist_Applictions", CommandType.StoredProcedure, p);
+            //List<Job_appliction_record> list = new List<Job_appliction_record>();
+            //while (dr.Read())
+            //{
+            //    Job_appliction_record n = new Job_appliction_record();
+            //    n.PostID = Convert.ToInt32(dr["PostID"]);
+            //    n.StuID = Convert.ToString(dr["StuID"]);
+            //    n.Application_time = Convert.ToDateTime(dr["Application_time"]);
+            //    n.Application_status = Convert.ToByte(dr["Application_status"]);
+            //    n.Stu_Resume = Convert.ToString(dr["Stu_Resume"]);
+            //    list.Add(n);
 
-            }
+            //}
 
-            return list;
+            //return list;
         }
         /// <summary>
         /// 添加一条申请记录
@@ -101,6 +102,109 @@ namespace DAL
             };
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Addjob_Applictions", CommandType.StoredProcedure, p));
             return i > 0;
+        }
+        /// <summary>
+        /// 根据时间获取申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_time(DateTime time)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@time",time)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_time", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 根据时间获取申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_order_by_time()
+        {
+
+            return SQLHelper.ExecuteReader("Job_order_by_time", CommandType.StoredProcedure, null);
+        }
+        /// <summary>
+        /// 根据时间降序排序申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_order_by_time(byte state,string mid)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@state",state),
+                    new SqlParameter("@mid",mid)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_order_by_time", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 根据时间升序排序申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_order_by_asctime(byte state, string mid)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@state",state),
+                    new SqlParameter("@mid",mid)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_order_by_asctime", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 根据岗位名称申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_name(string name, string mid,byte state)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@name",name),
+                    new SqlParameter("@mid",mid),
+                    new SqlParameter("@state",state)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_name", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 根据根据应聘者姓名获取申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_stu_name(string name, string mid, byte state)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@name",name),
+                    new SqlParameter("@mid",mid),
+                    new SqlParameter("@state",state)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_stu_name", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 根据应聘者手机号获取申请记录
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static SqlDataReader Job_appliction_stu_phone(string phone, string mid, byte state)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@phone",phone),
+                    new SqlParameter("@mid",mid),
+                    new SqlParameter("@state",state)
+                };
+            return SQLHelper.ExecuteReader("Job_appliction_stu_phone", CommandType.StoredProcedure, p);
         }
     }
 }

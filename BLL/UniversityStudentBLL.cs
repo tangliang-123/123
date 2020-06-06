@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace BLL
 {
@@ -44,16 +45,7 @@ namespace BLL
         {
             return DAL.JobDetailDAL.GetJobList();
         }
-        /// <summary>
-        /// 根据状态查看申请应聘工作岗位
-        /// </summary>
-        /// <param name="Jobid"></param>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        public static List<Job_appliction_record> joblist_Applictions(byte state)
-        {
-            return DAL.Job_appliction_recordDAL.joblist_Applictions(state);
-        }
+       
         /// <summary>
         /// 添加一条申请记录
         /// </summary>

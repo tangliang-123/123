@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -18,6 +19,7 @@ public partial class zhiweiguanli : System.Web.UI.Page
         Manager manager = new Manager();
         manager.M_LoginId = Session["admin"].ToString();
         Label6.Text = BLL.ManagerBusiness.returnlogid(manager);
+        
     }
 
     public void bindfab()
