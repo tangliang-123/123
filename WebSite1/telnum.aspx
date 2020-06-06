@@ -147,6 +147,10 @@
             width: 60px;
             height: 26px;
         }
+        .auto-style2 {
+            width: 50px;
+            height: 50px;
+        }
     </style>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
@@ -167,7 +171,7 @@
     <div class="container">
         <div class="nav">
             <div class="logo">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo.jpg" Height="43px" Width="64px" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/image/标志图.jpg" Height="43px" Width="64px" />
                 <p class="p1">助学社</p>
             </div>
             <div class="ulli">
@@ -189,7 +193,7 @@
               </ul>
             </div>
             <div class="toux">
-                <img src="images/tx.png" />
+                <img src="image/头像.png" class="auto-style2" />
                 <asp:Label ID="Label1" runat="server" Text="Label">18783920361</asp:Label>
             </div>
         </div>

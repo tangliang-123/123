@@ -145,6 +145,10 @@
        ,#LinkButton6,#LinkButton7,#LinkButton8,#LinkButton9,#LinkButton10,#LinkButton11,#LinkButton12{
            text-decoration:none;
        }
+        .auto-style1 {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +156,7 @@
     <div class="container">
         <div class="nav">
             <div class="logo">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo.jpg" Height="43px" Width="64px" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/image/标志图.jpg" Height="43px" Width="64px" />
                 <p class="p1">助学社</p>
             </div>
             <div class="ulli">
@@ -174,7 +178,7 @@
               </ul>
             </div>
             <div class="toux">
-                <img src="images/tx.png" />
+                <img src="image/头像.png" class="auto-style1" />
                 <asp:Label ID="Label1" runat="server" Text="Label">18783920361</asp:Label>
             </div>
         </div>
@@ -198,7 +202,7 @@
             <div class="right">
                 <div class="xgmm">
                     <p class="p5">修改密码</p>
-                    <p class="p6"><asp:LinkButton ID="LinkButton12" runat="server" CausesValidation="False" OnClick="LinkButton12_Click">注销账号&gt;</asp:LinkButton></p>
+                    <p class="p6"><asp:LinkButton ID="LinkButton12" runat="server" CausesValidation="False" style="color:black;"  OnClick="LinkButton12_Click">注销账号&gt;</asp:LinkButton></p>
                 </div>
                 <div class="xg">
                     <p class="p7">原始密码修改</p>
