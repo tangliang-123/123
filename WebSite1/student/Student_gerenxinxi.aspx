@@ -67,7 +67,7 @@
         <div class="container">
             <div class="layui-nav">
                 <nav>
-                    <asp:LinkButton ID="LinkButton1" runat="server">首页</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/student/Student_Default.aspx">首页</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/student/Student_gerenxinxi.aspx?myiframe=stu_gerenjianli.aspx">个人简历</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton3" runat="server">寻找兼职</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/student/Stu_xiaoxi.aspx">消息</asp:LinkButton>
