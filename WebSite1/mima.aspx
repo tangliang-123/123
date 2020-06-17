@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mima.aspx.cs" Inherits="mima" %>
+﻿0<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mima.aspx.cs" Inherits="mima" %>
 
 <!DOCTYPE html>
 
