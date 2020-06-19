@@ -47,7 +47,7 @@ public partial class _Default : System.Web.UI.Page
             if (BLL.UniversityStudentBLL.StuLogin(admin, password) && BLL.UniversityStudentBLL.Perstulogin(admin, password))
             {
                 Session["stulogin"] = admin;
-                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
+                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../student/Student_Default.aspx", this);
             }
             else
             {

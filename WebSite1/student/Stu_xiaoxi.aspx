@@ -74,7 +74,7 @@
                 <nav>
                     <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/student/Student_Default.aspx">首页</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/student/Student_gerenxinxi.aspx?myiframe=stu_gerenjianli.aspx">个人简历</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton3" runat="server">寻找兼职</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/student/xunzhaojianzhi.aspx">寻找兼职</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/student/Stu_xiaoxi.aspx">消息</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/student/Student_gerenxinxi.aspx?myiframe=stu_gerenxinxi.aspx">
                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

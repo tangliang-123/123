@@ -1,15 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Student_Default.aspx.cs" Inherits="student_Student_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="xunzhaojianzhi.aspx.cs" Inherits="student_xunzhaojianzhi" %>
+
+<%@ Register Src="~/user/xzjz.ascx" TagPrefix="uc1" TagName="xzjz" %>
+
 
 <!DOCTYPE html>
-
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+
     <link href="../css/theme3693.min.css" rel="stylesheet" />
-    <style>
+     <style>
         *{
             color:black;
             text-decoration:none;
@@ -25,9 +27,30 @@
          #LinkButton1, #LinkButton2, #LinkButton3, #LinkButton4{
              margin-right:50px;
          }
-        #LinkButton5 {
-            position: absolute;
-            right: 100px;
+        #LinkButton5{
+           position:absolute;
+           right:100px;
+        }
+        .container2{
+            width:700px;
+            height:580px;
+            background:white;
+            margin:10px auto;
+            position:relative;
+        }
+        #Text1{
+            margin:20px 15px;
+            border:1px solid #00ff00 ;
+        }
+        .jz{
+            position:absolute;
+            right:30px;
+            top:20px;
+        }
+        .xzjz{
+            position:absolute;
+            left:10px;
+            margin:0 auto;
         }
     </style>
 </head>
@@ -44,9 +67,16 @@
                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                     </asp:LinkButton>
                 </nav>
-            </div>
-
+            </div>            
         </div>
+        <div class="container2">
+            <input id="Text1" type="text" runat="server"/><asp:Button ID="Button1" runat="server" Text="查询" BackColor="Aqua" BorderStyle="None" BorderWidth="50px" />
+            <span class="jz"><asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#00ff00">历史兼职</asp:HyperLink></span>
+            <div>
+                <uc1:xzjz runat="server" ID="xzjz" />
+            </div>
+        </div>
+        
     </form>
 </body>
 </html>
