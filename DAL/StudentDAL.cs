@@ -118,5 +118,63 @@ namespace DAL
                 };
             return SQLHelper.ExecuteReader("GetStu", CommandType.StoredProcedure, p);
         }
+
+        /// <summary>
+        /// 根据学生的学号获得学生的简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static SqlDataReader GetResume(Resume resume)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@StuID",resume.StuID)
+                };
+            return SQLHelper.ExecuteReader("GetResume", CommandType.StoredProcedure, p);
+        }
+
+        /// <summary>
+        /// 修改学生表中的个人信息
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool ChangeStuMsg(Student student)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@Sname",student.S_name),
+                    new SqlParameter("@Sex",student.S_sex),
+                    new SqlParameter("@age",student.S_age),
+                    new SqlParameter("@telnum",student.S_telnum),
+                    new SqlParameter("@adress",student.S_adress),
+                    new SqlParameter("@Stuid",student.StuID)
+                };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeStuMsg", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 修改简历表中的学生简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool ChangeResume(Resume resume)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@name",resume.S_name),
+                    new SqlParameter("@Sex",resume.S_Sex),
+                    new SqlParameter("@age",resume.S_age),
+                    new SqlParameter("@number",resume.S_number),
+                    new SqlParameter("@adress",resume.Adress),
+                    new SqlParameter("@minzu",resume.Minzu),
+                    new SqlParameter("@status",resume.P_status),
+                    new SqlParameter("@major",resume.Major),
+                    new SqlParameter("@description",resume.P_description),
+                    new SqlParameter("@StuId",resume.StuID)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeResume", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
     }
 }

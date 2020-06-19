@@ -94,5 +94,45 @@ namespace BLL
         {
             return DAL.StudentDAL.StuNumIsExist(account);
         }
+
+        /// <summary>
+        /// 获得个人信息
+        /// </summary>
+        /// <param name="stu"></param>
+        /// <returns></returns>
+        public static SqlDataReader GetStu(int stu)
+        {
+            return DAL.StudentDAL.GetStu(stu);
+        }
+
+        /// <summary>
+        /// 获得简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static SqlDataReader GeResume(Resume resume)
+        {
+            return DAL.StudentDAL.GetResume(resume);
+        }
+
+        /// <summary>
+        /// 修改学生个人信息
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool ChangeStuMsg(Student student)
+        {
+            return DAL.StudentDAL.ChangeStuMsg(student);
+        }
+
+        /// <summary>
+        /// 修改学生的简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool ChangeResume(Resume resume)
+        {
+            return DAL.StudentDAL.ChangeResume(resume);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="stu_gerenjianli.aspx.cs" Inherits="student_stu_gerenjianli" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="xiugaijianli.aspx.cs" Inherits="student_xiugaijianli" %>
 
 <!DOCTYPE html>
 
@@ -13,56 +13,61 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <p style="font-size:25px;color:aqua;">个人简历</p>
+            <p style="font-size:20px;color:darkgreen;">修改个人简历</p>
             <table class="layui-table" border="0">
                 <tr>
                     <td>姓名：</td>
                     <td>
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>性别：</td>
                     <td>
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>年龄：</td>
                     <td>
-                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>电话号码：</td>
                     <td>
-                        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>学生住址：</td>
                     <td>
-                        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>民族：</td>
                     <td>
-                        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>政治面貌：</td>
                     <td>
-                        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label></td>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem>群众</asp:ListItem>
+                            <asp:ListItem>团员</asp:ListItem>
+                            <asp:ListItem>预备党员</asp:ListItem>
+                            <asp:ListItem>党员</asp:ListItem>
+                        </asp:DropDownList></td>
                 </tr>
                 <tr>
                     <td>专业：</td>
                     <td>
-                        <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>个人描述：</td>
                     <td>
-                        <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label></td>
+                        <asp:TextBox ID="TextBox9" runat="server" Height="43px" MaxLength="500" TextMode="MultiLine" Width="186px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                            <asp:Button ID="Button1" runat="server" Text="修改简历" class="layui-btn" OnClick="Button1_Click"/>                        
+                            <asp:Button ID="Button1" runat="server" Text="确认" class="layui-btn" OnClick="Button1_Click"/>                        
                     </td>
                 </tr>
             </table>

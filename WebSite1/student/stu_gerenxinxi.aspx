@@ -17,10 +17,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        
+         <div>
             <p style="font-size:25px;color:aqua;">个人信息</p>
             <table class="layui-table" border="0">
-                <tr>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <tr>
                     <td>账号：</td>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
@@ -50,13 +54,18 @@
                     <td>
                         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></td>
                 </tr>
+                        <asp:Timer ID="Timer1" runat="server" Interval="1000"></asp:Timer>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                            <asp:Button ID="Button1" runat="server" Text="修改信息" class="layui-btn"/>                        
+                            <asp:Button ID="Button1" runat="server" Text="修改信息" class="layui-btn" OnClick="Button1_Click"/>                        
                     </td>
                 </tr>
             </table>
         </div>
+        
     </form>
 </body>
 </html>
