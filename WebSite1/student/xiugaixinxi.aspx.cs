@@ -40,6 +40,6 @@ public partial class student_xiugaixinxi : System.Web.UI.Page
         student.S_telnum = TextBox5.Text;
         student.S_adress = TextBox6.Text;
         if (BLL.UniversityStudentBLL.ChangeStuMsg(student))
-            Response.Write("<script>window.opener=null;window.close();</script>");
+            Utility.JavaScript.RefreshParent("../student/stu_gerenxinxi.aspx", this);
     }
 }

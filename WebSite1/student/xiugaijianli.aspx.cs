@@ -58,7 +58,8 @@ public partial class student_xiugaijianli : System.Web.UI.Page
             resume.StuID = Session["stulogin"].ToString();
         if(BLL.UniversityStudentBLL.ChangeResume(resume))
         {
-            Response.Write("<script>window.opener=null;window.close();</script>");
+           // Response.Write("<script>window.opener=null;window.close();</script>");
+            Utility.JavaScript.RefreshParent("../student/stu_gerenjianli.aspx",this);
         }
     }
 }

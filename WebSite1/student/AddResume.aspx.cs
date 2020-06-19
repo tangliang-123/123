@@ -29,7 +29,7 @@ public partial class student_AddResume : System.Web.UI.Page
             resume.StuID = Session["stulogin"].ToString();
         if (BLL.UniversityStudentBLL.AddResume(resume))
         {
-            Response.Write("<script>window.opener=null;window.close();</script>");
+            Utility.JavaScript.RefreshParent("../student/stu_gerenjianli.aspx", this);
         }
     }
 }

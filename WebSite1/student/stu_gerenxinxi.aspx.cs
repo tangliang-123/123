@@ -23,7 +23,6 @@ public partial class student_stu_gerenxinxi : System.Web.UI.Page
                 Label6.Text = m["S_adress"].ToString();                
             }
         }
-        
     }
 
     protected void Button1_Click(object sender, EventArgs e)
