@@ -17,14 +17,24 @@
         #work{
             margin-left:20px;
         }
+        .fu{
+            position:relative;
+        }
+        .zdykj{
+           position:absolute;
+           left:5%;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="fu">
             <p style="font-size:25px;color:aqua;">我的兼职</p>
             <hr style="color:aqua;" />
-            <uc1:work runat="server" ID="work" />
+            <div class="zdykj">
+                <uc1:work runat="server" ID="work" />
+            </div>
+            
         </div>
     </form>
 </body>

@@ -47,10 +47,10 @@
             right:30px;
             top:20px;
         }
-        .xzjz{
+        .zdykj
+        {
             position:absolute;
             left:10px;
-            margin:0 auto;
         }
     </style>
 </head>
@@ -72,7 +72,7 @@
         <div class="container2">
             <input id="Text1" type="text" runat="server"/><asp:Button ID="Button1" runat="server" Text="查询" BackColor="Aqua" BorderStyle="None" BorderWidth="50px" />
             <span class="jz"><asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#00ff00">历史兼职</asp:HyperLink></span>
-            <div>
+            <div class="zdykj">
                 <uc1:xzjz runat="server" ID="xzjz" />
             </div>
         </div>
