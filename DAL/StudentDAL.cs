@@ -176,5 +176,44 @@ namespace DAL
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeResume", CommandType.StoredProcedure, p));
             return i > 0;
         }
+
+        /// <summary>
+        /// 判断简历信息是否存在
+        /// </summary>
+        /// <param name="Stuid"></param>
+        /// <returns></returns>
+        public static bool ResumeIsExist(string Stuid)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@StuID",Stuid)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("ResumeIsExist", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 向简历表添加一条记录
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool AddResume(Resume resume)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@name",resume.S_name),
+                    new SqlParameter("@Sex",resume.S_Sex),
+                    new SqlParameter("@age",resume.S_age),
+                    new SqlParameter("@number",resume.S_number),
+                    new SqlParameter("@adress",resume.Adress),
+                    new SqlParameter("@minzu",resume.Minzu),
+                    new SqlParameter("@status",resume.P_status),
+                    new SqlParameter("@major",resume.Major),
+                    new SqlParameter("@description",resume.P_description),
+                    new SqlParameter("@StuId",resume.StuID)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddResume", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
     }
 }

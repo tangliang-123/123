@@ -84,13 +84,13 @@
                     <span><a href="Stu_xiugaimima.aspx" target="iframe">修改密码</a></span>
                 </div>
                 <div class="button">
-                    <span><a href="stu_gerenjianli.aspx" target="iframe">个人简历</a></span>
+                    <span><a href="stu_gerenjianli.aspx" target="iframe" runat="server" id="grjl">个人简历</a></span>
                     <span><a href="stu_wodejianzhi.aspx" target="iframe">我的兼职</a></span>
                     <span><a>退出登录</a></span>                  
                 </div>
             </div>
             <div>
-                <iframe src="stu_gerenxinxi.aspx" frameborder="0" scrolling="no" name="iframe" id="myframe" runat="server">
+                <iframe src="zanwujilu.aspx" frameborder="0" scrolling="no" name="iframe" id="myframe" runat="server">
 
                 </iframe>
             </div>

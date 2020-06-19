@@ -134,5 +134,26 @@ namespace BLL
         {
             return DAL.StudentDAL.ChangeResume(resume);
         }
+
+        /// <summary>
+        /// 判断简历信息是否存在
+        /// </summary>
+        /// <param name="Stuid"></param>
+        /// <returns></returns>
+        public static bool ResumeIsExist(string Stuid)
+        {
+            return DAL.StudentDAL.ResumeIsExist(Stuid);
+        }
+
+        /// <summary>
+        /// 向简历表添加一条信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool AddResume(Resume resume)
+        {
+            return DAL.StudentDAL.AddResume(resume);
+        }
+        
     }
 }
