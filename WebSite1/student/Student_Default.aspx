@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Student_Default.aspx.cs" Inherits="student_Student_Default" %>
 
+<%@ Register Src="~/user/stu_syjz.ascx" TagPrefix="uc1" TagName="stu_syjz" %>
+
+
 <!DOCTYPE html>
 
 
@@ -45,8 +48,9 @@
                     </asp:LinkButton>
                 </nav>
             </div>
-
+           
         </div>
+         <uc1:stu_syjz runat="server" ID="stu_syjz" />
     </form>
 </body>
 </html>

@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                            <asp:Button ID="Button1" runat="server" Text="修改密码" class="layui-btn layui-btn-danger"/>                        
+                            <asp:Button ID="Button1" runat="server" Text="修改密码" class="layui-btn layui-btn-danger" OnClick="Button1_Click"/>                        
                     </td>
                 </tr>
             </table>

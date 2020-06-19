@@ -11,6 +11,10 @@ public partial class student_Student_gerenxinxi : System.Web.UI.Page
     {
         if(Request.QueryString["myiframe"]!=null)
             myframe.Src = Request.QueryString["myiframe"];
+        if (Session["stulogin"] != null)
+        {
+            Label1.Text = Session["stulogin"].ToString();
+        }
     }
 
     protected void LinkButton2_Click(object sender, EventArgs e)

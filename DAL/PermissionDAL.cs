@@ -65,7 +65,8 @@ namespace DAL
 			SqlParameter[] p = new SqlParameter[]
 			{
 				new SqlParameter("@Account",permission.P_Account),
-				new SqlParameter("@Password",permission.P_Password)
+				new SqlParameter("@Password",permission.P_Password),
+				new SqlParameter("@Post",permission.P_Role)
 			};
 			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Updatepermission", CommandType.StoredProcedure, p));
 			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";

@@ -51,18 +51,22 @@ namespace DAL
         /// </summary>
         /// <param name = "account" ></ param >
         /// < returns ></ returns >
-        public static bool StuIsExist(string account,string pwd)
+        public static string StuIsExist(Student student)
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",account),
-                new SqlParameter("@Password",pwd)
+                new SqlParameter("@Account",student.StuID),
 
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("StuIsExist", CommandType.StoredProcedure, p));
+            SqlDataReader i = SQLHelper.ExecuteReader("StuIsExist", CommandType.StoredProcedure, p);
             //string sqltext = "select count(*) from Manager where M_LoginId=@Account";
             //int i = Convert.ToInt32(SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p));
-            return i > 0;
+            string m = "";
+            while (i.Read())
+            {
+                m = i["S_Password"].ToString();
+            }
+            return m;
 
         }
         /// <summary>
@@ -77,9 +81,10 @@ namespace DAL
                 new SqlParameter("@Account",manager.StuID),
                 new SqlParameter("@telnum",manager.S_telnum)
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeStuNum", CommandType.StoredProcedure, p));
+            int i =Convert.ToInt32( SQLHelper.ExecuteReader("ChangeStuNum", CommandType.StoredProcedure, p));
             //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
             //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+           
             return i > 0;
         }
         /// <summary>

@@ -61,23 +61,17 @@ namespace BLL
         /// </summary>
         /// <param name = "account" ></ param >
         /// < returns ></ returns >
-        public static bool ChangeStuPwd(Student manager)
+        public static bool ChangeStuPwd(Student manager,string password)
         {
-            if (DAL.StudentDAL.StuIsExist(manager.StuID, manager.S_Password))
+            if (DAL.StudentDAL.StuIsExist(manager) == password)
             {
-                return false;
+                return DAL.StudentDAL.ChangeStuPwd(manager);
             }
-            return DAL.StudentDAL.ChangeStuPwd(manager);
+            else
+                return false;
+            
         }
-        /// <summary>
-        /// 判断学生密码是否存在
-        /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
-        public static bool StuIsExist(string account,string pwd)
-        {
-            return DAL.StudentDAL.StuIsExist(account,pwd);
-        }
+        
         /// <summary>
         /// 修改学生手机号
         /// </summary>
