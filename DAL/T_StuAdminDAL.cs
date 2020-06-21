@@ -30,33 +30,53 @@ namespace DAL
             return i > 0;
         }
         /// <summary>
-        /// 修改管理员密码
+        /// 忘记管理员密码
         /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
-        public static bool ChangeAdminPwd(T_StuAdmin manager)
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool ChangeAdminPass(T_StuAdmin manager)
         {
             SqlParameter[] p = new SqlParameter[]
             {
                 new SqlParameter("@Account",manager.T_Num),
                 new SqlParameter("@Password",manager.T_Password)
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeAdminPwd", CommandType.StoredProcedure, p));
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeAdminPass", CommandType.StoredProcedure, p));
             //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
             //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
             return i > 0;
         }
+
         /// <summary>
-        /// 统计，判断学生密码是否存在
+        /// 向管理员表添加一条记录
         /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
-        public static bool AdminIsExist(string account, string pwd)
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool AddAdmin(T_StuAdmin student)
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",account),
-                new SqlParameter("@Password",pwd)
+                new SqlParameter("@StuID",student.T_Num),
+                new SqlParameter("@password",student.T_Password)
+
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddAdmin", CommandType.StoredProcedure, p));
+            //string sqltext = "select count(*) from Manager where M_LoginId=@Account";
+            //int i = Convert.ToInt32(SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p));
+            return i > 0;
+
+        }
+
+        /// <summary>
+        /// 统计，判断管理员账号是否存在
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static bool AdminIsExist(string account)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@Account",account)
 
             };
             int i = Convert.ToInt32(SQLHelper.ExecuteScalar("AdminIsExist", CommandType.StoredProcedure, p));
@@ -65,22 +85,6 @@ namespace DAL
             return i > 0;
 
         }
-        /// <summary>
-        /// 注销管理员账号
-        /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
-        public static bool DeleteAdmin(string login)
-        {
-            SqlParameter[] p = new SqlParameter[]
-            {
-                new SqlParameter("@Account",login)
-                
-            };
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DeleteAdmin", CommandType.StoredProcedure, p));
-            //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
-            //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
-            return i > 0;
-        }
+
     }
 }

@@ -233,9 +233,9 @@ namespace BLL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public static DataSet GetJobListByName(string name)
+        public static DataSet GetJobListByName(string name,string id)
         {
-            return DAL.JobDetailDAL.GetJobListByName(name);
+            return DAL.JobDetailDAL.GetJobListByName(name,id);
         }
         /// <summary>
         /// 根据学号显示学生信息

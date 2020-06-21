@@ -7,5 +7,3 @@ D:\软件工程\Model\bin\Debug\Model.dll
 D:\软件工程\Model\bin\Debug\Model.pdb
 D:\软件工程\Model\obj\Debug\Model.dll
 D:\软件工程\Model\obj\Debug\Model.pdb
-D:\软件工程\Model\obj\Debug\Model.csprojAssemblyReference.cache
-E:\123\Model\obj\Debug\Model.csprojAssemblyReference.cache

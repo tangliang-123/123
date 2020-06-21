@@ -100,7 +100,8 @@ public partial class zhiweiguanli : System.Web.UI.Page
     protected void Button1_Click1(object sender, EventArgs e)
     {
         string name = TextBox1.Text;
-        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name);
+        string id = Session["admin"].ToString();
+        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name,id);
         GridView1.DataSource = ds;
         GridView1.DataBind();
         Timer1.Enabled = false;

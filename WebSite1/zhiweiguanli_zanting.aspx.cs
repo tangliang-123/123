@@ -34,7 +34,8 @@ public partial class zhiweiguanli_zanting : System.Web.UI.Page
     protected void souSuo_Click(object sender, EventArgs e)
     {
         string name =((TextBox) Master.FindControl(" TextBox1")).Text;
-        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name);
+        string id = Session["admin"].ToString();
+        DataSet ds = BLL.ManagerBusiness.GetJobListByName(name,id);
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }

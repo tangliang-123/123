@@ -29,6 +29,20 @@ namespace Model
 			set { s_name = value; }
 		}
 
+		private string s_sex;
+		public string S_sex
+		{
+			get { return s_sex; }
+			set { s_sex = value; }
+		}
+
+		private string s_age;
+		public string S_age
+		{
+			get { return s_age; }
+			set { s_age = value; }
+		}
+
 		private bool s_Real_Name;
 		public bool S_Real_Name
 		{
@@ -42,24 +56,12 @@ namespace Model
 			get { return s_telnum; }
 			set { s_telnum = value; }
 		}
-		private string s_Address;
-		public string S_Address
+
+		private string s_adress;
+		public string S_adress
 		{
-			get { return s_Address; }
-			set { s_Address = value; }
+			get { return s_adress; }
+			set { s_adress = value; }
 		}
-		private string s_Sex;
-		public string S_Sex
-		{
-			get { return s_Sex; }
-			set { s_Sex = value; }
-		}
-		private string s_IDCard;
-		public string S_IDCard
-		{
-			get { return s_IDCard; }
-			set { s_IDCard = value; }
-		}
-		
 	}
 }

@@ -65,7 +65,8 @@ namespace DAL
 			SqlParameter[] p = new SqlParameter[]
 			{
 				new SqlParameter("@Account",permission.P_Account),
-				new SqlParameter("@Password",permission.P_Password)
+				new SqlParameter("@Password",permission.P_Password),
+				new SqlParameter("@Post",permission.P_Role)
 			};
 			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Updatepermission", CommandType.StoredProcedure, p));
 			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
@@ -109,40 +110,23 @@ namespace DAL
 			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
 			return i > 0;
 		}
-		/// <summary>
-		/// 修改权限表管理员密码
-		/// </summary>
-		/// <param name = "account" ></ param >
-		/// < returns ></ returns >
-		public static bool ChangePerminssionPwd(Permission manager)
-		{
-			SqlParameter[] p = new SqlParameter[]
-			{
-				new SqlParameter("@Account",manager.P_Account),
-				new SqlParameter("@Password",manager.P_Password)
-			};
-			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangePerminssionPwd", CommandType.StoredProcedure, p));
-			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
-			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
-			return i > 0;
-		}
-		/// <summary>
-		/// 注销权限表管理员账号
-		/// </summary>
-		/// <param name = "account" ></ param >
-		/// < returns ></ returns >
-		public static bool DeletePerssion(string login)
-		{
-			SqlParameter[] p = new SqlParameter[]
-			{
-				new SqlParameter("@Account",login)
 
+		/// <summary>
+		/// 权限表返回账号的身份
+		/// </summary>
+		/// <param name="permission"></param>
+		/// <returns></returns>
+		public static string ReturnRole(Permission permission)
+		{
+			string role = "";
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",permission.P_Account)
 			};
-			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DeletePerssion", CommandType.StoredProcedure, p));
-			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
-			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
-			return i > 0;
+			SqlDataReader i = SQLHelper.ExecuteReader("ReturnRole", CommandType.StoredProcedure, p);
+			while (i.Read())
+				role = i["P_Role"].ToString();
+			return role;
 		}
 	}
-
 }
