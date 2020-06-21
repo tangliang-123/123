@@ -32,6 +32,7 @@ public partial class admin_zhiweiguanli : System.Web.UI.Page
 
     {
 
+
         if (BLL.TeachAdminBLL.DeleteJob(ID))
         {
             return true;
