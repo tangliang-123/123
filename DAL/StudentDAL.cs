@@ -57,6 +57,7 @@ namespace DAL
             {
                 new SqlParameter("@Account",student.StuID),
 
+
             };
             SqlDataReader i = SQLHelper.ExecuteReader("StuIsExist", CommandType.StoredProcedure, p);
             //string sqltext = "select count(*) from Manager where M_LoginId=@Account";
