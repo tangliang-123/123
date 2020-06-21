@@ -237,5 +237,24 @@ namespace DAL
                 };
             return SQLHelper.ExecuteReader("Job_appliction_stu_phone", CommandType.StoredProcedure, p);
         }
+        /// <summary>
+        /// 修改申请应聘工作岗位状态
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static bool UpdateAppliction_recordState(int Jobid,string stuid, byte state)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                 new SqlParameter("@JobID",Jobid),
+                 new SqlParameter("@JobState",state),
+                 new SqlParameter("@stuid",stuid)
+
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("UpdateAppliction_recordState", CommandType.StoredProcedure, p));
+
+            return i > 0;
+        }
     }
 }

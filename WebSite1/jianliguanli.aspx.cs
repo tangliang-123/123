@@ -40,8 +40,8 @@ public partial class jianliguanli : System.Web.UI.Page
             jianlixianshi(sdr);
             
         }
-        if (DropDownList1.SelectedValue == "请选择" && DropDownList2.SelectedValue == "请选择" && TextBox1.Text == "请输入应聘者的姓名或手机号")
-        {
+        //if (DropDownList1.SelectedValue == "请选择" && DropDownList2.SelectedValue == "请选择" && TextBox1.Text == "请输入应聘者的姓名或手机号")
+        //{
             if (DropDownList3.SelectedValue == "按时间升序")
             {
 
@@ -64,9 +64,9 @@ public partial class jianliguanli : System.Web.UI.Page
                 jianlixianshi(sdr);
 
             }
-        }
-        if (DropDownList3.SelectedValue == "请选择" && TextBox1.Text == "请输入应聘者的姓名或手机号")
-        {
+       // }
+        //if (DropDownList3.SelectedValue == "请选择" && TextBox1.Text == "请输入应聘者的姓名或手机号")
+        //{
             if (DropDownList2.SelectedValue == "最早时间")
             {
                 TextBox1.Text = "请输入应聘者的姓名或手机号";
@@ -86,7 +86,7 @@ public partial class jianliguanli : System.Web.UI.Page
                 jianlixianshi(sdr);
 
             }
-        }
+       // }
         
             if (DropDownList1.SelectedValue != "请选择")
             {

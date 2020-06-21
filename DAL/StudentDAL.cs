@@ -136,9 +136,83 @@ namespace DAL
                 {
                     new SqlParameter("@stu",stu)
                 };
+
             return SQLHelper.ExecuteReader("GetStu", CommandType.StoredProcedure, p);
         }
 
+        /// <summary>
+        /// 获取所有学生信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<Student> GetAllStuList()
+        {
+            SqlDataReader dr = SQLHelper.ExecuteReader("GetAllStuList", CommandType.StoredProcedure, null);
+
+            List<Student> list = new List<Student>();///
+            while (dr.Read())
+            {
+                Student n = new Student();
+                n.StuID = Convert.ToString(dr["StuID"]);
+                n.S_Password = Convert.ToString(dr["S_Password"]);
+                n.S_name = Convert.ToString(dr["S_name"]);
+                n.S_telnum = Convert.ToString(dr["S_telnum"]);
+                n.S_Address = Convert.ToString(dr["S_Address"]);
+                n.S_Sex = Convert.ToString(dr["S_Sex"]);
+                n.S_IDCard = Convert.ToString(dr["S_IDCard"]);
+                n.S_Real_Name = Convert.ToBoolean(dr["S_Real_Name"]);
+                list.Add(n);
+            }
+            return list;
+        }
+        /// <summary>
+        /// 删除选中学生账号
+        /// </summary>
+        /// <returns></returns>
+        public static bool DeleteStudent(string  student)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
+                    new SqlParameter("@stu",student)
+                };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DeleteStudent", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+        /// <summary>
+        /// 详细信息，通过id来查
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectStuById(Student student)
+        {
+            SqlParameter[] p = {
+                  new SqlParameter("@ID",student.StuID)
+            };
+            DataSet i = SQLHelper.ExecuteDataSet("selectStuById", CommandType.StoredProcedure, p);
+            return i;
+        }
+        
+        /// <summary>
+        /// 修改学生信息
+        /// </summary>
+        /// <param name="jobdet"></param>
+        /// <returns></returns>
+        public static bool UpdateStudent(Student student)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+               
+            new SqlParameter("@jname",student.S_Password),
+                new SqlParameter("@jCategory", student.S_name),
+                new SqlParameter("@jportray",student.S_Real_Name),
+                new SqlParameter("@jsalary", student.S_telnum),
+                new SqlParameter("@wokintime", student.S_adress),
+                new SqlParameter("@positio", student.S_sex),
+                new SqlParameter("@id",student.StuID)
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("UpdateStudent", CommandType.StoredProcedure, p));
+            return i > 0;
+
+            
         /// <summary>
         /// 根据学生的学号获得学生的简历信息
         /// </summary>
@@ -249,6 +323,7 @@ namespace DAL
             };
             SqlDataReader i = SQLHelper.ExecuteReader("selectMywork", CommandType.StoredProcedure, p);
             return i ;
+
         }
     }
 }

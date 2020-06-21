@@ -335,5 +335,15 @@ namespace BLL
         {
             return DAL.JobDetailDAL.selectJobByStata(jobDetail);
         }
+        /// <summary>
+        /// 修改申请应聘工作岗位状态
+        /// </summary>
+        /// <param name="Jobid"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static bool UpdateAppliction_recordState(int Jobid, string stuid, byte state)
+        {
+            return DAL.Job_appliction_recordDAL.UpdateAppliction_recordState(Jobid, stuid, state);
+        }
     }
 }

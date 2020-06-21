@@ -241,6 +241,16 @@
         top:350px;
        
     }
+    .auto-style39 {
+    position:absolute;
+    left:80%;
+    top:35%;
+    cursor: pointer;
+    border-style:none;
+    background-color:burlywood;
+    width:80px;
+    height:30px;
+    }
 </style>
 <div id="jianli" style="background-color:aquamarine;border-radius:4px;" class="auto-style11">
     <asp:CheckBox ID="CheckBox1" runat="server" CssClass="auto-style7" AutoPostBack="True" />
@@ -249,7 +259,7 @@
     <asp:Label ID="Label1" runat="server" Text="简历信息" Style="margin-left:50%;margin-top:8%;" CssClass="auto-style4"></asp:Label>
     <asp:Label ID="Label2" runat="server" Text="信息" Style="margin-left:50%;margin-top:8%;" CssClass="auto-style5"></asp:Label>
     <asp:Label ID="Label3" runat="server" Text="申请时间" Style="margin-left:50%;margin-top:8%" CssClass="auto-style6"></asp:Label>
-
+    <asp:Button ID="Label9" runat="server" Text="录取" CssClass="auto-style39" OnClick="Label9_Click"></asp:Button>
 
 </div>
 <div id="xs" runat="server" style="display:none;background-color:aquamarine;border-radius:4px;" class="auto-style12">
