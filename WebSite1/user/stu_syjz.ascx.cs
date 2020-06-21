@@ -29,7 +29,7 @@ public partial class stu_syjz : System.Web.UI.UserControl
         Job_appliction_record jobDetail = new Job_appliction_record();
         jobDetail.PostID =int.Parse( m);
         jobDetail.StuID = Session["stulogin"].ToString();
-        jobDetail.Application_status = 0;
+        jobDetail.Application_status = 1;
         jobDetail.Application_time = DateTime.Now;
         if (!BLL.UniversityStudentBLL.gwISExist(jobDetail))
         {
