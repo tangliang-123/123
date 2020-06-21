@@ -64,7 +64,7 @@ public partial class zhuce : System.Web.UI.Page
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('该账号已存在')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('该账号已存在!')</script>");
                 }
             }
         }
