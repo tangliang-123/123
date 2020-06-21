@@ -54,11 +54,11 @@
 
         iframe{
             background:white;
-            width:550px;
+            width:800px;
             height:450px;
             position:absolute;
             top:155px;
-            right:300px;
+            right:150px;
         }
     </style>
 </head>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div>
-                <iframe src="zanwujilu.aspx" frameborder="0" scrolling="no" name="iframe" id="myframe" runat="server">
+                <iframe src="zanwujilu.aspx" frameborder="0" scrolling="yes" name="iframe" id="myframe" runat="server">
 
                 </iframe>
             </div>

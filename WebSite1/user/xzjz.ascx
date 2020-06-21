@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="xzjz.ascx.cs" Inherits="user_xzjz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="xzjz.ascx.cs" Inherits="xzjz" %>
 <style>
     img{
         width:30px;
@@ -12,6 +12,7 @@
         height:150px;
         border:1px solid lime;
         border-radius:10px;
+        margin:10px auto;
 
     }
     table{
@@ -24,6 +25,9 @@
         padding: 0 10px;
         background:#00ff21
     }
+    .auto-style1 {
+        width: 206px;
+    }
 </style>
 <link href="../css/theme3693.min.css" rel="stylesheet" />
 <div class="pp">
@@ -33,8 +37,8 @@
     <br />
     <table>
         <tr>
-            <td>
-                <img src="../image/sj.jpg" /><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <td class="auto-style1">
+                商家编号:<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <br />
                 <img src="../image/dw.jpg" /><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
             </td>
@@ -54,7 +58,7 @@
                 需求人数:<asp:Label ID="Label5" runat="server" Text="Label" Font-Size="15px" ForeColor="#66ccff"></asp:Label>
             </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="应聘兼职" CssClass="layui-btn" BorderStyle="None" ForeColor="#CCFFFF" /></td>
+                <asp:Button ID="Button1" runat="server" Text="应聘兼职" CssClass="layui-btn" BorderStyle="None" ForeColor="#CCFFFF" OnClick="Button1_Click" /></td>
         </tr>
     </table>
 </div>

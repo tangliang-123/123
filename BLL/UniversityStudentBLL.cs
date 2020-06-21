@@ -45,7 +45,7 @@ namespace BLL
         {
             return DAL.JobDetailDAL.GetJobList();
         }
-       
+
         /// <summary>
         /// 添加一条申请记录
         /// </summary>
@@ -61,7 +61,7 @@ namespace BLL
         /// </summary>
         /// <param name = "account" ></ param >
         /// < returns ></ returns >
-        public static bool ChangeStuPwd(Student manager,string password)
+        public static bool ChangeStuPwd(Student manager, string password)
         {
             if (DAL.StudentDAL.StuIsExist(manager) == password)
             {
@@ -69,7 +69,7 @@ namespace BLL
             }
             else
                 return false;
-            
+
         }
 
         /// <summary>
@@ -168,9 +168,9 @@ namespace BLL
         /// 查找所有商家发布的职业
         /// </summary>
         /// <returns></returns>
-        public static SqlDataReader selectAllJob()
+        public static SqlDataReader selectAllJob(int state)
         {
-            return DAL.JobDetailDAL.selectAllJob();
+            return DAL.JobDetailDAL.selectAllJob(state);
         }
 
         /// <summary>
@@ -187,6 +187,35 @@ namespace BLL
             }
             else
                 return DAL.StudentDAL.AddStudent(manager);
+        }
+
+        /// <summary>
+        ///查找自己申请的岗位兼职
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static SqlDataReader selectMywork(Student manager)
+        {
+            return DAL.StudentDAL.selectMywork(manager);
+        }
+        /// <summary>
+        /// 查询报名和录取的人数
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public static int selectNum(Job_appliction_record job)
+        {
+            return DAL.Job_appliction_recordDAL.selectNum(job);
+        }
+
+        /// <summary>
+        /// 判断学生是否重复报名
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public static bool gwISExist(Job_appliction_record job)
+        {
+            return DAL.Job_appliction_recordDAL.gwISExist(job);
         }
 
     }

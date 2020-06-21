@@ -32,11 +32,12 @@
            right:100px;
         }
         .container2{
-            width:700px;
+            width:820px;
             height:580px;
             background:white;
             margin:10px auto;
             position:relative;
+            overflow:scroll;
         }
         #Text1{
             margin:20px 15px;
@@ -50,9 +51,16 @@
         .zdykj
         {
             position:absolute;
-            left:10px;
+            left:50px;
             top:80px;
+            
         }
+        /*#Panel1{
+             width:800px;
+            height:550px;
+            background:white;
+            overflow:scroll;
+        }*/
     </style>
 </head>
 <body>
@@ -74,7 +82,7 @@
             <input id="Text1" type="text" runat="server"/><asp:Button ID="Button1" runat="server" Text="查询" BackColor="Aqua" BorderStyle="None" BorderWidth="50px" />
             <span class="jz"><asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#00ff00">历史兼职</asp:HyperLink></span>
             <div class="zdykj">
-                <uc1:xzjz runat="server" ID="xzjz" />
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
             </div>
         </div>
         

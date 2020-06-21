@@ -37,6 +37,8 @@
             height:550px;
             background:white;
             margin:20px auto;
+            padding:10px;
+            overflow-y:scroll;
         }
     </style>
 </head>

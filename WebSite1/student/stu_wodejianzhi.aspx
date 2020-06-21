@@ -22,7 +22,7 @@
         }
         .zdykj{
            position:absolute;
-           left:5%;
+           left:20px;
         }
     </style>
 </head>
@@ -32,7 +32,7 @@
             <p style="font-size:25px;color:aqua;">我的兼职</p>
             <hr style="color:aqua;" />
             <div class="zdykj">
-                <uc1:work runat="server" ID="work" />
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
             </div>
             
         </div>

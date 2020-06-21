@@ -399,9 +399,13 @@ namespace DAL
         /// 查找所有商家发布的职业
         /// </summary>
         /// <returns></returns>
-        public static SqlDataReader selectAllJob()
+        public static SqlDataReader selectAllJob(int state)
         {
-            return SQLHelper.ExecuteReader("selectAllJob", CommandType.StoredProcedure,null);
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@Jstata",state)
+               };
+            return SQLHelper.ExecuteReader("selectAllJob", CommandType.StoredProcedure,p);
         }
     }
 }

@@ -235,5 +235,20 @@ namespace DAL
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddResume", CommandType.StoredProcedure, p));
             return i > 0;
         }
+
+        /// <summary>
+        /// 查找自己申请的岗位兼职
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static SqlDataReader selectMywork(Student manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@StuID",manager.StuID),
+            };
+            SqlDataReader i = SQLHelper.ExecuteReader("selectMywork", CommandType.StoredProcedure, p);
+            return i ;
+        }
     }
 }

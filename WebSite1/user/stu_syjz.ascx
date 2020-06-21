@@ -5,12 +5,13 @@
         height:30px;
     }
     td{
-        width:400px;
+        width:800px;
     }
     .pp{
-        width:480px;
+        width:700px;
         height:150px;
         border:1px solid lime;
+        margin:10px auto;
     }
     table{
         margin-left:10px;
@@ -24,17 +25,21 @@
     }
 </style>
 <div class="pp">
-    <p style="color:deepskyblue;">兼职名称</p>
+    <p style="color:deepskyblue;">
+        <asp:Label ID="Label3" runat="server" Text="Label" ForeColor="#0099ff"></asp:Label></p>
     <table>
         <tr>
-            <td><img src="../image/sj.jpg" /><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
+            <td>岗位ID:<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
             <td >工资薪水:<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></td>
+            <td >地址:<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+            </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="应聘兼职"  CssClass="layui-btn" BorderStyle="None"/></td>
+                <asp:Button ID="Button1" runat="server" Text="应聘兼职"  CssClass="layui-btn" BorderStyle="None" OnClick="Button1_Click"/></td>
         </tr>
         <tr>
-            <td><img src="../image/dw.jpg" /><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td>
+            <td>商家编号:<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td>
             <td>需求人数:<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></td>
+            <td>&nbsp;</td>
         </tr>
     </table>
 </div>

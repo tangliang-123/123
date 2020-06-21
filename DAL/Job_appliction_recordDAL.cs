@@ -92,17 +92,48 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-                new SqlParameter("@Account",job.ID),
-                new SqlParameter("@jname",job.PostID),
-                new SqlParameter("@jCategory",job.StuID),
-                new SqlParameter("@jportray",job.Application_time),
-                new SqlParameter("@jsalary",job.Application_status),
-                new SqlParameter("@wokintime",job.Stu_Resume)
-                
+                new SqlParameter("@postid",job.PostID),
+                new SqlParameter("@stuid",job.StuID),
+                new SqlParameter("@state",job.Application_status),
+                new SqlParameter("@time",job.Application_time),
             };
-            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("Addjob_Applictions", CommandType.StoredProcedure, p));
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddGwsq", CommandType.StoredProcedure, p));
             return i > 0;
         }
+
+
+        /// <summary>
+        /// 查询报名和录取状态
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public static int selectNum(Job_appliction_record job)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@postid",job.PostID),
+                new SqlParameter("@stata",job.Application_status),
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("selectNum", CommandType.StoredProcedure, p));
+            return i;
+        }
+
+        /// <summary>
+        /// 判断学生是否重复报名
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public static bool gwISExist(Job_appliction_record job)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@postid",job.PostID),
+                new SqlParameter("@stuid",job.StuID),
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("GwISExist", CommandType.StoredProcedure, p));
+            return i>0;
+        }
+
         /// <summary>
         /// 根据时间获取申请记录
         /// </summary>
