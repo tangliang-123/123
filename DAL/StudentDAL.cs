@@ -156,9 +156,8 @@ namespace DAL
                 n.S_Password = Convert.ToString(dr["S_Password"]);
                 n.S_name = Convert.ToString(dr["S_name"]);
                 n.S_telnum = Convert.ToString(dr["S_telnum"]);
-                n.S_Address = Convert.ToString(dr["S_Address"]);
-                n.S_Sex = Convert.ToString(dr["S_Sex"]);
-                n.S_IDCard = Convert.ToString(dr["S_IDCard"]);
+                n.S_adress = Convert.ToString(dr["S_Address"]);
+                n.S_sex = Convert.ToString(dr["S_Sex"]);
                 n.S_Real_Name = Convert.ToBoolean(dr["S_Real_Name"]);
                 list.Add(n);
             }
@@ -212,119 +211,118 @@ namespace DAL
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("UpdateStudent", CommandType.StoredProcedure, p));
             return i > 0;
         }
-
-            /// <summary>
-            /// 根据学生的学号获得学生的简历信息
-            /// </summary>
-            /// <param name="resume"></param>
-            /// <returns></returns>
-            public static SqlDataReader GetResume(Resume resume)
-            { 
+        /// <summary>
+        /// 根据学生的学号获得学生的简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static SqlDataReader GetResume(Resume resume)
+        {
             SqlParameter[] p = new SqlParameter[]
                 {
                     new SqlParameter("@StuID",resume.StuID)
                 };
             return SQLHelper.ExecuteReader("GetResume", CommandType.StoredProcedure, p);
-            }
+        }
 
-            /// <summary>
-            /// 修改学生表中的个人信息
-            /// </summary>
-            /// <param name="student"></param>
-            /// <returns></returns>
-            public static bool ChangeStuMsg(Student student)
-            {
-                SqlParameter[] p = new SqlParameter[]
-                    {
+        /// <summary>
+        /// 修改学生表中的个人信息
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool ChangeStuMsg(Student student)
+        {
+            SqlParameter[] p = new SqlParameter[]
+                {
                     new SqlParameter("@Sname",student.S_name),
                     new SqlParameter("@Sex",student.S_sex),
                     new SqlParameter("@age",student.S_age),
                     new SqlParameter("@telnum",student.S_telnum),
                     new SqlParameter("@adress",student.S_adress),
                     new SqlParameter("@Stuid",student.StuID)
-                    };
-                int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeStuMsg", CommandType.StoredProcedure, p));
-                return i > 0;
-            }
-
-            /// <summary>
-            /// 修改简历表中的学生简历信息
-            /// </summary>
-            /// <param name="resume"></param>
-            /// <returns></returns>
-            public static bool ChangeResume(Resume resume)
-            {
-                SqlParameter[] p = new SqlParameter[]
-                   {
-                    new SqlParameter("@name",resume.S_name),
-                    new SqlParameter("@Sex",resume.S_Sex),
-                    new SqlParameter("@age",resume.S_age),
-                    new SqlParameter("@number",resume.S_number),
-                    new SqlParameter("@adress",resume.Adress),
-                    new SqlParameter("@minzu",resume.Minzu),
-                    new SqlParameter("@status",resume.P_status),
-                    new SqlParameter("@major",resume.Major),
-                    new SqlParameter("@description",resume.P_description),
-                    new SqlParameter("@StuId",resume.StuID)
-                   };
-                int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeResume", CommandType.StoredProcedure, p));
-                return i > 0;
-            }
-
-            /// <summary>
-            /// 判断简历信息是否存在
-            /// </summary>
-            /// <param name="Stuid"></param>
-            /// <returns></returns>
-            public static bool ResumeIsExist(string Stuid)
-            {
-                SqlParameter[] p = new SqlParameter[]
-                   {
-                    new SqlParameter("@StuID",Stuid)
-                   };
-                int i = Convert.ToInt32(SQLHelper.ExecuteScalar("ResumeIsExist", CommandType.StoredProcedure, p));
-                return i > 0;
-            }
-
-            /// <summary>
-            /// 向简历表添加一条记录
-            /// </summary>
-            /// <param name="resume"></param>
-            /// <returns></returns>
-            public static bool AddResume(Resume resume)
-            {
-                SqlParameter[] p = new SqlParameter[]
-                   {
-                    new SqlParameter("@name",resume.S_name),
-                    new SqlParameter("@Sex",resume.S_Sex),
-                    new SqlParameter("@age",resume.S_age),
-                    new SqlParameter("@number",resume.S_number),
-                    new SqlParameter("@adress",resume.Adress),
-                    new SqlParameter("@minzu",resume.Minzu),
-                    new SqlParameter("@status",resume.P_status),
-                    new SqlParameter("@major",resume.Major),
-                    new SqlParameter("@description",resume.P_description),
-                    new SqlParameter("@StuId",resume.StuID)
-                   };
-                int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddResume", CommandType.StoredProcedure, p));
-                return i > 0;
-            }
-
-            /// <summary>
-            /// 查找自己申请的岗位兼职
-            /// </summary>
-            /// <param name="manager"></param>
-            /// <returns></returns>
-            public static SqlDataReader selectMywork(Student manager)
-            {
-                SqlParameter[] p = new SqlParameter[]
-                {
-                new SqlParameter("@StuID",manager.StuID),
                 };
-                SqlDataReader i = SQLHelper.ExecuteReader("selectMywork", CommandType.StoredProcedure, p);
-                return i;
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeStuMsg", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
 
-            }
-        
+        /// <summary>
+        /// 修改简历表中的学生简历信息
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool ChangeResume(Resume resume)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@name",resume.S_name),
+                    new SqlParameter("@Sex",resume.S_Sex),
+                    new SqlParameter("@age",resume.S_age),
+                    new SqlParameter("@number",resume.S_number),
+                    new SqlParameter("@adress",resume.Adress),
+                    new SqlParameter("@minzu",resume.Minzu),
+                    new SqlParameter("@status",resume.P_status),
+                    new SqlParameter("@major",resume.Major),
+                    new SqlParameter("@description",resume.P_description),
+                    new SqlParameter("@StuId",resume.StuID)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangeResume", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 判断简历信息是否存在
+        /// </summary>
+        /// <param name="Stuid"></param>
+        /// <returns></returns>
+        public static bool ResumeIsExist(string Stuid)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@StuID",Stuid)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteScalar("ResumeIsExist", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 向简历表添加一条记录
+        /// </summary>
+        /// <param name="resume"></param>
+        /// <returns></returns>
+        public static bool AddResume(Resume resume)
+        {
+            SqlParameter[] p = new SqlParameter[]
+               {
+                    new SqlParameter("@name",resume.S_name),
+                    new SqlParameter("@Sex",resume.S_Sex),
+                    new SqlParameter("@age",resume.S_age),
+                    new SqlParameter("@number",resume.S_number),
+                    new SqlParameter("@adress",resume.Adress),
+                    new SqlParameter("@minzu",resume.Minzu),
+                    new SqlParameter("@status",resume.P_status),
+                    new SqlParameter("@major",resume.Major),
+                    new SqlParameter("@description",resume.P_description),
+                    new SqlParameter("@StuId",resume.StuID)
+               };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddResume", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 查找自己申请的岗位兼职
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static SqlDataReader selectMywork(Student manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@StuID",manager.StuID),
+            };
+            SqlDataReader i = SQLHelper.ExecuteReader("selectMywork", CommandType.StoredProcedure, p);
+            return i;
+
+        }
     }
 }
+
