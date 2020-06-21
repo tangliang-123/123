@@ -54,8 +54,8 @@ public partial class admin_EditStudent : System.Web.UI.Page
 
         student.S_name = TextBox2.Text;
         student.S_telnum = TextBox4.Text;
-        student.S_Address = TextBox5.Text;
-        student.S_Sex = TextBox6.Text;
+        student.S_adress = TextBox5.Text;
+        student.S_sex = TextBox6.Text;
         
 
         if (BLL.TeachAdminBLL.UpdateStudent(student))

@@ -81,10 +81,10 @@ namespace DAL
                 new SqlParameter("@Account",manager.StuID),
                 new SqlParameter("@telnum",manager.S_telnum)
             };
-            int i =Convert.ToInt32( SQLHelper.ExecuteReader("ChangeStuNum", CommandType.StoredProcedure, p));
+            int i = Convert.ToInt32(SQLHelper.ExecuteReader("ChangeStuNum", CommandType.StoredProcedure, p));
             //string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
             //int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
-           
+
             return i > 0;
         }
 
@@ -156,9 +156,8 @@ namespace DAL
                 n.S_Password = Convert.ToString(dr["S_Password"]);
                 n.S_name = Convert.ToString(dr["S_name"]);
                 n.S_telnum = Convert.ToString(dr["S_telnum"]);
-                n.S_Address = Convert.ToString(dr["S_Address"]);
-                n.S_Sex = Convert.ToString(dr["S_Sex"]);
-                n.S_IDCard = Convert.ToString(dr["S_IDCard"]);
+                n.S_adress = Convert.ToString(dr["S_Address"]);
+                n.S_sex = Convert.ToString(dr["S_Sex"]);
                 n.S_Real_Name = Convert.ToBoolean(dr["S_Real_Name"]);
                 list.Add(n);
             }
@@ -168,7 +167,7 @@ namespace DAL
         /// 删除选中学生账号
         /// </summary>
         /// <returns></returns>
-        public static bool DeleteStudent(string  student)
+        public static bool DeleteStudent(string student)
         {
             SqlParameter[] p = new SqlParameter[]
                 {
@@ -190,7 +189,7 @@ namespace DAL
             DataSet i = SQLHelper.ExecuteDataSet("selectStuById", CommandType.StoredProcedure, p);
             return i;
         }
-        
+
         /// <summary>
         /// 修改学生信息
         /// </summary>
@@ -200,7 +199,7 @@ namespace DAL
         {
             SqlParameter[] p = new SqlParameter[]
             {
-               
+
             new SqlParameter("@jname",student.S_Password),
                 new SqlParameter("@jCategory", student.S_name),
                 new SqlParameter("@jportray",student.S_Real_Name),
@@ -211,8 +210,7 @@ namespace DAL
             };
             int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("UpdateStudent", CommandType.StoredProcedure, p));
             return i > 0;
-
-            
+        }
         /// <summary>
         /// 根据学生的学号获得学生的简历信息
         /// </summary>
@@ -322,8 +320,9 @@ namespace DAL
                 new SqlParameter("@StuID",manager.StuID),
             };
             SqlDataReader i = SQLHelper.ExecuteReader("selectMywork", CommandType.StoredProcedure, p);
-            return i ;
+            return i;
 
         }
     }
 }
+
