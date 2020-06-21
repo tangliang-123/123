@@ -30,6 +30,9 @@ public partial class wangjimima : System.Web.UI.Page
         student.S_Password = TextBox2.Text;
         permission.P_Account = id;
         permission.P_Password = TextBox2.Text;
+        T_StuAdmin t_StuAdmin = new T_StuAdmin();
+        t_StuAdmin.T_Num = id;
+        t_StuAdmin.T_Password = TextBox2.Text;
         permission.P_Role = BLL.PermissionBLL.ReturnRole(permission);
         if (permission.P_Role == "商家")
         {
@@ -39,6 +42,11 @@ public partial class wangjimima : System.Web.UI.Page
         else if(permission.P_Role=="学生")
         {
             if (BLL.UniversityStudentBLL.wangjiMima(student) && BLL.ManagerBusiness.UpdateQuanxian(permission))
+                Response.Write("<script>window.opener=null;window.close();</script>");
+        }
+        else if (permission.P_Role == "学生")
+        {
+            if (BLL.TeachAdminBLL.wangjiMima(t_StuAdmin) && BLL.ManagerBusiness.UpdateQuanxian(permission))
                 Response.Write("<script>window.opener=null;window.close();</script>");
         }
     }

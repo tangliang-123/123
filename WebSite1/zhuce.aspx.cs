@@ -26,6 +26,9 @@ public partial class zhuce : System.Web.UI.Page
         permission.P_Account = Text1.Value;
         permission.P_Password = Text2.Value;
         permission.P_Role = DropDownList1.SelectedValue;
+        T_StuAdmin permission2 = new T_StuAdmin();
+        permission2.T_Num = Text1.Value;
+        permission2.T_Password = Text2.Value;
         if (Text1.Value.Trim() == "" || Text2.Value.Trim() == "" ||DropDownList1.SelectedValue=="--请选择--")
             Utility.JavaScript.Alert("用户名、密码或身份不能为空", this);       
         else
@@ -45,6 +48,17 @@ public partial class zhuce : System.Web.UI.Page
             else if(DropDownList1.SelectedValue=="学生")
             {
                 if (BLL.UniversityStudentBLL.AddStudent(student) && BLL.ManagerBusiness.AddQuanxian(permission))
+                {
+                    Utility.JavaScript.AlertAndRedirect("注册成功", "../Default.aspx", this);
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>alert('该账号已存在')</script>");
+                }
+            }
+            else if (DropDownList1.SelectedValue == "管理员")
+            {
+                if (BLL.TeachAdminBLL.AddAdmin(permission2) && BLL.ManagerBusiness.AddQuanxian(permission))
                 {
                     Utility.JavaScript.AlertAndRedirect("注册成功", "../Default.aspx", this);
                 }

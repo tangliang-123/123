@@ -91,5 +91,31 @@ namespace BLL
         {
             return DAL.ManagerDAL.selectmanager(manager);
         }
+
+        /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool wangjiMima(T_StuAdmin manager)
+        {
+            return DAL.T_StuAdminDAL.ChangeAdminPass(manager);
+        }
+
+        /// <summary>
+        /// 向学生表添加一条记录
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool AddAdmin(T_StuAdmin manager)
+        {
+            //判断账号是否存在？
+            if (DAL.T_StuAdminDAL.AdminIsExist(manager.T_Num))
+            {
+                return false;
+            }
+            else
+                return DAL.T_StuAdminDAL.AddAdmin(manager);
+        }
     }
 }
