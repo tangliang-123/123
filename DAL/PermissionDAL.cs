@@ -110,5 +110,23 @@ namespace DAL
 			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
 			return i > 0;
 		}
+
+		/// <summary>
+		/// 权限表返回账号的身份
+		/// </summary>
+		/// <param name="permission"></param>
+		/// <returns></returns>
+		public static string ReturnRole(Permission permission)
+		{
+			string role = "";
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",permission.P_Account)
+			};
+			SqlDataReader i = SQLHelper.ExecuteReader("ReturnRole", CommandType.StoredProcedure, p);
+			while (i.Read())
+				role = i["P_Role"].ToString();
+			return role;
+		}
 	}
 }

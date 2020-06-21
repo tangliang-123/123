@@ -71,7 +71,17 @@ namespace BLL
                 return false;
             
         }
-        
+
+        /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool wangjiMima(Student manager)
+        {
+            return DAL.StudentDAL.ChangeStuPwd(manager);
+        }
+
         /// <summary>
         /// 修改学生手机号
         /// </summary>
@@ -154,6 +164,30 @@ namespace BLL
         {
             return DAL.StudentDAL.AddResume(resume);
         }
-        
+        /// <summary>
+        /// 查找所有商家发布的职业
+        /// </summary>
+        /// <returns></returns>
+        public static SqlDataReader selectAllJob()
+        {
+            return DAL.JobDetailDAL.selectAllJob();
+        }
+
+        /// <summary>
+        /// 向学生表添加一条记录
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        public static bool AddStudent(Student manager)
+        {
+            //判断账号是否存在？
+            if (DAL.StudentDAL.StuNumIsExist(manager.StuID))
+            {
+                return false;
+            }
+            else
+                return DAL.StudentDAL.AddStudent(manager);
+        }
+
     }
 }

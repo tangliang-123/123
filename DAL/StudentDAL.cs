@@ -87,11 +87,31 @@ namespace DAL
            
             return i > 0;
         }
+
+        /// <summary>
+        /// 向学生表添加一条记录
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool AddStudent(Student student)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+                new SqlParameter("@StuID",student.StuID),
+                new SqlParameter("@password",student.S_Password)
+
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("AddStudent", CommandType.StoredProcedure, p));
+            //string sqltext = "select count(*) from Manager where M_LoginId=@Account";
+            //int i = Convert.ToInt32(SQLHelper.ExecuteScalar(sqltext, CommandType.Text, p));
+            return i > 0;
+
+        }
         /// <summary>
         /// 统计，判断学生手机号是否存在
         /// </summary>
-        /// <param name = "account" ></ param >
-        /// < returns ></ returns >
+        /// <param name="account"></param>
+        /// <returns></returns>
         public static bool StuNumIsExist(string account)
         {
             SqlParameter[] p = new SqlParameter[]

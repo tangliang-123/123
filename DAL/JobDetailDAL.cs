@@ -394,5 +394,14 @@ namespace DAL
                 };
             return SQLHelper.ExecuteReader("Job_name", CommandType.StoredProcedure, p);
         }
+
+        /// <summary>
+        /// 查找所有商家发布的职业
+        /// </summary>
+        /// <returns></returns>
+        public static SqlDataReader selectAllJob()
+        {
+            return SQLHelper.ExecuteReader("selectAllJob", CommandType.StoredProcedure,null);
+        }
     }
 }

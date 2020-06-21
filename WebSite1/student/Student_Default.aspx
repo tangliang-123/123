@@ -32,6 +32,12 @@
             position: absolute;
             right: 100px;
         }
+        #Panel1{
+            width:800px;
+            height:550px;
+            background:white;
+            margin:20px auto;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +56,10 @@
             </div>
            
         </div>
-         <uc1:stu_syjz runat="server" ID="stu_syjz" />
+        <div>
+            <asp:Panel ID="Panel1" runat="server">
+            </asp:Panel>
+        </div>
     </form>
 </body>
 </html>
