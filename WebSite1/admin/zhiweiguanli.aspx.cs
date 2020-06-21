@@ -29,6 +29,7 @@ public partial class admin_zhiweiguanli : System.Web.UI.Page
 
     [WebMethod]
     public static bool deleteByID(int ID)
+
     {
 
         if (BLL.TeachAdminBLL.DeleteJob(ID))
