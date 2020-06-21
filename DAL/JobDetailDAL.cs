@@ -394,7 +394,19 @@ namespace DAL
                 };
             return SQLHelper.ExecuteReader("Job_name", CommandType.StoredProcedure, p);
         }
-
+        /// <summary>
+        /// 删除选中的岗位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DeleteJob(int jobID)//演示
+        {
+            SqlParameter[] p = {
+                   new SqlParameter("@JobID", jobID)
+            };
+            int i = SQLHelper.ExecuteNonQuery("DeleteJob", CommandType.StoredProcedure, p);
+            return i > 0;
+        }
         /// <summary>
         /// 查找所有商家发布的职业
         /// </summary>

@@ -22,6 +22,6 @@ public partial class admin_stu_frist : System.Web.UI.Page
             Session.Remove("adminlogin");
             Response.Write("<script>alert('已注销!');location.href='../Default.aspx';</script>");
         }
-        
+
     }
 }

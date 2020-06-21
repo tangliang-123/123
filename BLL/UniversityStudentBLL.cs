@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using DAL;
 
 namespace BLL
 {
@@ -81,7 +82,15 @@ namespace BLL
         {
             return DAL.StudentDAL.ChangeStuPwd(manager);
         }
-
+        /// <summary>
+        /// 判断学生密码是否存在
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool StuIsExist(string account, string pwd)
+        {
+            return DAL.StudentDAL.StuIsExist(account, pwd);
+        }
         /// <summary>
         /// 修改学生手机号
         /// </summary>
