@@ -45,6 +45,7 @@ public partial class admin_zhiweiguanli : System.Web.UI.Page
     }
 
     protected void search_Click(object sender, EventArgs e)
+
     {
         List<JobDetail> list = BLL.UniversityStudentBLL.GetJobListByType(cxType.Value);
         rpTest.DataSource = list;
