@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli_yiwancheng.aspx.cs" Inherits="jianliguanli_yiwancheng" %>
-
+<%@ Register Src="~/user/jianli.ascx" TagPrefix="uc1" TagName="jianli" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -217,12 +217,14 @@
         right:60px;
         top:50px;
         }
-    .auto-style1 {
-        left: 520px;
-        top: 445px;
-    }
-    .auto-style2 {
-        right: 824px;
+        #jianlixinxi {
+        position:absolute;
+        width:100%;
+       
+        left:0px;
+        top:100px;
+        background-color:#fff;
+
     }
     </style>
 </head>
@@ -268,7 +270,7 @@
             <asp:Button ID="Button2" runat="server" Text="发布兼职" BackColor="#00CCFF" BorderColor="White" BorderStyle="Solid" BorderWidth="1px" OnClick="Button2_Click" />
         </div>
         <div id="jilu">
-            <asp:Label ID="Label20" runat="server" Text="筛选条件" CssClass="auto-style2"></asp:Label>
+            <asp:Label ID="Label20" runat="server" Text="筛选条件"></asp:Label>
             <asp:Button ID="Button3" runat="server" Text="不限" />
             <asp:Button ID="Button4" runat="server" Text="有留言" />
 
@@ -276,6 +278,9 @@
 
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
             <asp:Button ID="Button1" runat="server" Text="发布兼职" CssClass="auto-style1" OnClick="Button1_Click" />
+            <div id="jianlixinxi" style="overflow-y:auto;">
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+            </div>
         </div>
     </div>
     </form>

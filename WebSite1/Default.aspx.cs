@@ -42,7 +42,7 @@ public partial class _Default : System.Web.UI.Page
             if (BLL.TeachAdminBLL.T_StuAdminLogin(admin, password) && BLL.TeachAdminBLL.Peradmlogin(admin, password))
             {
                 Session["adminlogin"] = admin;
-                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../shouye.aspx", this);
+                Utility.JavaScript.AlertAndRedirect("登录成功，点击确定跳转首页", "../admin/admin_frist.aspx", this);
             }
             if (BLL.UniversityStudentBLL.StuLogin(admin, password) && BLL.UniversityStudentBLL.Perstulogin(admin, password))
             {

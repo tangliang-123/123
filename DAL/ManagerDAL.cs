@@ -273,7 +273,6 @@ namespace DAL
                 n.M_LoginId = Convert.ToString(dr["M_LoginId"]);
                 n.M_Password = Convert.ToString(dr["M_Password"]);
                 n.Identification = Convert.ToString(dr["Identification"]);
-                n.Real_Name = Convert.ToBoolean(dr["Real_Name"]);
                 n.Grading = Convert.ToString(dr["Grading"]);
                 n.M_Name = Convert.ToString(dr["M_Name"]);
                 n.M_Address = Convert.ToString(dr["M_Address"]);
@@ -285,7 +284,44 @@ namespace DAL
             }
             return list;
         }
+        /// <summary>
+        /// 详细信息，通过id来查
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectMannagerById(Manager manager)
+        {
+            SqlParameter[] p = {
+                  new SqlParameter("@ID",manager.M_LoginId)
+            };
+            DataSet i = SQLHelper.ExecuteDataSet("selectMannagerById", CommandType.StoredProcedure, p);
+            return i;
+        }
 
+        /// <summary>
+        /// 修改商家信息
+        /// </summary>
+        /// <param name="jobdet"></param>
+        /// <returns></returns>
+        public static bool UpdateManager(Manager manager)
+        {
+            SqlParameter[] p = new SqlParameter[]
+            {
+
+                new SqlParameter("@jname",manager.M_Password),
+                new SqlParameter("@jCategory",manager.Real_Name),
+                new SqlParameter("@jportray",manager.Grading),
+                new SqlParameter("@jsalary",manager.M_Name),
+                new SqlParameter("@wokintime",manager.M_Address),
+                new SqlParameter("@positio",manager.M_Position),
+                new SqlParameter("@remarks",manager.Sex),
+                new SqlParameter("@settlement",manager.Nation),
+                new SqlParameter("@number",manager.Number),
+                new SqlParameter("@id",manager.M_LoginId),
+            };
+            int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("UpdateManager", CommandType.StoredProcedure, p));
+            return i > 0;
+        }
 
 
     }

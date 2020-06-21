@@ -109,5 +109,40 @@ namespace DAL
 			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
 			return i > 0;
 		}
+		/// <summary>
+		/// 修改权限表管理员密码
+		/// </summary>
+		/// <param name = "account" ></ param >
+		/// < returns ></ returns >
+		public static bool ChangePerminssionPwd(Permission manager)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",manager.P_Account),
+				new SqlParameter("@Password",manager.P_Password)
+			};
+			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("ChangePerminssionPwd", CommandType.StoredProcedure, p));
+			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
+			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+			return i > 0;
+		}
+		/// <summary>
+		/// 注销权限表管理员账号
+		/// </summary>
+		/// <param name = "account" ></ param >
+		/// < returns ></ returns >
+		public static bool DeletePerssion(string login)
+		{
+			SqlParameter[] p = new SqlParameter[]
+			{
+				new SqlParameter("@Account",login)
+
+			};
+			int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery("DeletePerssion", CommandType.StoredProcedure, p));
+			//string sqlt = "Update Manager set M_Password=@Password where M_LoginId=@Account";
+			//int i = Convert.ToInt32(SQLHelper.ExecuteNonQuery(sqlt, CommandType.Text, p));
+			return i > 0;
+		}
 	}
+
 }

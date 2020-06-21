@@ -42,5 +42,24 @@ namespace Model
 			get { return s_telnum; }
 			set { s_telnum = value; }
 		}
+		private string s_Address;
+		public string S_Address
+		{
+			get { return s_Address; }
+			set { s_Address = value; }
+		}
+		private string s_Sex;
+		public string S_Sex
+		{
+			get { return s_Sex; }
+			set { s_Sex = value; }
+		}
+		private string s_IDCard;
+		public string S_IDCard
+		{
+			get { return s_IDCard; }
+			set { s_IDCard = value; }
+		}
+		
 	}
 }

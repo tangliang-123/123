@@ -224,9 +224,13 @@ namespace DAL
             return dr;
         }
         /// <summary>
-        /// 获取岗位对象
+        /// 获取岗位对象StudentGetJobList
         /// </summary>
         /// <param name="account"></param>
+        /// <returns></returns>
+        /// <summary>
+        /// 获取所有岗位信息
+        /// </summary>
         /// <returns></returns>
         public static List<JobDetail> GetJobList()
         {
@@ -235,23 +239,16 @@ namespace DAL
             List<JobDetail> list = new List<JobDetail>();
             while (dr.Read())
             {
-                JobDetail order = new JobDetail();
-                order.ID = Convert.ToInt32(dr["JobID"]);
-                order.J_LoginId = Convert.ToString(dr["J_LoginId"]);
-                order.J_name = Convert.ToString(dr["J_name"]);
-                order.J_Category = Convert.ToString(dr["J_Category"]); order.ID = Convert.ToInt32(dr["JobID"]);
-                order.J_Portray = Convert.ToString(dr["J_Portray"]);
-                order.J_Salary = Convert.ToString(dr["J_Salary"]);
-                order.Working_time = Convert.ToString(dr["Working_time"]);
-                order.Position = Convert.ToString(dr["Position"]);
-                order.Remarks = Convert.ToString(dr["Remarks"]);
-                order.Settlement = Convert.ToString(dr["Settlement"]);
-                order.Need_number = Convert.ToInt32(dr["Need_number"]);
-                order.J_state = Convert.ToInt32(dr["J_state"]);
-                order.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
-                order.Safety_Grade = Convert.ToInt32(dr["Safety_Grade"]);
-
-                list.Add(order);
+                JobDetail c = new JobDetail();
+                c.ID = Convert.ToInt32(dr["ID"]);
+                c.J_LoginId = Convert.ToString(dr["J_LoginId"]);
+                c.J_name = Convert.ToString(dr["J_name"]);
+                c.J_Salary = Convert.ToString(dr["J_Salary"]);
+                c.J_Category = Convert.ToString(dr["J_Category"]);
+                c.J_Portray = Convert.ToString(dr["J_Portray"]);
+                c.J_state = Convert.ToInt32(dr["J_state"]);
+                c.To_release_time = Convert.ToDateTime(dr["To_release_time"]);
+                list.Add(c);
             }
             return list;
 
@@ -392,6 +389,19 @@ namespace DAL
                     new SqlParameter("@jobid",jobid)
                 };
             return SQLHelper.ExecuteReader("Job_name", CommandType.StoredProcedure, p);
+        }
+        /// <summary>
+        /// 删除选中的岗位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DeleteJob(int jobID)//演示
+        {
+            SqlParameter[] p = {
+                   new SqlParameter("@JobID", jobID)
+            };
+            int i = SQLHelper.ExecuteNonQuery("DeleteJob", CommandType.StoredProcedure, p);
+            return i > 0;
         }
     }
 }

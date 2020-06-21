@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,36 @@ public partial class jianliguanli_yiwancheng : System.Web.UI.Page
         Manager manager = new Manager();
         manager.M_LoginId = Session["admin"].ToString();
         Label6.Text = BLL.ManagerBusiness.returnlogid(manager);
+        SqlDataReader sdr = BLL.ManagerBusiness.joblist_Applictions(2, Session["admin"].ToString());
+        jianlixianshi(sdr);
+    }
+    public void jianlixianshi(SqlDataReader sdr)
+    {
+        SqlDataReader sdl, sdt;
+
+
+
+        while (sdr.Read())
+        {
+            sdl = BLL.ManagerBusiness.GetStu(Convert.ToInt32(sdr["StuID"]));
+            sdt = BLL.ManagerBusiness.GetJob(Convert.ToInt32(sdr["PostID"]));
+            while (sdl.Read())
+            {
+                while (sdt.Read())
+                {
+                    if (Convert.ToInt32(sdr["Application_status"]) == 2)
+                    {
+
+                        user_WebUserControl jianli = (user_WebUserControl)LoadControl("user/jianli.ascx");
+                        jianli.jian(jianli, sdr, sdl, sdt);
+                        Panel1.Controls.Add(jianli);
+
+                    }
+                }
+
+            }
+
+        }
     }
     protected void Label10_Click(object sender, EventArgs e)
     {

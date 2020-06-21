@@ -91,5 +91,135 @@ namespace BLL
         {
             return DAL.ManagerDAL.selectmanager(manager);
         }
+        /// <summary>
+        /// 查询所有岗位信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static List<JobDetail> GetJobList()
+        {
+            return DAL.JobDetailDAL.GetJobList();
+        }
+        /// <summary>
+        /// 删除选中的岗位
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DeleteJob(int jobID)
+        {
+            return DAL.JobDetailDAL.DeleteJob(jobID);
+            //return false;
+        }
+        /// <summary>
+        /// 删除选中的商家
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DeleteManager(Manager manager)
+        {
+            return DAL.ManagerDAL.DeleteManager(manager);
+        }
+        /// <summary>
+        /// 获取所有学生信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<Student> GetAllStuList()
+        {
+            return DAL.StudentDAL.GetAllStuList();
+        }
+        /// <summary>
+        /// 删除选中的学生账号
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool DeleteStudent(string id)
+        {
+            return DAL.StudentDAL.DeleteStudent(id);
+        }
+        /// <summary>
+        /// 修改管理员密码
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool ChangeAdminPwd(T_StuAdmin manager)
+        {
+            if (DAL.T_StuAdminDAL.AdminIsExist(manager.T_Num, manager.T_Password))
+            {
+                return false;
+            }
+            return DAL.T_StuAdminDAL.ChangeAdminPwd(manager);
+        }
+        /// <summary>
+        /// 判断管理员密码是否存在
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool AdminIsExist(string account, string pwd)
+        {
+            return DAL.T_StuAdminDAL.AdminIsExist(account, pwd);
+        }
+        /// <summary>
+        /// 修改权限表管理员密码
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool ChangePerminssionPwd(Permission manager)
+        {
+            return DAL.PermissionDAL.ChangePerminssionPwd(manager);
+        }
+        /// <summary>
+        /// 根据ID查看商家的详细信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectMannagerById(Manager manager)
+        {
+            return DAL.ManagerDAL.selectMannagerById(manager);
+        }
+        /// <summary>
+        /// 根据ID查看学生的详细信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static DataSet selectStuById(Student student)
+        {
+            return DAL.StudentDAL.selectStuById(student);
+        }
+        /// <summary>
+        /// 修改商家信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool UpdateManager(Manager manager)
+        {
+            return DAL.ManagerDAL.UpdateManager(manager);
+        }
+        /// <summary>
+        /// 修改学生信息
+        /// </summary>
+        /// <param name="jobDetail"></param>
+        /// <returns></returns>
+        public static bool UpdateStudent(Student student)
+        {
+            return DAL.StudentDAL.UpdateStudent(student);
+        }
+        /// <summary>
+        /// 注销管理员账号
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool DeleteAdmin(string login)
+        {
+            return DAL.T_StuAdminDAL.DeleteAdmin(login);
+        }
+        /// <summary>
+        /// 注销权限表管理员账号
+        /// </summary>
+        /// <param name = "account" ></ param >
+        /// < returns ></ returns >
+        public static bool DeletePerssion(string login)
+        {
+            return DAL.PermissionDAL.DeletePerssion(login);
+        }
     }
 }

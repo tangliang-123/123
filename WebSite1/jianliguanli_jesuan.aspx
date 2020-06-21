@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jianliguanli_jesuan.aspx.cs" Inherits="jianliguanli_jesuan" %>
-
+<%@ Register Src="~/user/jianli.ascx" TagPrefix="uc1" TagName="jianli" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -272,9 +272,15 @@
         right:60px;
         top:165px;
         }
-    .auto-style1 {
-        left: 520px;
-        top: 445px;
+    
+    #jianlixinxi {
+        position:absolute;
+        width:100%;
+       
+        left:0px;
+        top:250px;
+        background-color:#fff;
+
     }
     </style>
 </head>
@@ -338,6 +344,9 @@
 
             <asp:Image ID="Image3" runat="server" ImageUrl="~/image/发布兼职.png" />
             <asp:Button ID="Button1" runat="server" Text="发布兼职" CssClass="auto-style1" OnClick="Button1_Click" />
+            <div id="jianlixinxi" style="overflow-y:auto;">
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+            </div>
         </div>
     </div>
     </form>
